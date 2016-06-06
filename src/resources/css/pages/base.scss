@@ -1,0 +1,59 @@
+$grey: #262626;
+$yellow: #f39c12;
+$h1: 8.3rem;
+$h2: 4rem;
+$h3: 3.5rem;
+$h4: 3rem;
+$h5: 1.7rem;
+$h6: 1rem;
+$p: 1.4rem;
+$yellow: #FFCC00;
+$grey: #666666;
+
+body {
+	font-family: "PermianSans", sans-serif;
+	font-weight: normal;
+	font-size: 10px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialised;
+	overflow-x: hidden;
+	height: 100%;
+	color: #000;
+} 
+a, a:hover, a:focus {
+  	text-decoration: none; 
+  	color: #fff;
+  	outline: none; }
+ul { list-style-type: none;	padding: 0; }
+h1 { font-size: $h1; font-family: "PermianSerif", sans-serif; font-weight:bold;}
+h2 { font-size: $h2; font-family: "PermianSerif", sans-serif; font-weight:bold;}
+h3 { font-size: $h3; font-family: "PermianSerif", sans-serif; font-weight:bold;}
+h4 { font-size: $h4;}
+h5 { font-size: $h5;}
+h6 { font-size: $h6;}
+p,a,span,button { font-size: $p;}
+p,h1,h2,h3,h4,h5,h6 {padding: 0; margin: 0;}
+
+.btn_yellow {
+	height: 40px;
+	background-color: $yellow;
+	border: none;
+	padding: 0 15px;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.btn_grey {
+	height: 40px;
+	background-color: #DEDEDE;
+	border: none;
+	padding: 0 15px;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.fix_padding {
+	padding: 0;
+}

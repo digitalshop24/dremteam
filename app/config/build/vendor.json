@@ -1,0 +1,27 @@
+{
+    "scripts": {
+        "src": [
+            "node_modules/babel-polyfill/dist/polyfill.min.js",
+            "bower_components/angular/angular.min.js",
+            "bower_components/jquery/dist/jquery.min.js",
+            "bower_components/angular-ui-router/release/angular-ui-router.min.js",
+            "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
+            "bower_components/ngstorage/ngStorage.min.js",
+            "bower_components/angular-cookies/angular-cookies.min.js",
+            "node_modules/angular-youtube-embed/dist/angular-youtube-embed.min.js"
+        ],
+        "dest": "vendor.min.js"
+    },
+    "styles": {
+        "src": [
+            "bower_components/bootstrap/dist/css/bootstrap.min.css",
+            "bower_components/angular-bootstrap/ui-bootstrap-css.js"
+
+        ],
+        "dest": "vendor.min.css"
+    },
+    "fonts": {
+        "src": [
+        ]
+    }
+}
