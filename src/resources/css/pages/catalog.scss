@@ -7,6 +7,23 @@
 		position: absolute;
 		z-index: 100;
 		margin-top: -60px;
-
+	}
+}
+.manager {
+	background-color: #F5F5F5;
+	margin-top: 60px;
+	padding: 20px 20px 70px 20px;
+	img {
+		float:left;
+	}
+	ul {
+		margin-top: 20px;
+		position: relative;
+		right: -20px;
+		li {
+			font-size: $p;
+			border-bottom: none !important;
+			
+		}
 	}
 }

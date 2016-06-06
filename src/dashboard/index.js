@@ -1,17 +1,17 @@
 'use strict';
 
 import angular from 'angular';
-
 import sitemap from './sitemap/index';
 import main from './main/index';
 import catalog from './catalog/index';
+import contacts from './contacts/index';
 
 export default angular.module('dashboard',
-    [
+    [   
         sitemap.name,
         main.name,
-        catalog.name
-
+        catalog.name,
+        contacts.name
     ])
     // .service('login', Login)
     // .service('modal', Modal)

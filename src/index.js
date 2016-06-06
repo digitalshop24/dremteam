@@ -1,8 +1,6 @@
 'use strict';
 
 import angular from 'angular';
-
-
 // import index from './index/index';
 import dashboard from './dashboard/index';
 // import Api from './api';
@@ -16,6 +14,7 @@ export default angular.module('app',
         'ui.bootstrap',
         'ngCookies',
         'youtube-embed',
+        'slick',
         localStorage.name,
         dashboard.name
         
