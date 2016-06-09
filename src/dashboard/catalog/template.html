@@ -6,19 +6,55 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3 menu_personal">
+			<div class="col-md-3 menu_personal menu_catalog">
 				<ul>
 					<li>
-						<a href="">Модели</a>
-						<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						<div class="cursor_pointer"> 
+							<a href="">Модели</a>
+							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						</div>
+						<div class="filter">
+							<div class="one_filter">
+								<p>Пол:</p>
+								<ul>
+									<li><a href="">Парни</a></li>
+									<li><a href="">Девушки</a></li>
+								</ul>
+							</div>
+							<div class="one_filter">
+								<p>Рост:</p>
+								<ul>
+									<li><a href="">от 175 см</a></li>
+									<li><a href="">до  175 см</a></li>
+								</ul>
+							</div>
+							<div class="one_filter">
+								<p>Цвет волос:</p>
+								<ul>
+									<li><a href="">Светлые</a></li>
+									<li><a href="">Темные</a></li>
+									<li><a href="">Рыжие</a></li>
+								</ul>
+							</div>
+						</div>
 					</li>
 					<li>
-						<a href="">Фотографы</a>
-						<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						<div class="cursor_pointer"> 
+							<a href="">Фотографы</a>
+							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						</div>
 					</li>
 					<li>
-						<a href="">Стилисты</a>
-						<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						<div class="cursor_pointer"> 
+							<a href="">Стилисты</a>
+							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						</div>
+					</li>
+					<li>
+						<div class="cursor_pointer" ng-click="ctrl.showSet=!ctrl.showSet">
+							<a href="" >Сет</a>
+							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+						</div>
 					</li>
 				</ul>
 				<div class="manager text-center">
@@ -32,44 +68,108 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-9">
-				<div class="row">
-					<div class="col-md-3 fix_padding">
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+			<div class="col-md-9 catalog_model">
+				<div class="row" ng-show="!ctrl.showSet">
+					<div class="col-md-3 ">
+						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
 						<div class="btn_group">
 							<button class="btn_yellow">Выбрать</button>
 							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
 						</div>
+						<h5>Алина Иванова<br> ID: 110</h5>
 					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+					<div class="col-md-3 "> 
+						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
 						<div class="btn_group">
 							<button class="btn_yellow">Выбрать</button>
 							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
 						</div>
+						<h5>Алина Иванова<br> ID: 110</h5>
 					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+					<div class="col-md-3 "> 
+						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
 						<div class="btn_group">
 							<button class="btn_yellow">Выбрать</button>
 							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
 						</div>
+						<h5>Алина Иванова<br> ID: 110</h5>
 					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+					<div class="col-md-3 "> 
+						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
 						<div class="btn_group">
 							<button class="btn_yellow">Выбрать</button>
 							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
 						</div>
+						<h5>Алина Иванова<br> ID: 110</h5>
+					</div>
+					<div class="col-md-3 "> 
+						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model">
+						<div class="btn_group">
+							<button class="btn_yellow">Выбрать</button>
+							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
+						</div>
+						<h5>Алина Иванова<br> ID: 110</h5>
+					</div>
+				</div>
+				<div class="row" ng-show="ctrl.showSet">
+					<div class="col-md-12 set">
+						<div class="row">
+							<div class="col-md-12">
+								<h4 class="left">Для презентации</h4>
+								<h4 class="right"><span>Скидка</span> -20%</h4>
+							</div>
+							<div class="col-md-6">
+								<p>Модели</p>	
+								<div class="row">
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+								</div>
+													
+							</div>
+							<div class="col-md-6">
+								<p>Бармены</p>	
+								<div class="row">
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+								</div>
+													
+							</div>
+							<div class="col-md-6">
+								<p>Бармены</p>	
+								<div class="row">
+									<div class="col-md-4">
+										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+										<h5>Алина Иванова<br> ID: 110</h5>
+									</div>
+								</div>
+													
+							</div>
+
+							<div class="col-md-12 text-center">
+								<button class="btn_yellow">Выбрать</button>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,29 @@
+.model {
+	padding: 70px 0;
+	background-color: #000;
+	img {
+		margin: 0 auto;
+	}
+	h2 {
+		padding:50px;
+		color: #fff;
+	}
+	ul {
+		li {
+			font-size: $p;
+			color: #fff;
+		}
+	}
+	.back {
+		color: #fff;
+		margin-bottom: 30px;
+		span {
+			border: 1px solid $yellow;
+			padding: 5px 15px;
+			color: $yellow;
+			margin-right: 5px;
+			position: relative;
+			top: 4px;
+		}
+	}
+}
