@@ -1,136 +1,135 @@
 <section class="first_screen">
-	<div class="container-fluid">
-		<div class="row">
-			<slick infinite=true slides-to-show=1 slides-to-scroll=1>
-				<div ng-repeat="image in ctrl.images">
-					<img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive">
-				</div>
+    <div class="container-fluid">
+        <div class="row">
+            <slick infinite=true slides-to-show=1 slides-to-scroll=1>
+                <div ng-repeat="image in ctrl.images">
+                    <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive">
+                </div>
 
-				<!-- <div>
-					<img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive">
-				</div> -->
-			</slick>
-			<!-- <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive"> -->
-			<!-- <div class="col-md-12 text-center"> -->
-				<div class="titel_first_screen text-center">
-					<h2>Наше агентство соберет для Вас персональную<br>команду сотрудников </h2>
-					<h5>Свяжитесь с нами и расскажите о вашем мероприятии.<br>Наши опытные менеджеры предоставят Вам всех необходимых людей.</h5>
-					<button class="btn_yellow" ui-sref="dashboard.catalog">
-						Подобрать персонал
-					</button>
-					<button class="btn_yellow" ui-sref="dashboard.catalog">
-						<span class="fa fa-user" aria-hidden="true"></span>
-					</button>
-				</div>
-				
-			<!-- </div> -->
-		</div>
-	</div>
+                <!-- <div>
+                    <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive">
+                </div> -->
+            </slick>
+            <!-- <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive"> -->
+            <!-- <div class="col-md-12 text-center"> -->
+            <div class="titel_first_screen text-center">
+                <h2>Наше агентство соберет для Вас персональную<br>команду сотрудников </h2>
+                <h5>Свяжитесь с нами и расскажите о вашем мероприятии.<br>Наши опытные менеджеры предоставят Вам всех
+                    необходимых людей.</h5>
+                <button class="btn_yellow" ui-sref="dashboard.catalog">
+                    Подобрать персонал
+                </button>
+                <button class="btn_yellow" ui-sref="dashboard.catalog">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <!-- </div> -->
+        </div>
+    </div>
 </section>
 <section class="our_model">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h2>Наши модели</h2>
-				<p>Вы можете создать команду мечты сомастоятельно, <br>просто перейдите в каталог и сделайте свой выбор</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 fix_padding">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-			</div>
-			<div class="col-md-3 fix_padding">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-			</div>
-			<div class="col-md-3 fix_padding">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-			</div>
-			<div class="col-md-3 fix_padding">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<button class="btn_grey" ui-sref="dashboard.catalog">
-					Перейти в каталог
-					<span class="fa fa-angle-right " aria-hidden="true"></span>
-				</button>
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Наши модели</h2>
+
+                <p>Вы можете создать команду мечты сомастоятельно, <br>просто перейдите в каталог и сделайте свой выбор
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <slick infinite=true slides-to-show=4 slides-to-scroll=1>
+                <div class="col-md-3 fix_padding" ng-repeat="model in ctrl.models">
+                    <img src="{{model.url.medium}}" alt="" class="img-responsive">
+                </div>
+            </slick>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btn_grey" ui-sref="dashboard.catalog">
+                    Перейти в каталог
+                    <span class="fa fa-angle-right " aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="banner_specpred">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 text-center fix_padding">
-				<h2>Спецпредложение</h2>	
-				<p>Вам нужны девушки-модели, встречающие гостей? А как же стилисты<br>и визажисты для них? Для случаев заказа полного комплекта персонала <br>у нас предусмотрены скидки!</p>	
-				<img src="img/resources/img/main_set.jpg" alt="" class="img-responsive ">
-				<button class="btn_yellow" ui-sref="dashboard.catalog">
-					Спецпредложение
-					<span class="" aria-hidden="true">!</span>
-				</button>		
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center fix_padding">
+                <h2>Спецпредложение</h2>
+
+                <p>Вам нужны девушки-модели, встречающие гостей? А как же стилисты<br>и визажисты для них? Для случаев
+                    заказа полного комплекта персонала <br>у нас предусмотрены скидки!</p>
+                <img src="img/resources/img/main_set.jpg" alt="" class="img-responsive ">
+                <button class="btn_yellow" ui-sref="dashboard.catalog">
+                    Спецпредложение
+                    <span class="" aria-hidden="true">!</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="personal">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h2>Персонал для мероприятий</h2>	
-				<p>С нашим агенством сотрудничают лучшие<br>профессионалы своего дела</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 menu_personal">
-				<ul>
-					<li>
-						<a href="">Работы фотографов</a>
-						<span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
-					</li>
-					<li>
-						<a href="">Работы стилистов</a>
-						<span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
-					</li>
-					<li>
-						<a href="">Работы визажистов</a>
-						<span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-9">
-				<div class="row">
-					<div class="col-md-3 fix_padding">
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-3 fix_padding"> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Персонал для мероприятий</h2>
+
+                <p>С нашим агенством сотрудничают лучшие<br>профессионалы своего дела</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 menu_personal">
+                <ul>
+                    <li>
+                        <a href="">Работы фотографов</a>
+                        <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
+                    </li>
+                    <li>
+                        <a href="">Работы стилистов</a>
+                        <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
+                    </li>
+                    <li>
+                        <a href="">Работы визажистов</a>
+                        <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3 fix_padding">
+                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-3 fix_padding">
+                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-3 fix_padding">
+                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-3 fix_padding">
+                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="last_screen">
-	<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h2>Затрудняетесь с выбором?</h2>	
-					<h5>Наше агенство соберет для Вас персональную<br>команду сотрудников</h5>
-					<button class="btn_yellow" ui-sref="dashboard.catalog">
-						Подобрать персонал
-					</button>
-					<button class="btn_yellow">
-						<span class="fa fa-user" aria-hidden="true"></span>
-					</button>
-				</div>
-			</div>
-		</div>	
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Затрудняетесь с выбором?</h2>
+                <h5>Наше агенство соберет для Вас персональную<br>команду сотрудников</h5>
+                <button class="btn_yellow" ui-sref="dashboard.catalog">
+                    Подобрать персонал
+                </button>
+                <button class="btn_yellow">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 </section>

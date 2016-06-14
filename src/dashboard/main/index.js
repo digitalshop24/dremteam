@@ -17,6 +17,10 @@ export default angular.module('dashboard.main', [])
                 resolve: {
                     images: (mainService) => {
                         return mainService.getImagesForSlider();
+                    },
+
+                    models: staffService => {
+                        return staffService.getStaffForMain();
                     }
                 }
             });

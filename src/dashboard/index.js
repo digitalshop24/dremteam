@@ -9,6 +9,7 @@ import model from './model/index';
 import cart from './cart/index';
 import cart2 from './cart2/index';
 import cart3 from './cart3/index';
+import StaffService from './staffService';
 
 export default angular.module('dashboard',
     [   
@@ -21,7 +22,7 @@ export default angular.module('dashboard',
         cart2.name,
         cart3.name
     ])
-    // .service('login', Login)
+    .service('staffService', StaffService)
     // .service('modal', Modal)
     // .service('modalSpeed', ModalSpeed)
     // .service('notificationService', NotificationService)
