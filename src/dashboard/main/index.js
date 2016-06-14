@@ -14,10 +14,10 @@ export default angular.module('dashboard.main', [])
                 url: '/',
                 controller: MainCtrl,
                 controllerAs: 'ctrl',
-                // resolve: {
-                //     token: ($stateParams) => {
-                //         return $stateParams.reset_password_token;
-                //     }
-                // }
+                resolve: {
+                    images: (mainService) => {
+                        return mainService.getImagesForSlider();
+                    }
+                }
             });
     });
