@@ -8,17 +8,19 @@
             "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
             "bower_components/ngstorage/ngStorage.min.js",
             "bower_components/angular-cookies/angular-cookies.min.js",
-            "bower_components/angular-slick/dist/slick.min.js",
-            "node_modules/angular-youtube-embed/dist/angular-youtube-embed.min.js",
             "bower_components/bootstrap/dist/js/bootstrap.min.js"
+            "bower_components/slick-carousel/slick/slick.js",
+            "bower_components/angular-slick/dist/slick.js",
+            "node_modules/angular-youtube-embed/dist/angular-youtube-embed.min.js"
         ],
         "dest": "vendor.min.js"
     },
     "styles": {
         "src": [
             "bower_components/bootstrap/dist/css/bootstrap.min.css",
-            "bower_components/angular-bootstrap/ui-bootstrap-css.js"
-
+            "bower_components/angular-bootstrap/ui-bootstrap-css.js",
+            "bower_components/slick-carousel/slick/slick.css",
+            "bower_components/slick-carousel/slick/slick-theme.css"
         ],
         "dest": "vendor.min.css"
     },

@@ -32,7 +32,7 @@ var fonts = {
 };
 
 module.exports = {
-    mode: '1dev',
+    mode: 'dev',
     pack: {
         src: sources.src,
         dest: sources.dest,

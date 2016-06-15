@@ -4,12 +4,10 @@ const UNAUTHORIZED = 401;
 const EXTERNAL_SERVER_ERROR = 500;
 
 export default class Api {
-    constructor($http, $state, session, login, $rootScope) {
-        this.api = "";
+    constructor($http, $state, $rootScope) {
+        this.api = "http://dream-team-staging.dshop24.ru/api/v1";
         this.http = $http;
         this.state = $state;
-        this.session = session;
-        this.login = login;
         this.rootscope = $rootScope;
     } 
 
@@ -48,7 +46,7 @@ export default class Api {
     }
 
     get headers() {
-        return {'Auth-Token': this.session.token};
+        return {};
     }
 
     isAuthorized(response) {
@@ -60,12 +58,8 @@ export default class Api {
     }
 
     handleResponse(response) {
-        // if (!this.isAuthorized(response) && !this.rootscope.alreadyInLoginModal) {
-        if (!this.isAuthorized(response) {
-            // this.rootscope.alreadyInLoginModal = true;
-            // this.session.invalidate();
-            // this.rootscope.$broadcast('user:updated', {});
-            this.login.open();
+        if (!this.isAuthorized(response)) {
+
         }
 
         if (this.isExternalServerError(response)) {
