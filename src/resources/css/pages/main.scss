@@ -41,8 +41,9 @@
 	.btn_yellow {
 		margin: 40px 0;
 		span {
-			padding: 5px 10px;
+			padding: 1px 10px;
 			border: 1px solid #000;
+			margin-left: 5px;
 		}
 	}
 }
@@ -65,6 +66,18 @@
 			}
 			span {
 				float: right;
+			}
+		}
+		.main_collapse {
+			background-color: #F1F1F1;
+			margin: 10px 0;
+			ul {
+				li {
+					padding: 5px;
+					border-bottom: none;
+					font-size: 1.3rem;
+					text-transform: uppercase;
+				}
 			}
 		}
 		

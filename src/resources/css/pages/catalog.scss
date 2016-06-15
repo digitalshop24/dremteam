@@ -5,7 +5,7 @@
 	}
 	
 	.filter {
-		padding: 10px 0 30px 0;
+		// padding: 10px 0 30px 0;
 		background-color: #F1F1F1;
 		margin-top: 10px;
 		border-top: 1px solid #e1e1e1;
@@ -62,9 +62,13 @@
 			transition-delay: 1s;
 			transition-delay: 0.5s;
 		} 
-		.foto_model:hover + .btn_group {
+		.foto_model:hover +.btn_group {
 			display: block;
 			transition-delay: 0.5s;
+		}
+		
+		.foto_model +.btn_group:hover {
+			display: block;
 		}
 	}
 	.set {
