@@ -1,6 +1,6 @@
 'use strict';
 
-export default class CartCtrl {
+export default class CardCtrl {
     constructor() {
     	
     }

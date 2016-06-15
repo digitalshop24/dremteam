@@ -6,7 +6,7 @@ import main from './main/index';
 import catalog from './catalog/index';
 import contacts from './contacts/index';
 import model from './model/index';
-import cart from './cart/index';
+import card from './card/index';
 import cart2 from './cart2/index';
 import cart3 from './cart3/index';
 import StaffService from './staffService';
@@ -18,7 +18,7 @@ export default angular.module('dashboard',
         catalog.name,
         contacts.name,
         model.name,
-        cart.name,
+        card.name,
         cart2.name,
         cart3.name
     ])

@@ -1,6 +1,6 @@
 'use strict';
 
-export default class CartService {
+export default class CardService {
     constructor(api) {
         this.api = api;
 
