@@ -1,14 +1,14 @@
 <header>
-				<img src="img/resources/img/logo.png" alt="" class="logo" ui-sref="dashboard.main">
-				<ul>
-					<li class="li_active"><a href="#" ui-sref="dashboard.main">Главная</a></li>
-					<li><a href="#" ui-sref="dashboard.catalog">Персонал</a></li>
-					<li><a href="#" ui-sref="dashboard.сontacts">Контакты</a></li>
-				</ul>
-				<div class="basket">
-					<a href="" ui-sref="dashboard.card">
-						<span class="fa fa-user"></span>
-						<h5>Выбрано:</h5>
-					</a>
-				</div>
+    <img src="img/resources/img/logo.png" alt="" class="logo" ui-sref="dashboard.main">
+    <ul>
+        <li class="li_active"><a href="#" ui-sref="dashboard.main">Главная</a></li>
+        <li><a href="#" ui-sref="dashboard.catalog">Персонал</a></li>
+        <li><a href="#" ui-sref="dashboard.сontacts">Контакты</a></li>
+    </ul>
+    <div class="basket">
+        <a href="" ui-sref="dashboard.card">
+            <span class="fa fa-user"></span>
+            <h5>Выбрано:{{ctrl.cardStorage.staffAmount}}</h5>
+        </a>
+    </div>
 </header>
