@@ -1,5 +1,3 @@
-
-
 <section class="personal catalog">
 	<div class="container-fluid">
 		<div class="row">
@@ -11,13 +9,12 @@
 			<div class="col-md-3 menu_personal menu_catalog">
 				<div class="tag">
 					<span class="title">Отобранны:</span>
-					<span>Мужчины<span class=" fa fa-times"></span></span>
-					<span>Модели<span class=" fa fa-times" ></span></span>
+					<span ng-repeat="filter in ctrl.filters">{{filter.tagName}}<span class="fa fa-times" ng-click="ctrl.removeFilterByName(filter.name)"></span></span>
 				</div>
 				<ul>
 					<li>
 						<div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1" aria-expanded="true" aria-controls="collapse_1"> 
-							<a class="" >
+							<a class="" ng-click="ctrl.handleFilter('models')" >
 						  		Модели
 							</a>
 							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
@@ -28,8 +25,8 @@
 								<div class="one_filter">
 									<p>Пол:</p>
 									<ul>
-										<li><a href="">Парни</a></li>
-										<li><a href="">Девушки</a></li>
+										<li><a href="" ng-click="ctrl.handleFilter('models.male')">Парни</a></li>
+										<li><a href="" ng-click="ctrl.handleFilter('models.female')">Девушки</a></li>
 									</ul>
 								</div>
 								<div class="one_filter">
@@ -42,9 +39,9 @@
 								<div class="one_filter">
 									<p>Цвет волос:</p>
 									<ul>
-										<li><a href="">Светлые</a></li>
-										<li><a href="">Темные</a></li>
-										<li><a href="">Рыжие</a></li>
+										<li><a href="" ng-click="ctrl.handleFilter('models.hair.blond')">Светлые</a></li>
+										<li><a href="" ng-click="ctrl.handleFilter('models.hair.dark')">Темные</a></li>
+										<li><a href="" ng-click="ctrl.handleFilter('models.hair.red')">Рыжие</a></li>
 									</ul>
 								</div>
 							</div>
@@ -52,19 +49,19 @@
 					</li>
 					<li>
 						<div class="cursor_pointer"> 
-							<a href="">Фотографы</a>
+							<a href="" ng-click="ctrl.handleFilter('photographs')">Фотографы</a>
 							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 						</div>
 					</li>
 					<li>
 						<div class="cursor_pointer"> 
-							<a href="">Стилисты</a>
+							<a href="" ng-click="ctrl.handleFilter('stylists')">Стилисты</a>
 							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 						</div>
 					</li>
 					<li>
 						<div class="cursor_pointer" ng-click="ctrl.showSet=!ctrl.showSet">
-							<a href="" >Сет</a>
+							<a href="" ng-click="ctrl.handleFilter('set')">Сет</a>
 							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 						</div>
 					</li>
