@@ -20,7 +20,7 @@ export default angular.module('dashboard.main', [])
                     },
 
                     models: staffService => {
-                        return staffService.getStaffForMain();
+                        return staffService.getStaff(true);
                     }
                 }
             });

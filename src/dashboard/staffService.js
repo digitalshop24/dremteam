@@ -5,8 +5,12 @@ export default class StaffService {
         this.api = api;
     }
 
-    getStaffForMain() {
-        return this.api.get('/staff/main_page').then((res) => {
+    getStaff(main) {
+        return this.api.get('/staff', {
+            params: {
+                main: main
+            }
+        }).then((res) => {
             return res.data;
         });
     }
