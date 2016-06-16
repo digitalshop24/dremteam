@@ -11,7 +11,7 @@ export default class StaffService {
                 main: main
             }
         }).then((res) => {
-            return res.data;
+            return res.data.items;
         });
     }
 }

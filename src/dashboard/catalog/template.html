@@ -82,46 +82,14 @@
 				</div>
 			</div>
 			<div class="col-md-9 catalog_model">
-				<div class="row" ng-show="!ctrl.show+Set">
-					<div class="col-md-3 ">
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
+				<div class="row" ng-show="!ctrl.showSet">
+					<div class="col-md-3" ng-repeat="person in ctrl.staff">
+						<img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
 						<div class="btn_group">
 							<button class="btn_yellow">Выбрать</button>
 							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
 						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
+						<h5>{{person.name}}<br> ID: {{person.id}}</h5>
 					</div>
 				</div>
 				<div class="row" ng-show="ctrl.showSet">
