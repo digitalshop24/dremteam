@@ -1,8 +1,9 @@
 'use strict';
 
 export default class CatalogCtrl {
-    constructor(staff) {
-        this.staff = staff;
+    constructor(staff, sets) {
+        this.staff = staff.concat(sets);
+        this.filteredStaff = this.staff;
         this.filters = [];
         this.initFilters();
     }
@@ -21,6 +22,19 @@ export default class CatalogCtrl {
         } else {
             this.addFilter(filterName);
         }
+        this.filterStaff();
+    }
+
+    filterStaff() {
+        this.filteredStaff = this.staff;
+        this.filters.forEach(filter => {
+            this.filteredStaff = this.filteredStaff.filter(filter.filter);
+        });
+    }
+
+    removeFilterAndUpdate(filterName) {
+        this.removeFilterByName(filterName);
+        this.filterStaff();
     }
 
     removeFilterByName(filterName) {
@@ -47,17 +61,26 @@ export default class CatalogCtrl {
             {
                 name: "models",
                 exclude: "all",
-                tagName: "Модели"
+                tagName: "Модели",
+                filter: (person) => {
+                    return person.profession == "model";
+                }
             },
             {
                 name: "models.male",
                 tagName: "Парни",
-                exclude: "models.female"
+                exclude: "models.female",
+                filter: (person) => {
+                    return person.profession == "model" && person.sex == "m";
+                }
             },
             {
                 name: "models.female",
                 tagName: "Девушки",
-                exclude: "models.male"
+                exclude: "models.male",
+                filter: (person) => {
+                    return person.profession == "model" && person.sex == "w";
+                }
             },
             {
                 name: "models.hair.red",
@@ -74,17 +97,26 @@ export default class CatalogCtrl {
             {
                 name: "photographs",
                 tagName: "Фотографы",
-                exclude: "all"
+                exclude: "all",
+                filter: (person) => {
+                    return person.profession == "photographs";
+                }
             },
             {
                 name: "stylists",
                 tagName: "Стилисты",
-                exclude: "all"
+                exclude: "all",
+                filter: (person) => {
+                    return person.profession == "stylist";
+                }
             },
             {
                 name: "set",
                 tagName: "СПЕЦПРЕДЛОЖЕНИЯ",
-                exclude: "all"
+                exclude: "all",
+                filter: (person) => {
+                    return person.type == "suites";
+                }
             }
         ]
     }

@@ -14,4 +14,10 @@ export default class StaffService {
             return res.data.items;
         });
     }
+
+    getSets() {
+        return this.api.get('/suites').then((res) => {
+            return res.data.items;
+        });
+    }
 }

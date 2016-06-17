@@ -9,7 +9,7 @@
 			<div class="col-md-3 menu_personal menu_catalog">
 				<div class="tag">
 					<span class="title">Отобранны:</span>
-					<span ng-repeat="filter in ctrl.filters">{{filter.tagName}}<span class="fa fa-times" ng-click="ctrl.removeFilterByName(filter.name)"></span></span>
+					<span ng-repeat="filter in ctrl.filters">{{filter.tagName}}<span class="fa fa-times" ng-click="ctrl.removeFilterAndUpdate(filter.name)"></span></span>
 				</div>
 				<ul>
 					<li>
@@ -80,13 +80,15 @@
 			</div>
 			<div class="col-md-9 catalog_model">
 				<div class="row" ng-show="!ctrl.showSet">
-					<div class="col-md-3" ng-repeat="person in ctrl.staff">
-						<img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
+					<div class="col-md-3" ng-repeat="person in ctrl.filteredStaff">
+						<div>
+							<img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
+							<div class="btn_group">
+								<button class="btn_yellow">Выбрать</button>
+								<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
+							</div>
+							<h5>{{person.name}}<br> ID: {{person.id}}</h5>
 						</div>
-						<h5>{{person.name}}<br> ID: {{person.id}}</h5>
 					</div>
 				</div>
 				<div class="row" ng-show="ctrl.showSet">

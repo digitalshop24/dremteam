@@ -17,6 +17,10 @@ export default angular.module('dashboard.catalog', [])
                 resolve: {
                     staff: staffService => {
                         return staffService.getStaff();
+                    },
+
+                    sets: staffService => {
+                        return staffService.getSets();
                     }
                 }
             });
