@@ -21,6 +21,10 @@ export default angular.module('dashboard.main', [])
 
                     models: staffService => {
                         return staffService.getStaff(true);
+                    },
+
+                    works: mainService => {
+                        return mainService.getWorks();
                     }
                 }
             });
