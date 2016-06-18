@@ -11,18 +11,19 @@ export default class CatalogCtrl {
     handleFilter(filterName) {
         const filer = this.getFilterByName(filterName) || {};
         if(filer.exclude) {
-            if(filer.exclude == "all") {
+            if(filer.exclude[0] == "all") {
                 this.filters = [];
             } else {
-                this.removeFilterByName(filer.exclude);
+                this.removeFilters(filer.exclude);
             }
         }
         if(this.isFilterSwitchedOn(filterName)) {
-            this.removeFilterByName(filterName);
+            this.removeFilters([filterName]);
         } else {
             this.addFilter(filterName);
         }
         this.filterStaff();
+        this.showSets = filer.showSets;
     }
 
     filterStaff() {
@@ -33,15 +34,17 @@ export default class CatalogCtrl {
     }
 
     removeFilterAndUpdate(filterName) {
-        this.removeFilterByName(filterName);
+        this.removeFilters([filterName]);
         this.filterStaff();
     }
 
-    removeFilterByName(filterName) {
-        const filterIndex = this.filters.findIndex(f => f.name == filterName);
-        if (filterIndex > -1) {
-            this.filters.splice(filterIndex, 1);
-        }
+    removeFilters(filters) {
+        filters.forEach((filterName) => {
+            const filterIndex = this.filters.findIndex(f => f.name == filterName);
+            if (filterIndex > -1) {
+                this.filters.splice(filterIndex, 1);
+            }
+        });
     }
 
     addFilter(filterName) {
@@ -60,7 +63,7 @@ export default class CatalogCtrl {
         this.allFilters = [
             {
                 name: "models",
-                exclude: "all",
+                exclude: ["all"],
                 tagName: "Модели",
                 filter: (person) => {
                     return person.profession == "model";
@@ -69,7 +72,7 @@ export default class CatalogCtrl {
             {
                 name: "models.male",
                 tagName: "Парни",
-                exclude: "models.female",
+                exclude: ["models.female"],
                 filter: (person) => {
                     return person.profession == "model" && person.sex == "m";
                 }
@@ -77,35 +80,47 @@ export default class CatalogCtrl {
             {
                 name: "models.female",
                 tagName: "Девушки",
-                exclude: "models.male",
+                exclude: ["models.male"],
                 filter: (person) => {
                     return person.profession == "model" && person.sex == "w";
                 }
             },
             {
                 name: "models.hair.red",
-                tagName: "Рыжие"
+                tagName: "Рыжие",
+                exclude: ["models.hair.dark", "models.hair.blond"],
+                filter: (person) => {
+                    return person.profession == "model" && person.hair_color == "red";
+                }
             },
             {
                 name: "models.hair.dark",
-                tagName: "Темные"
+                tagName: "Темные",
+                exclude: ["models.hair.red", "models.hair.blond"],
+                filter: (person) => {
+                    return person.profession == "model" && person.hair_color == "dark";
+                }
             },
             {
                 name: "models.hair.blond",
-                tagName: "Светлые"
+                tagName: "Светлые",
+                exclude: ["models.hair.red", "models.hair.dark"],
+                filter: (person) => {
+                    return person.profession == "model" && person.hair_color == "blond";
+                }
             },
             {
                 name: "photographs",
                 tagName: "Фотографы",
-                exclude: "all",
+                exclude: ["all"],
                 filter: (person) => {
-                    return person.profession == "photographs";
+                    return person.profession == "photograph";
                 }
             },
             {
                 name: "stylists",
                 tagName: "Стилисты",
-                exclude: "all",
+                exclude: ["all"],
                 filter: (person) => {
                     return person.profession == "stylist";
                 }
@@ -113,7 +128,8 @@ export default class CatalogCtrl {
             {
                 name: "set",
                 tagName: "СПЕЦПРЕДЛОЖЕНИЯ",
-                exclude: "all",
+                exclude: ["all"],
+                showSets: true,
                 filter: (person) => {
                     return person.type == "suites";
                 }

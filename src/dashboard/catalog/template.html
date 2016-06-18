@@ -1,158 +1,137 @@
 <section class="personal catalog">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h2>Собери команду мечты!</h2>	
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 menu_personal menu_catalog">
-				<div class="tag">
-					<span class="title">Отобранны:</span>
-					<span ng-repeat="filter in ctrl.filters">{{filter.tagName}}<span class="fa fa-times" ng-click="ctrl.removeFilterAndUpdate(filter.name)"></span></span>
-				</div>
-				<ul>
-					<li>
-						<div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1" aria-expanded="true" aria-controls="collapse_1"> 
-							<a class="" ng-click="ctrl.handleFilter('models')" >
-						  		Модели
-							</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-							
-						</div>
-						<div class="filter collapse" id="collapse_1">
-							<div style="min-height:150px;">
-								<div class="one_filter">
-									<p>Пол:</p>
-									<ul>
-										<li><a href="" ng-click="ctrl.handleFilter('models.male')">Парни</a></li>
-										<li><a href="" ng-click="ctrl.handleFilter('models.female')">Девушки</a></li>
-									</ul>
-								</div>
-								<div class="one_filter">
-									<p>Рост:</p>
-									<ul>
-										<li><a href="">от 175 см</a></li>
-										<li><a href="">до  175 см</a></li>
-									</ul>
-								</div>
-								<div class="one_filter">
-									<p>Цвет волос:</p>
-									<ul>
-										<li><a href="" ng-click="ctrl.handleFilter('models.hair.blond')">Светлые</a></li>
-										<li><a href="" ng-click="ctrl.handleFilter('models.hair.dark')">Темные</a></li>
-										<li><a href="" ng-click="ctrl.handleFilter('models.hair.red')">Рыжие</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="cursor_pointer"> 
-							<a href="" ng-click="ctrl.handleFilter('photographs')">Фотографы</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-						</div>
-					</li>
-					<li>
-						<div class="cursor_pointer"> 
-							<a href="" ng-click="ctrl.handleFilter('stylists')">Стилисты</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-						</div>
-					</li>
-					<li>
-						<div class="cursor_pointer" ng-click="ctrl.showSet=!ctrl.showSet">
-							<a href="" ng-click="ctrl.handleFilter('set')">Сет</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-						</div>
-					</li>
-				</ul>
-				
-				<div class="manager text-center">
-					<h4>Ваш Event - менеджер</h4>
-					<p>Для уточнения информации свяжитесь с ивент-менеджером</p>
-					<img src="img/resources/img/foto.png" alt="" class="img-responsive">
-					<ul class="text-left">
-						<li>Василиса</li>
-						<li>+7 (977) 389 59 35</li>
-						<li>Dream.team.model@gmail.com</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-9 catalog_model">
-				<div class="row" ng-show="!ctrl.showSet">
-					<div class="col-md-3" ng-repeat="person in ctrl.filteredStaff">
-						<div>
-							<img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-							<div class="btn_group">
-								<button class="btn_yellow">Выбрать</button>
-								<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-							</div>
-							<h5>{{person.name}}<br> ID: {{person.id}}</h5>
-						</div>
-					</div>
-				</div>
-				<div class="row" ng-show="ctrl.showSet">
-					<div class="col-md-12 set">
-						<div class="row">
-							<div class="col-md-12">
-								<h4 class="left">Для презентации</h4>
-								<h4 class="right"><span>Скидка</span> -20%</h4>
-							</div>
-							<div class="col-md-6">
-								<p>Модели</p>	
-								<div class="row">
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-								</div>
-													
-							</div>
-							<div class="col-md-6">
-								<p>Бармены</p>	
-								<div class="row">
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-								</div>
-													
-							</div>
-							<div class="col-md-6">
-								<p>Бармены</p>	
-								<div class="row">
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-								</div>
-													
-							</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Собери команду мечты!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 menu_personal menu_catalog">
+                <div class="tag">
+                    <span class="title">Отобранны:</span>
+                    <span ng-repeat="filter in ctrl.filters">{{filter.tagName}}<span class="fa fa-times"
+                                                                                     ng-click="ctrl.removeFilterAndUpdate(filter.name)"></span></span>
+                </div>
+                <ul>
+                    <li>
+                        <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1"
+                             aria-expanded="true" aria-controls="collapse_1">
+                            <a class="" ng-click="ctrl.handleFilter('models')">
+                                Модели
+                            </a>
+                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 
-							<div class="col-md-12 text-center">
-								<button class="btn_yellow">Выбрать</button>
-							</div>
-						</div>
+                        </div>
+                        <div class="filter collapse" id="collapse_1">
+                            <div style="min-height:150px;">
+                                <div class="one_filter">
+                                    <p>Пол:</p>
+                                    <ul>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.male')">Парни</a></li>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.female')">Девушки</a></li>
+                                    </ul>
+                                </div>
+                                <div class="one_filter">
+                                    <p>Рост:</p>
+                                    <ul>
+                                        <li><a href="">от 175 см</a></li>
+                                        <li><a href="">до 175 см</a></li>
+                                    </ul>
+                                </div>
+                                <div class="one_filter">
+                                    <p>Цвет волос:</p>
+                                    <ul>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.blond')">Светлые</a>
+                                        </li>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.dark')">Темные</a></li>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.red')">Рыжие</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cursor_pointer">
+                            <a href="" ng-click="ctrl.handleFilter('photographs')">Фотографы</a>
+                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cursor_pointer">
+                            <a href="" ng-click="ctrl.handleFilter('stylists')">Стилисты</a>
+                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cursor_pointer">
+                            <a href="" ng-click="ctrl.handleFilter('set')">Сет</a>
+                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+                        </div>
+                    </li>
+                </ul>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="manager text-center">
+                    <h4>Ваш Event - менеджер</h4>
+
+                    <p>Для уточнения информации свяжитесь с ивент-менеджером</p>
+                    <img src="img/resources/img/foto.png" alt="" class="img-responsive">
+                    <ul class="text-left">
+                        <li>Василиса</li>
+                        <li>+7 (977) 389 59 35</li>
+                        <li>Dream.team.model@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 catalog_model">
+                <div class="row">
+                    <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.filteredStaff">
+                        <div ng-show="person.type == 'staff'">
+                            <img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model"
+                                 ui-sref="dashboard.model">
+
+                            <div class="btn_group">
+                                <button class="btn_yellow">Выбрать</button>
+                                <button class="btn_yellow"><span class=" fa fa-plus"></span></button>
+                            </div>
+                            <h5>{{person.name}}<br> ID: {{person.id}}</h5>
+                        </div>
+
+                        <div class="row" ng-show="person.type == 'suites'">
+                            <div class="col-md-12">
+                                <h4 class="left" ng-bind="person.description">Для презентации</h4>
+                                <h4 class="right"><span>Скидка</span> -{{person.discount}}%</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Модели</p>
+
+                                <div class="row">
+                                    <div class="col-md-4" ng-repeat="model in person.staff.model">
+                                        <img src="{{model.photo.medium}}" alt="" class="img-responsive">
+                                        <h5>{{model.name}}<br> ID: {{model.id}}</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <p>Бармены</p>
+
+                                <div class="row">
+                                    <div class="col-md-4" ng-repeat="model in person.staff.barmens">
+                                        <img src="{{model.photo.medium}}" alt="" class="img-responsive">
+                                        <h5>{{model.name}}<br> ID: {{model.id}}</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button class="btn_yellow">Выбрать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>
