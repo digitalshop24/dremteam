@@ -10,4 +10,10 @@ export default class MainService {
             return res.data;
         });
     }
+
+    getWorks() {
+        return this.api.get('/works').then((res) => {
+            return res.data;
+        });
+    }
 }

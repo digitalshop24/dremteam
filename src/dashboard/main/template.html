@@ -41,7 +41,7 @@
         <div class="row">
             <slick infinite=true slides-to-show=4 slides-to-scroll=1>
                 <div class="col-md-3 fix_padding" ng-repeat="model in ctrl.models">
-                    <img src="{{model.url.medium}}" alt="" class="img-responsive">
+                    <img src="{{model.photo.medium}}" alt="" class="img-responsive">
                 </div>
             </slick>
         </div>
@@ -84,47 +84,26 @@
         <div class="row">
             <div class="col-md-3 menu_personal">
                 <ul>
-                    <li>
-                        <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_2" aria-expanded="true" aria-controls="collapse_2"> 
+                    <li ng-repeat="work in ctrl.works">
+                        <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_{{$index}}" aria-expanded="true" aria-controls="collapse_{{$index}}">
                             <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
-                                <a class="" >
+                                <a class="" ng-bind="work.name">
                                    Работы фотографов
                                 </a>
                            <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                        </div>
-                       <div class="main_collapse collapse" id="collapse_2">
+                       <div class="main_collapse collapse" id="collapse_{{$index}}">
                            <ul>
-                               <li>Мария</li>
-                               <li>Алекстандра</li>
-                               <li>Стас</li>
-                               <li>Петр</li>
+                               <li ng-repeat="person in work.staff" ng-bind="person.name" ng-click="ctrl.worksPhotos = person.photos">Мария</li>
                            </ul>
                        </div>
-                    </li>
-                    </li>
-                    <li>
-                        <a href="">Работы стилистов</a>
-                        <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
-                    </li>
-                    <li>
-                        <a href="">Работы визажистов</a>
-                        <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
                     </li>
                 </ul>
             </div>
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-3 fix_padding">
-                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-3 fix_padding">
-                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-3 fix_padding">
-                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-                    </div>
-                    <div class="col-md-3 fix_padding">
-                        <img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
+                    <div class="col-md-3 fix_padding" ng-repeat="photo in ctrl.worksPhotos">
+                        <img src="{{photo.medium}}" alt="" class="img-responsive">
                     </div>
                 </div>
             </div>

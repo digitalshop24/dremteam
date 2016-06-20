@@ -14,10 +14,14 @@ export default angular.module('dashboard.catalog', [])
                 url: '/catalog',
                 controller: CatalogCtrl,
                 controllerAs: 'ctrl',
-                // resolve: {
-                //     token: ($stateParams) => {
-                //         return $stateParams.reset_password_token;
-                //     }
-                // }
+                resolve: {
+                    staff: staffService => {
+                        return staffService.getStaff();
+                    },
+
+                    sets: staffService => {
+                        return staffService.getSets();
+                    }
+                }
             });
     });
