@@ -1,7 +1,7 @@
 'use strict';
 
 export default class ModelCtrl {
-    constructor() {
-    	
+    constructor(person) {
+        this.person = person;
     }
 }

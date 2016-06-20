@@ -92,7 +92,7 @@
                                 <choose-button person="person"></choose-button>
                                 <choose-button person="person" icon="true"></choose-button>
                             </div>
-                            <h5>{{person.name}}<br> ID: {{person.id}}</h5>
+                            <h5 ui-sref="dashboard.model({id: person.id})">{{person.name}}<br> ID: {{person.id}}</h5>
                         </div>
 
                         <div class="row" ng-show="person.type == 'suites'">
