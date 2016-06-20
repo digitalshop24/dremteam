@@ -19,7 +19,9 @@ export default angular.module('app',
         $locationProvider.html5Mode(true);
         $localStorageProvider.setKeyPrefix('dt-agency-');
     })
-    .run(($rootScope) => {
+    .run(($rootScope, $state) => {
+        $rootScope.$state = $state;
+
         $rootScope.$on('$stateChangeError', () => {
             console.log("Error");
         });

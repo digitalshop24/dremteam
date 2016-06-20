@@ -10,6 +10,7 @@ import model from './model/index';
 import card from './card/index';
 import cart2 from './cart2/index';
 import cart3 from './cart3/index';
+import chooseButton from './choose-button/index';
 import StaffService from './staffService';
 
 export default angular.module('dashboard',
@@ -19,6 +20,7 @@ export default angular.module('dashboard',
         catalog.name,
         contacts.name,
         model.name,
+        chooseButton.name,
         card.name,
         cart2.name,
         cart3.name
