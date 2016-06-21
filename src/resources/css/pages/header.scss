@@ -36,3 +36,37 @@ header {
 		}
 	}
 }
+
+
+header.black {
+	ul {
+		li {
+			a {
+				font-size: 1.4rem;
+				text-transform: uppercase;
+				color: #000;
+			}
+		}
+		.li_active {
+			border-bottom: 1px solid #000;
+			border-top: 1px solid #000;
+		}
+	}
+	.logo {
+		width: 150px;
+		margin: 10px; 
+
+	}
+	.basket {
+		float: right;
+		margin: 24px 75px;
+		h5 {
+			display: inline-block;
+		}
+		span {
+			padding: 10px;
+			border: 1px solid $yellow;
+		}
+	}
+}
+
