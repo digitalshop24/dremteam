@@ -2,19 +2,42 @@
 
 export default class CatalogCtrl {
     constructor(staff, sets) {
+        staff.sort((a,b) => {
+            if (a.sex == 'w' && b.sex == 'm') {
+                return -1;
+            }
+            if (a.sex == 'm' && b.sex == 'w') {
+                return 1;
+            }
+            return 0;
+        });
         this.staff = staff.concat(sets);
         this.filteredStaff = this.staff;
         this.filters = [];
+        this.slider = {
+            minValue: 150,
+            maxValue: 200,
+            options: {
+                floor: 150,
+                ceil: 200,
+                step: 1,
+                onChange: () => {
+                    this.removeFilters(['models.height']);
+                    this.handleFilter('models.height');
+                }
+            }
+        };
         this.initFilters();
+        this.handleFilter('models');
     }
 
     handleFilter(filterName) {
-        const filer = this.getFilterByName(filterName) || {};
-        if(filer.exclude) {
-            if(filer.exclude[0] == "all") {
+        const filter = this.getFilterByName(filterName) || {};
+        if(filter.exclude) {
+            if(filter.exclude[0] == "all") {
                 this.filters = [];
             } else {
-                this.removeFilters(filer.exclude);
+                this.removeFilters(filter.exclude);
             }
         }
         if(this.isFilterSwitchedOn(filterName)) {
@@ -23,7 +46,7 @@ export default class CatalogCtrl {
             this.addFilter(filterName);
         }
         this.filterStaff();
-        this.showSets = filer.showSets;
+        this.showSets = filter.showSets;
     }
 
     filterStaff() {
@@ -86,27 +109,31 @@ export default class CatalogCtrl {
                 }
             },
             {
+                name: "models.height",
+                tagName: "Рост",
+                filter: (person) => {
+                    return person.height >= this.slider.minValue && person.height <= this.slider.maxValue;
+                }
+            },
+            {
                 name: "models.hair.red",
                 tagName: "Рыжие",
-                exclude: ["models.hair.dark", "models.hair.blond"],
                 filter: (person) => {
-                    return person.profession == "model" && person.hair_color == "red";
+                    return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
                 name: "models.hair.dark",
                 tagName: "Темные",
-                exclude: ["models.hair.red", "models.hair.blond"],
                 filter: (person) => {
-                    return person.profession == "model" && person.hair_color == "dark";
+                    return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
                 name: "models.hair.blond",
                 tagName: "Светлые",
-                exclude: ["models.hair.red", "models.hair.dark"],
                 filter: (person) => {
-                    return person.profession == "model" && person.hair_color == "blond";
+                    return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
@@ -134,6 +161,14 @@ export default class CatalogCtrl {
                     return person.type == "suites";
                 }
             }
+        ]
+    }
+
+    getEnabledHairColors() {
+        return [
+            this.isFilterSwitchedOn('models.hair.red') ? 'red' : '',
+            this.isFilterSwitchedOn('models.hair.dark') ? 'dark' : '',
+            this.isFilterSwitchedOn('models.hair.blond') ? 'blond' : ''
         ]
     }
 }

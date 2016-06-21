@@ -10,6 +10,7 @@ import model from './model/index';
 import card from './card/index';
 import cart2 from './cart2/index';
 import cart3 from './cart3/index';
+import chooseButton from './choose-button/index';
 import StaffService from './staffService';
 
 export default angular.module('dashboard',
@@ -19,6 +20,7 @@ export default angular.module('dashboard',
         catalog.name,
         contacts.name,
         model.name,
+        chooseButton.name,
         card.name,
         cart2.name,
         cart3.name
@@ -43,4 +45,29 @@ export default angular.module('dashboard',
                     }
                 }
             });
+    })
+    .run(($rootScope, $state, $window, $timeout, $location, $anchorScroll) => {
+        var scrollPosCache = {};
+
+
+        $rootScope.$on('$stateChangeStart', function() {
+            // store scroll position for the current view
+            if ($state.current) {
+                scrollPosCache[$state.current.url] = [ $window.pageXOffset, $window.pageYOffset ];
+            }
+        });
+
+        $rootScope.$on('$stateChangeSuccess', function() {
+            // if hash is specified explicitly, it trumps previously stored scroll position
+            if ($location.hash()) {
+                $anchorScroll();
+
+                // else get previous scroll position; if none, scroll to the top of the page
+            } else {
+                var prevScrollPos = scrollPosCache[$state.current.url] || [ 0, 0 ];
+                $timeout(function() {
+                    $window.scrollTo(prevScrollPos[0], prevScrollPos[1]);
+                }, 0);
+            }
+        });
     });

@@ -37,6 +37,7 @@
     "socket.io-client": "^1.4.5",
     "ng-rollbar": "~1.9.1",
     "angulartics-google-analytics": "~0.1.4",
-    "angular-youtube-embed": "^1.0.2"
+    "angular-youtube-embed": "^1.0.2",
+    "angularjs-slider": "~4.0.2"
   }
 }

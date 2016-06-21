@@ -9,69 +9,20 @@
 			<!-- <div class="col-md-12 text-left">
 				<a href=""><p class="back"><span class="fa fa-angle-left fa-2x"></span>Вернуться в каталог</p></a>
 			</div> -->
-			<div class="col-md-3 text-center">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-				<ul class="text-left">
-					<li>Рост: 173</li>
+			<div class="col-md-3 text-center" ng-repeat="person in ctrl.staff">
+				<img src="{{person.photo.medium}}" alt="" class="img-responsive">
+				<ul class="text-left" ng-show="person.profession == 'model'">
+					<li ng-bind="person.name + ' ID:' + person.id">Рост: 173</li>
+					<li ng-bind="'Рост: ' + person.height">Рост: 173</li>
 					<li>Вес: 51</li>
 					<li>Параметры: 86-58-89</li>
-					<li>Опыт работы 10 лет</li>
-				</ul>	
+				</ul>
+				<p ng-bind="person.description"></p>
 				<div class="btn_group">
-					<button class="btn_grey"><span class=" fa fa-times"></span></button>
+					<button class="btn_grey" ng-click="ctrl.remove(person)"><span class=" fa fa-times"></span></button>
 				</div>
 			</div>
-			<div class="col-md-3 text-center">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-				<ul class="text-left">
-					<li>Рост: 173</li>
-					<li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li>
-					<li>Опыт работы 10 лет</li>
-				</ul>	
-				<div class="btn_group">
-					
-					<button class="btn_grey"><span class=" fa fa-times"></span></button>
-				</div>
-			</div>
-			<div class="col-md-3 text-center">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-				<ul class="text-left">
-					<li>Рост: 173</li>
-					<li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li>
-					<li>Опыт работы 10 лет</li>
-				</ul>	
-				<div class="btn_group">
-					
-					<button class="btn_grey"><span class=" fa fa-times"></span></button>
-				</div>
-			</div>
-			<div class="col-md-3 text-center">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-				<ul class="text-left">
-					<li>Рост: 173</li>
-					<li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li>
-					<li>Опыт работы 10 лет</li>
-				</ul>	
-				<div class="btn_group">
-					
-					<button class="btn_grey"><span class=" fa fa-times"></span></button>
-				</div>
-			</div>
-			<div class="col-md-3 text-center">
-				<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-				<ul class="text-left">
-					<li>Рост: 173</li>
-					<li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li>
-					<li>Опыт работы 10 лет</li>
-				</ul>	
-				<div class="btn_group">
-					<button class="btn_grey"><span class=" fa fa-times"></span></button>
-				</div>
-			</div>
+
 
 		</div>
 		<div class="row">
