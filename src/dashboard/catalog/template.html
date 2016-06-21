@@ -15,8 +15,8 @@
                 <ul>
                     <li>
                         <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1"
-                             aria-expanded="true" aria-controls="collapse_1">
-                            <a class="" ng-click="ctrl.handleFilter('models')">
+                             aria-expanded="true" aria-controls="collapse_1" ng-click="ctrl.handleFilter('models')">
+                            <a class="" >
                                 Модели
                             </a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
@@ -51,204 +51,26 @@
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer">
-                            <a href="" ng-click="ctrl.handleFilter('photographs')">Фотографы</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('photographs')">
+                            <a href="" >Фотографы</a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer">
-                            <a href="" ng-click="ctrl.handleFilter('stylists')">Стилисты</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('stylists')">
+                            <a href="" >Стилисты</a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer">
-                            <a href="" ng-click="ctrl.handleFilter('set')">Сет</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('set')">
+                            <a href="" >Сет</a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                     </li>
                 </ul>
 
-<!-- <<<<<<< HEAD
-<section class="personal catalog">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h2>Собери команду мечты!</h2>	
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 menu_personal menu_catalog">
-				<div class="tag">
-					<span class="title">Отобранны:</span>
-					<span>Мужчины<span class=" fa fa-times"></span></span>
-					<span>Модели<span class=" fa fa-times" ></span></span>
-				</div>
-				<ul> 
-					<li>
-						<div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1" aria-expanded="true" aria-controls="collapse_1"> 
-							<a class="" >
-						  		Модели
-							</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-							
-						</div>
-						<div class="filter collapse" id="collapse_1">
-							<div style="min-height:150px;">
-								<div class="one_filter">
-									<p>Пол:</p>
-									<ul>
-										<li><a href="">Парни</a></li>
-										<li><a href="">Девушки</a></li>
-									</ul>
-								</div>
-								<div class="one_filter">
-									<p>Рост:</p>
-									<ul>
-										<li><a href="">от 175 см</a></li>
-										<li><a href="">до  175 см</a></li>
-									</ul>
-								</div>
-								<div class="one_filter">
-									<p>Цвет волос:</p>
-									<ul>
-										<li><a href="">Светлые</a></li>
-										<li><a href="">Темные</a></li>
-										<li><a href="">Рыжие</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="cursor_pointer"> 
-							<a href="">Фотографы</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-						</div>
-					</li>
-					<li>
-						<div class="cursor_pointer"> 
-							<a href="">Стилисты</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-						</div>
-					</li>
-					<li>
-						<div class="cursor_pointer" ng-click="ctrl.showSet=!ctrl.showSet">
-							<a href="" >Сет</a>
-							<span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
-						</div>
-					</li>
-				</ul>
-				
-				<div class="manager text-center">
-					<h4>Ваш Event - менеджер</h4>
-					<p>Для уточнения информации свяжитесь с ивент-менеджером</p>
-					<img src="img/resources/img/foto.png" alt="" class="img-responsive">
-					<ul class="text-left">
-						<li>Василиса</li>
-						<li>+7 (977) 389 59 35</li>
-						<li>Dream.team.model@gmail.com</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-9 catalog_model">
-				<div class="row" ng-show="!ctrl.showSet">
-					<div class="col-md-3 ">
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model" ui-sref="dashboard.model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-					<div class="col-md-3 "> 
-						<img src="img/resources/img/model1.jpg" alt="" class="img-responsive foto_model">
-						<div class="btn_group">
-							<button class="btn_yellow">Выбрать</button>
-							<button class="btn_yellow"><span class=" fa fa-plus"></span></button>
-						</div>
-						<h5>Алина Иванова<br> ID: 110</h5>
-					</div>
-				</div>
-				<div class="row" ng-show="ctrl.showSet">
-					<div class="col-md-12 set">
-						<div class="row">
-							<div class="col-md-12">
-								<h4 class="left">Для презентации</h4>
-								<h4 class="right"><span>Скидка</span> -20%</h4>
-							</div>
-							<div class="col-md-6">
-								<p>Модели</p>	
-								<div class="row">
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-								</div>
-													
-							</div>
-							<div class="col-md-6">
-								<p>Бармены</p>	
-								<div class="row">
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-								</div>
-													
-							</div>
-							<div class="col-md-6">
-								<p>Бармены</p>	
-								<div class="row">
-									<div class="col-md-4">
-										<img src="img/resources/img/model1.jpg" alt="" class="img-responsive">
-										<h5>Алина Иванова<br> ID: 110</h5>
-									</div>
-								</div>
-													
-							</div>
-======= -->
+
                 <div class="manager text-center">
                     <h4>Ваш Event - менеджер</h4>
 
@@ -302,7 +124,6 @@
                                 </div>
 
                             </div>
->>>>>>> 11a972c337c07021187572f4d0dfb54a8ab39924
 
                             <div class="col-md-12 text-center">
                                 <button class="btn_yellow">Выбрать</button>

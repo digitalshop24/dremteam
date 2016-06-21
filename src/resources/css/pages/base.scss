@@ -84,14 +84,34 @@ p,h1,h2,h3,h4,h5,h6 {padding: 0; margin: 0;}
 		margin: 20px 0; 
 	}
 }
-// .slick-prev {
-// 	left: 0px;
-// 	width: 20px;
-// 	height: 20px;
-// 	border: 1px solid #000;
-	
+.slick-prev {
+	left: 0px;
+	width: 45px;
+	height: 45px;
+	background-image: url("img/resources/img/arrow_left.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 1001;
+}
+.slick-prev:hover {
+	background-image: url('img/resources/img/arrow_left.png');
+}
+.slick-prev::before {
+	content: "";
+}
 
-// }
-// .slick-prev::before {
-// 	content: "";
-// }
+.slick-next {
+	right: 0px;
+	width: 45px;
+	height: 45px;
+	background-image: url("img/resources/img/arrow_right.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 1001;
+}
+.slick-next:hover {
+	background-image: url('img/resources/img/arrow_right.png');
+}
+.slick-next::before {
+	content: " ";
+}

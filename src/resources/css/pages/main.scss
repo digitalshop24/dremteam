@@ -9,6 +9,12 @@
 			color: #fff;
 		}
 	}
+	.slides {
+		height: 100vh;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
 }
 .our_model {
 	h2 {
@@ -77,6 +83,7 @@
 					border-bottom: none;
 					font-size: 1.3rem;
 					text-transform: uppercase;
+					cursor: pointer;
 				}
 			}
 		}
