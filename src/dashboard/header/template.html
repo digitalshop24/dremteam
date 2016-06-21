@@ -1,5 +1,6 @@
 <header ng-class="{'black' : $state.includes('dashboard.catalog')}">
-    <img src="img/resources/img/logo.png" alt="" class="logo" ui-sref="dashboard.main">
+    <img ng-show="!$state.includes('dashboard.catalog')" src="img/resources/img/logo.png" alt="" class="logo" ui-sref="dashboard.main">
+    <img ng-show="$state.includes('dashboard.catalog')" src="img/resources/img/logo2.png" alt="" class="logo" ui-sref="dashboard.main">
     <ul>
         <li ng-class="{'li_active': $state.includes('dashboard.main')}"><a href="#" ui-sref="dashboard.main">Главная</a></li>
         <li ng-class="{'li_active': $state.includes('dashboard.catalog')}"><a href="#" ui-sref="dashboard.catalog">Персонал</a></li>
@@ -8,7 +9,7 @@
     <div class="basket">
         <a href="" ui-sref="dashboard.card">
             <span class="fa fa-user"></span>
-            <h5>Выбрано:{{ctrl.cardStorage.staffAmount}}</h5>
+            <h5>Выбрано: {{ctrl.cardStorage.staffAmount}}</h5>
         </a>
     </div>
 </header>
