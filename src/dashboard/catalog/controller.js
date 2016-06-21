@@ -2,6 +2,15 @@
 
 export default class CatalogCtrl {
     constructor(staff, sets) {
+        staff.sort((a,b) => {
+            if (a.sex == 'w' && b.sex == 'm') {
+                return -1;
+            }
+            if (a.sex == 'm' && b.sex == 'w') {
+                return 1;
+            }
+            return 0;
+        });
         this.staff = staff.concat(sets);
         this.filteredStaff = this.staff;
         this.filters = [];

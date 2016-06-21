@@ -86,7 +86,7 @@
                     <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.filteredStaff">
                         <div ng-show="person.type == 'staff'">
                             <img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model"
-                                 ui-sref="dashboard.model">
+                                 ui-sref="dashboard.model({id: person.id})">
 
                             <div class="btn_group">
                                 <choose-button person="person"></choose-button>
