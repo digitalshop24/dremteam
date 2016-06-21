@@ -15,12 +15,16 @@ export default class CatalogCtrl {
         this.filteredStaff = this.staff;
         this.filters = [];
         this.slider = {
-            minValue: 160,
-            maxValue: 190,
+            minValue: 150,
+            maxValue: 200,
             options: {
-                floor: 160,
+                floor: 150,
                 ceil: 200,
-                step: 1
+                step: 1,
+                onChange: () => {
+                    this.removeFilters(['models.height']);
+                    this.handleFilter('models.height');
+                }
             }
         };
         this.initFilters();
@@ -102,6 +106,13 @@ export default class CatalogCtrl {
                 exclude: ["models.male"],
                 filter: (person) => {
                     return person.profession == "model" && person.sex == "w";
+                }
+            },
+            {
+                name: "models.height",
+                tagName: "Рост",
+                filter: (person) => {
+                    return person.height >= this.slider.minValue && person.height <= this.slider.maxValue;
                 }
             },
             {
