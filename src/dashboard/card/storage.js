@@ -35,7 +35,7 @@ export default class CardStorage {
     }
 
     isContained(person) {
-        return this.goods.findIndex(i => i.id == person.id) > -1;
+        return this.staff.findIndex(i => i.id == person.id) > -1;
     }
 
     updateCounters() {
