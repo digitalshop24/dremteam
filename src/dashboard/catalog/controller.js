@@ -118,25 +118,22 @@ export default class CatalogCtrl {
             {
                 name: "models.hair.red",
                 tagName: "Рыжие",
-                exclude: ["models.hair.dark", "models.hair.blond"],
                 filter: (person) => {
-                    return person.profession == "model" && person.hair_color == "red";
+                    return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
                 name: "models.hair.dark",
                 tagName: "Темные",
-                exclude: ["models.hair.red", "models.hair.blond"],
                 filter: (person) => {
-                    return person.profession == "model" && person.hair_color == "dark";
+                    return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
                 name: "models.hair.blond",
                 tagName: "Светлые",
-                exclude: ["models.hair.red", "models.hair.dark"],
                 filter: (person) => {
-                    return person.profession == "model" && person.hair_color == "blond";
+                    return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
@@ -164,6 +161,14 @@ export default class CatalogCtrl {
                     return person.type == "suites";
                 }
             }
+        ]
+    }
+
+    getEnabledHairColors() {
+        return [
+            this.isFilterSwitchedOn('models.hair.red') ? 'red' : '',
+            this.isFilterSwitchedOn('models.hair.dark') ? 'dark' : '',
+            this.isFilterSwitchedOn('models.hair.blond') ? 'blond' : ''
         ]
     }
 }
