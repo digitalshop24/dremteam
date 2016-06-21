@@ -8,11 +8,10 @@ export default angular.module('app',
     [
         'ui.router',
         'ui.bootstrap',
-        'youtube-embed',
         'slick',
         'ngStorage',
+        'yaMap',
         dashboard.name
-        
     ])
     .service('api', Api)
     .config(($locationProvider, $localStorageProvider) => {
