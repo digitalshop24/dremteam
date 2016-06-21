@@ -22,7 +22,7 @@
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 
                         </div>
-                        <div class="filter collapse" id="collapse_1">
+                        <div class="filter collapse in"  id="collapse_1">
                             <div style="min-height:150px;">
                                 <div class="one_filter">
                                     <p>Пол:</p>
@@ -100,22 +100,11 @@
                                 <h4 class="left" ng-bind="person.description">Для презентации</h4>
                                 <h4 class="right"><span>Скидка</span> -{{person.discount}}%</h4>
                             </div>
-                            <div class="col-md-6">
-                                <p>Модели</p>
+                            <div class="col-md-6" ng-repeat="block in person.staff">
+                                <p ng-bind="block.name">Модели</p>
 
                                 <div class="row">
-                                    <div class="col-md-4" ng-repeat="model in person.staff.model">
-                                        <img src="{{model.photo.medium}}" alt="" class="img-responsive">
-                                        <h5>{{model.name}}<br> ID: {{model.id}}</h5>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p>Бармены</p>
-
-                                <div class="row">
-                                    <div class="col-md-4" ng-repeat="model in person.staff.barmens">
+                                    <div class="col-md-4" ng-repeat="model in block.persons">
                                         <img src="{{model.photo.medium}}" alt="" class="img-responsive">
                                         <h5>{{model.name}}<br> ID: {{model.id}}</h5>
                                     </div>

@@ -10,6 +10,7 @@
 			<div class="col-md-3 text-center" ng-repeat="person in ctrl.staff">
 				<img src="{{person.photo.medium}}" alt="" class="img-responsive">
 				<ul class="text-left" ng-show="person.profession == 'model'">
+					<li ng-bind="person.name + ' ID:' + person.id">Рост: 173</li>
 					<li ng-bind="'Рост: ' + person.height">Рост: 173</li>
 					<li>Вес: 51</li>
 					<li>Параметры: 86-58-89</li>

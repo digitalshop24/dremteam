@@ -6,6 +6,7 @@ export default class CatalogCtrl {
         this.filteredStaff = this.staff;
         this.filters = [];
         this.initFilters();
+        this.handleFilter('models');
     }
 
     handleFilter(filterName) {
