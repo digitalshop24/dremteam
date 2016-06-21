@@ -2,16 +2,10 @@
     <div class="container-fluid">
         <div class="row">
             <slick infinite=true slides-to-show=1 slides-to-scroll=1 arrow=true dots=true>
-                <div ng-repeat="image in ctrl.images" class="slides" style="background-image: url('img/resources/img/bg_slide2.jpg');">
-                    <!-- <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive"> -->
+                <div ng-repeat="image in ctrl.images" class="slides" style="background-image: url('{{image}}');">
                 </div>
 
-                <!-- <div>
-                    <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive">
-                </div> -->
             </slick>
-            <!-- <img src="img/resources/img/bg_slide2.jpg" alt="" class="img-responsive"> -->
-            <!-- <div class="col-md-12 text-center"> -->
             <div class="titel_first_screen text-center">
                 <h2>Наше агентство соберет для Вас персональную<br>команду сотрудников </h2>
                 <h5>Свяжитесь с нами и расскажите о вашем мероприятии.<br>Наши опытные менеджеры предоставят Вам всех
@@ -24,7 +18,6 @@
                 </button>
             </div>
 
-            <!-- </div> -->
         </div>
     </div>
 </section>
