@@ -14,17 +14,26 @@ export default class CatalogCtrl {
         this.staff = staff.concat(sets);
         this.filteredStaff = this.staff;
         this.filters = [];
+        this.slider = {
+            minValue: 160,
+            maxValue: 190,
+            options: {
+                floor: 160,
+                ceil: 200,
+                step: 1
+            }
+        };
         this.initFilters();
         this.handleFilter('models');
     }
 
     handleFilter(filterName) {
-        const filer = this.getFilterByName(filterName) || {};
-        if(filer.exclude) {
-            if(filer.exclude[0] == "all") {
+        const filter = this.getFilterByName(filterName) || {};
+        if(filter.exclude) {
+            if(filter.exclude[0] == "all") {
                 this.filters = [];
             } else {
-                this.removeFilters(filer.exclude);
+                this.removeFilters(filter.exclude);
             }
         }
         if(this.isFilterSwitchedOn(filterName)) {
@@ -33,7 +42,7 @@ export default class CatalogCtrl {
             this.addFilter(filterName);
         }
         this.filterStaff();
-        this.showSets = filer.showSets;
+        this.showSets = filter.showSets;
     }
 
     filterStaff() {

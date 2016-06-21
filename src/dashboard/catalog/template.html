@@ -15,14 +15,14 @@
                 <ul>
                     <li>
                         <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1"
-                             aria-expanded="true" aria-controls="collapse_1">
-                            <a class="" ng-click="ctrl.handleFilter('models')">
+                             aria-expanded="true" aria-controls="collapse_1" ng-click="ctrl.handleFilter('models')">
+                            <a class="">
                                 Модели
                             </a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 
                         </div>
-                        <div class="filter collapse in"  id="collapse_1">
+                        <div class="filter collapse"  id="collapse_1">
                             <div style="min-height:150px;">
                                 <div class="one_filter">
                                     <p>Пол:</p>
@@ -33,10 +33,13 @@
                                 </div>
                                 <div class="one_filter">
                                     <p>Рост:</p>
-                                    <ul>
+                                    <rzslider rz-slider-model="ctrl.slider.minValue"
+                                              rz-slider-high="ctrl.slider.maxValue"
+                                              rz-slider-options="ctrl.slider.options"></rzslider>
+                                    <!--<ul>
                                         <li><a href="">от 175 см</a></li>
                                         <li><a href="">до 175 см</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                                 <div class="one_filter">
                                     <p>Цвет волос:</p>
@@ -51,20 +54,20 @@
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer">
-                            <a href="" ng-click="ctrl.handleFilter('photographs')">Фотографы</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('photographs')">
+                            <a href="">Фотографы</a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer">
-                            <a href="" ng-click="ctrl.handleFilter('stylists')">Стилисты</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('stylists')">
+                            <a href="">Стилисты</a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer">
-                            <a href="" ng-click="ctrl.handleFilter('set')">Сет</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('set')">
+                            <a href="">Сет</a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                     </li>

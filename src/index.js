@@ -11,6 +11,7 @@ export default angular.module('app',
         'slick',
         'ngStorage',
         'yaMap',
+        'rzModule',
         dashboard.name
     ])
     .service('api', Api)
