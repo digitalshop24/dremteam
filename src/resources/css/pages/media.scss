@@ -1,0 +1,31 @@
+@media only screen and (max-width : 725px) {
+	.catalog {
+		padding-top: 200px;
+	}
+	header .logo {
+		display: block;
+		
+	}
+	header ul {
+	    display: block;
+	    position: relative;
+	    top: 0;
+	    text-align: center;
+	    padding-top: 20px;
+	}
+	.catalog .catalog_model .btn_group {
+		left: 45%;
+	}
+	header .basket {
+	    float: right;
+	    margin: 24px 75px;
+	    position: absolute;
+	    top: 30px;
+	    right: 30px;
+	    margin: 0;
+	}
+	header.black .basket {
+    	margin: 0;
+	}
+
+}
