@@ -7,7 +7,13 @@ export default class ChooseButtonCtrl {
     }
 
     add() {
-        this.cardStorage.addItem(this.person);
-        this.inCard = true;
+        if(this.inCard) {
+            this.cardStorage.removeItem(this.person);
+            this.inCard = false;
+        } else {
+            this.cardStorage.addItem(this.person);
+            this.inCard = true;
+        }
+
     }
 }
