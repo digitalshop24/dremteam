@@ -2,23 +2,23 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<img src="img/resources/img/cart_step.png" alt="">
+				<img src="img/resources/img/cart_step.png" alt="" class="hidden-xs hidden-sm">
 				<h3>Закажи Модель и получи услуги супервайзера в подарок!</h3>
 				<h2>Выбранный персонал</h2>
 			</div>
 			<!-- <div class="col-md-12 text-left">
 				<a href=""><p class="back"><span class="fa fa-angle-left fa-2x"></span>Вернуться в каталог</p></a>
 			</div> -->
-			<div class="col-md-3 text-center" ng-repeat="person in ctrl.staff">
+			<div class="col-md-3 text-center cart_model" ng-repeat="person in ctrl.staff">
 				<img ng-show="person.type == 'staff'" src="{{person.photo.medium}}" alt="" class="img-responsive">
 				<img ng-show="person.type == 'suites'" src="{{person.image.medium}}" alt="" class="img-responsive">
-				<ul class="text-left" ng-show="person.profession == 'model'">
+				<ul class="" ng-show="person.profession == 'model'">
 					<li ng-bind="person.name + ' ID:' + person.id"></li>
 					<li ng-bind="'Рост: ' + person.height">Рост: 173</li>
 					<li>Вес: 51</li>
 					<li>Параметры: 86-58-89</li>
 				</ul>
-				<ul class="text-left" ng-show="person.type == 'suites'">
+				<ul class="" ng-show="person.type == 'suites'">
 					<li ng-bind="person.name"></li>
 					<li ng-repeat="block in person.staff">{{block.name}} : {{block.persons.length}}</li>
 				</ul>
@@ -27,12 +27,10 @@
 					<button class="btn_grey" ng-click="ctrl.remove(person)"><span class=" fa fa-times"></span></button>
 				</div>
 			</div>
-
-
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center" >
-				<button class="btn_yellow" style="padding:5px 55px;" ui-sref="dashboard.cart2">Заказать</button>
+				<button class="btn_yellow" style="padding:5px 55px;" ui-sref="dashboard.card2">Заказать</button>
 			</div>
 		</div>
 	</div>

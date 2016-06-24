@@ -1,18 +1,18 @@
 'use strict';
 
 import angular from 'angular';
-import Cart2Ctrl from './controller.js';
-import Cart2Service from './service.js';
+import Card2Ctrl from './controller.js';
+import Card2Service from './service.js';
 
 
-export default angular.module('dashboard.cart2', [])
-    .service('cart2Service', Cart2Service)
+export default angular.module('dashboard.card2', [])
+    .service('cart2Service', Card2Service)
     .config(function ($stateProvider) {
         $stateProvider
-            .state('dashboard.cart2', {
+            .state('dashboard.card2', {
                 template: require('./template.html'),
-                url: '/cart-step-2',
-                controller: Cart2Ctrl,
+                url: '/card-step-2',
+                controller: Card2Ctrl,
                 controllerAs: 'ctrl',
                 // resolve: {
                 //     token: ($stateParams) => {

@@ -1,10 +1,18 @@
 footer {
 	padding: 20px;
+	background-color: #000;
 	img {
 		float:left;
 	}
 	p {
 		float:right;
 		padding-top: 15px;
+		color: #fff;
+	}
+}
+footer.white {
+	background-color: #fff;
+	p {
+		color: #000;
 	}
 }

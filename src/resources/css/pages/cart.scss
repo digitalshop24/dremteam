@@ -1,7 +1,12 @@
 .cart {
-	padding: 70px 0;
+	padding: 150px 0;
 	background-color: #000;
 	min-height: 90vh;
+	.cart_model {
+		img {
+			margin: 0 auto; 
+		}
+	}
 	.btn_group {
 		position: absolute;
 		z-index: 100;

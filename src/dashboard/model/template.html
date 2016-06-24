@@ -12,16 +12,19 @@
 			</div>
 			<div class="col-md-6">
 				<ul ng-show="ctrl.person.profession == 'model'">
-					<li ng-bind="'Рост: ' + ctrl.person.height">Рост: 173</li>
-					<li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li>
+					<li ng-bind="'Рост: ' + ctrl.person.height"></li>
+					<li ng-bind="'Параметры: ' + ctrl.person.measurements"></li>
+					<li ng-bind="'Цвет волос: ' + ctrl.person.hair_color"></li>
 				</ul>
 				<choose-button person="ctrl.person"></choose-button>
 			</div>
-			<slick ng-show="ctrl.person.photos">
-				<div ng-repeat="photo in ctrl.person.photos"><img src="{{photo.medium}}"/></div>
-			</slick>
+			<div class="col-md-12">
+				<slick ng-show="ctrl.person.photos" infinite=true slides-to-show=4 slides-to-scroll=1 arrow=true dots=true responsive="ctrl.responsive">
+					<div ng-repeat="photo in ctrl.person.photos"><img src="{{photo.small}}"/></div>
+				</slick>
+			</div>
 		</div>
+		
 	</div>
 </section>
 

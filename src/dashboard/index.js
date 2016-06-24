@@ -8,8 +8,7 @@ import catalog from './catalog/index';
 import contacts from './contacts/index';
 import model from './model/index';
 import card from './card/index';
-import cart2 from './cart2/index';
-import cart3 from './cart3/index';
+import card2 from './card2/index';
 import chooseButton from './choose-button/index';
 import StaffService from './staffService';
 
@@ -22,8 +21,7 @@ export default angular.module('dashboard',
         model.name,
         chooseButton.name,
         card.name,
-        cart2.name,
-        cart3.name
+        card2.name
     ])
     .service('staffService', StaffService)
     .config($stateProvider => {

@@ -1,13 +1,24 @@
 <section class="cart">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 text-center">
+			<div class="col-md-12 text-center" ng-show="!ctrl.showThx">
 				<h2>Контактные данные</h2>
 			</div>
 		</div>	
 		<div class="row">
 			<div class="col-md-12 text-center" >
-				<form action="https://docs.google.com/a/dshop24.ru/forms/d/1n8p66EvU-j6FTM1aaewMmPfiAX4RtZxhiARNgb9PnZM/formResponse" method="POST" id="ss-form" target="hidden_iframe" class="form">
+				<script type="text/javascript">var submitted=false;</script>
+				<iframe name="hidden_iframe" id="hidden_iframe"
+				style="display:none;" onload="if(submitted)
+				{window.location='http://YOUR-THANK-YOU-PAGE-URL';}"></iframe>
+				<form 
+					action="https://docs.google.com/a/dshop24.ru/forms/d/1n8p66EvU-j6FTM1aaewMmPfiAX4RtZxhiARNgb9PnZM/formResponse" 
+					method="POST" 
+					id="ss-form" 
+					target="hidden_iframe" 
+					ng-submit="ctrl.showThx = true" 
+					class="form" 
+					ng-show="!ctrl.showThx">
 					<input name="entry.1162530891" value="" class="ss-q-short valid" id="entry_1162530891" dir="auto" aria-label="Ваше имя  " title="" type="text" placeholder="Ваше имя">
 					<input name="entry.1146935013" value="" class="ss-q-short valid" id="entry_1146935013" dir="auto" aria-label="Контактный телефон  " title="" type="text" placeholder="Контактный телефон">
 					<input name="entry.810240119" value="" class="ss-q-short valid" id="entry_810240119" dir="auto" aria-label="Электронная почта  " title="" type="text" placeholder="Электронная почта">
@@ -28,11 +39,20 @@
 						<option value="Другое">Другое</option>
 					</select>
 					<textarea name="entry.1600898090" rows="7" class="ss-q-long valid" id="entry_1600898090" dir="auto" aria-label="Комментарии  " class="text-left" placeholder="Комментарий"></textarea>
-					<textarea name="entry.561144063" rows="8" cols="0" class="ss-q-long valid" id="entry_561144063" dir="auto" aria-label="Id моделей  " class="hidden">
-						<!-- Сюда нужно записывать id выбраных моделей -->
-					</textarea>
-					<button class="btn_yellow" style="padding:5px 55px;" >Отправить</button>
+					<!-- <textarea  name="entry.561144063" rows="8" cols="0" class="ss-q-long valid " id="entry_561144063" dir="auto" aria-label="Id моделей  " value="{{ctrl.allId}}" ng-init="ctrl.idModel();">
+						
+					</textarea> -->
+					<input name="entry.561144063" value="{{ctrl.allId}}" class="hidden ss-q-short valid" id="entry_561144063" dir="auto" aria-label="Id моделей  " title="" type="text"  ng-init="ctrl.idModel();" >
+					<!-- <input type="text" value="{{ctrl.allId}}"> -->
+					
+
+					<button class="btn_yellow" style="padding:5px 55px;" ng-click="">Отправить</button>
 				</form>
+				<div class="end text-center" ng-show="ctrl.showThx">
+					<!-- <h2>Успешный ввод</h2> -->
+					<h1>Спасибо!</h1>
+					<h5>Мы в ближайшем времени с вами свяжемся!</h5>
+				</div>
 				
 			</div>
 		</div>

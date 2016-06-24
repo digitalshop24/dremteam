@@ -1,4 +1,19 @@
+@media only screen and (max-width : 992px) { 
+	.catalog .catalog_model .btn_group {
+		left: 45%;
+	}
+	.cart {
+		padding: 200px 0;
+		.form input, .form select, .form textarea {
+			width: 80%;
+		}
+		
+	}
+}
 @media only screen and (max-width : 725px) {
+	.model {
+    	padding: 150px 0 !important;
+	}
 	.catalog {
 		padding-top: 200px;
 	}
@@ -13,9 +28,7 @@
 	    text-align: center;
 	    padding-top: 20px;
 	}
-	.catalog .catalog_model .btn_group {
-		left: 45%;
-	}
+	
 	header .basket {
 	    float: right;
 	    margin: 24px 75px;
