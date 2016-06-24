@@ -1,7 +1,11 @@
 'use strict';
 
-
 export default class StaffCtrl {
-    constructor() {
+    constructor($modal){
+        this.modal = $modal;
+    }
+    
+    close() {
+        this.modal.close();
     }
 }
