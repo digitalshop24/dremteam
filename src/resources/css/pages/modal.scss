@@ -1,6 +1,19 @@
 .popup {
+	padding: 0;
 	.form input, .form select, .form textarea {
 		width: 90%;
 	}
+
 	
-}
+}	
+.close {
+		position: relative;
+		left: -20px;
+		color: #fff;
+		opacity: 1;
+		top: 20px;
+		z-index: 1000;
+	}
+.close:hover {
+	color: #fff;
+}	
