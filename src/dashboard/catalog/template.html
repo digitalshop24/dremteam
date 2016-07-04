@@ -15,7 +15,7 @@
                 <ul>
                     <li>
                         <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1"
-                             aria-expanded="true" aria-controls="collapse_1" ng-click="ctrl.handleFilter('models')">
+                             aria-expanded="true" aria-controls="collapse_1" ng-click="ctrl.handleFilter('models'); ctrl.showOthe = false;">
                             <a class="">
                                 Модели
                             </a>
@@ -54,21 +54,21 @@
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('photographs')">
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('photographs'); ctrl.showOthe = true;">
                             <a href="">Фотографы</a>
-                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+                            <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('stylists')">
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('stylists'); ctrl.showOthe = true;">
                             <a href="">Стилисты</a>
-                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+                            <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
-                    <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('set')">
+                    <li> 
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('set'); ctrl.showOthe = false;">
                             <a href="">Сет</a>
-                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
+                            <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
                 </ul>
@@ -84,7 +84,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-9 catalog_model">
+            <div class="col-md-9 catalog_model" ng-show="!ctrl.showOthe">
                 <div class="row">
                     <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.filteredStaff">
                         <div ng-show="person.type == 'staff'">
@@ -98,7 +98,7 @@
                         </div>
 
                         <div class="row" ng-show="person.type == 'suites'">
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 20px;">
                                 <h4 class="left" ng-bind="person.description">Для презентации</h4>
                                 <h4 class="right"><span>Скидка</span> -{{person.discount}}%</h4>
                             </div>
@@ -106,7 +106,7 @@
                                 <p ng-bind="block.name">Модели</p>
 
                                 <div class="row">
-                                    <div class="col-md-4" ng-repeat="model in block.persons">
+                                    <div class="col-md-4 col-xs-6" ng-repeat="model in block.persons">
                                         <img src="{{model.photo.medium}}" alt="" class="img-responsive">
                                         <h5>{{model.name}}<br> ID: {{model.id}}</h5>
                                     </div>
@@ -118,6 +118,45 @@
                                 <choose-button person="person"></choose-button>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-9 catalog_model" ng-show="ctrl.showOthe">
+                <div class="row">
+                    <div class="col-md-12 otherModel" ng-repeat="person in ctrl.filteredStaff">
+                        <div ng-show="person.type == 'staff'" class="row">
+                            <div class="col-md-12 text-center">
+                                <h3>{{person.name}}</h3>
+                            </div>
+                            <div class="col-md-4">
+                                
+                                <img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model"
+                                 ui-sref="dashboard.model({id: person.id})"
+                                 style="border-radius: 50%;">
+                            </div>
+                            <div class="col-md-8 info_other">
+                                
+                                <!-- <ul>
+                                    <li ng-bind="'Рост: ' + ctrl.person.height"></li>
+                                    <li ng-bind="'Параметры: ' + ctrl.person.measurements"></li>
+                                    <li ng-bind="'Цвет волос: ' + ctrl.person.hair_color"></li>
+                                </ul> -->
+                                <div class="btn_group">
+                                    <choose-button person="person"></choose-button>
+                                    <button class="btn_yellow" ui-sref="dashboard.model({id: person.id})">Потрфолио</button>
+                                 </div>
+                                 
+                            </div>
+                            <div class="col-md-12">
+                                <slick infinite=true slides-to-show=4 slides-to-scroll=1  responsive="ctrl.responsive">
+                                    <div ng-repeat="photo in person.photos"><img  src="http://dream-team-staging.dshop24.ru{{photo.medium}}" class="img-responsive"></div>
+                                 </slick>
+                            </div>
+                            <!-- <div class="col-md-12">
+                                <img src="http://dream-team-staging.dshop24.ru{{person.photos[0].medium}}" alt="">
+                            </div>
+ -->                        </div>
                     </div>
                 </div>
 

@@ -3,6 +3,8 @@
 export default class ModelCtrl {
     constructor(person) {
         this.person = person;
+        console.log(this.person);
+        this.bigfoto = this.person.photo.medium;
         this.responsive = [
             {
               breakpoint: 1280,
@@ -29,5 +31,9 @@ export default class ModelCtrl {
             
 
           ];
+    }
+
+    checkBigFoto(link) {
+      this.bigfoto = link;
     }
 }

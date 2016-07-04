@@ -11,9 +11,12 @@ export default class CatalogCtrl {
             }
             return 0;
         });
+
         this.staff = staff.concat(sets);
+        console.log(this.staff);
         this.filteredStaff = this.staff;
         this.filters = [];
+        this.showOthe = false;
         this.slider = {
             minValue: 150,
             maxValue: 200,
