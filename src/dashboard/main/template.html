@@ -87,7 +87,7 @@
                        </div>
                        <div class="main_collapse collapse" id="collapse_{{$index}}">
                            <ul>
-                               <li ng-repeat="person in work.staff" ng-bind="person.name" ng-click="ctrl.worksPhotos = person.photos">Мария</li>
+                               <li ng-repeat="person in work.staff" ng-bind="person.name" ng-click="ctrl.worksPhotos = person.photos; ctrl.id_active = person.id;">Мария</li>
                            </ul>
                        </div>
                     </li>
@@ -96,7 +96,7 @@
             <div class="col-md-9 personal_main">
                 <div class="row">
                     <div class="col-md-3" ng-repeat="photo in ctrl.worksPhotos">
-                        <img src="{{photo.medium}}" alt="" class="img-responsive">
+                        <a href="" ><img src="{{photo.medium}}" alt="" class="img-responsive"></a>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Затрудняетесь с выбором?</h2>
-                <h5>Наше агентство соберет для Вас персональную<br>команду сотрудников</h5>
+                <h5>Наше агентством соберет для Вас персональную<br>команду сотрудников</h5>
                 <button class="btn_yellow" ng-click="ctrl.openRecruitingModal()">
                     Подобрать персонал
                 </button>

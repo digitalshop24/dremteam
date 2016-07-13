@@ -13,10 +13,11 @@ export default class CatalogCtrl {
         });
 
         this.staff = staff.concat(sets);
-        console.log(this.staff);
+        
         this.filteredStaff = this.staff;
         this.filters = [];
         this.showOthe = false;
+        this.i = 0;
         this.slider = {
             minValue: 150,
             maxValue: 200,
@@ -31,7 +32,18 @@ export default class CatalogCtrl {
             }
         };
         this.initFilters();
-        this.handleFilter('models');
+        this.obj = "";
+        if ((localStorage.getItem("filter") == undefined)) {
+            this.handleFilter('models');
+            console.log('111',this.filters);
+        }
+        else {
+            this.filt = JSON.parse(localStorage.getItem("filter"));
+            for (this.i = 0; this.i < this.filt.length; this.i++) {
+                this.handleFilter(this.filt[this.i].name);
+            }
+            console.log('222', this.filt);
+        }
     }
 
     handleFilter(filterName) {
@@ -50,6 +62,8 @@ export default class CatalogCtrl {
         }
         this.filterStaff();
         this.showSets = filter.showSets;
+        this.obj =JSON.stringify(this.filters);
+        localStorage.setItem("filter", this.obj);
     }
 
     filterStaff() {

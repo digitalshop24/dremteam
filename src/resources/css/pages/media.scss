@@ -14,11 +14,19 @@
 	.contacts  {
 		padding-top: 200px;
 	}
+	.catalog .otherModel .foto_model {
+		margin:0 auto;
+	}
 	.contacts .contacts_date {
 		position: relative;
 		top:0;
 		padding:0 28px 0 20px;
 		height: auto;
+	}
+	.info_other {
+		h3 {
+			text-align: center;
+		}
 	}
 	
 	.model {

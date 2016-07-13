@@ -7,6 +7,7 @@ export default class MainCtrl {
         this.recruitingModal = recruitingModal;
         this.works = works.works;
         this.worksPhotos = works.photos;
+        console.log(works);
     }
 
     openRecruitingModal() {

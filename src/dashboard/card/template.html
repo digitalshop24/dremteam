@@ -9,7 +9,7 @@
 			<!-- <div class="col-md-12 text-left">
 				<a href=""><p class="back"><span class="fa fa-angle-left fa-2x"></span>Вернуться в каталог</p></a>
 			</div> -->
-			<div class="col-md-3 text-center cart_model" ng-repeat="person in ctrl.staff">
+			<div class="col-md-3 text-center cart_model" ng-repeat="person in ctrl.staff | filter:{type:'staff'}">
 				<img ng-show="person.type == 'staff'" src="{{person.photo.medium}}" alt="" class="img-responsive">
 				<img ng-show="person.type == 'suites'" src="{{person.image.medium}}" alt="" class="img-responsive">
 				<ul class="" ng-show="person.profession == 'model'">
@@ -27,6 +27,31 @@
 					<button class="btn_grey" ng-click="ctrl.remove(person)"><span class=" fa fa-times"></span></button>
 				</div>
 			</div>
+			<div class="col-md-12 text-center cart_model cart_suite" ng-repeat="person in ctrl.staff | filter:{type:'suites'}">
+				<div class="row" ng-show="person.type == 'suites'">
+                    <div class="col-md-12" style="padding-bottom: 20px;">
+                        <h4 class="left" ng-bind="person.description">Для презентации</h4>
+                        <h4 class="right"><span>Скидка</span> -{{person.discount}}%</h4>
+                    </div>
+                    <div class="col-md-6 text-left" ng-repeat="block in person.staff" >
+                        <h5 ng-bind="block.name">Модели</h5>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-6" ng-repeat="model in block.persons">
+                                    <img src="{{model.photo.medium}}" alt="" class="img-responsive">
+                                    <h5>{{model.name}}<br> ID: {{model.id}}</h5>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <choose-button person="person"></choose-button>
+                    </div>
+                </div>
+				
+			</div>
+			
+                
+
+            
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center" >
