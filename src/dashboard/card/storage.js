@@ -2,9 +2,11 @@
 
 export default class CardStorage {
     constructor($localStorage) {
+
         this.storage = $localStorage.$default({
             staff: []
         });
+        console.log('qwer', this.storage);
         this.staff = this.storage.staff;
         this.updateCounters();
     }
@@ -16,6 +18,13 @@ export default class CardStorage {
     set staff(value) {
         this.storage.staff = this._staff = value;
         this.updateCounters();
+    }
+
+    delStaff() {
+        this.storage.staff = [];
+        this.staff = this.storage.staff;
+        this.updateCounters();
+
     }
 
     addItem(person) {
