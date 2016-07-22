@@ -9,6 +9,15 @@
 		background-color: #F1F1F1;
 		margin-top: 10px;
 		border-top: 1px solid #e1e1e1;
+		.staff_ul {
+			padding-left: 20px;
+			li {
+				border: none;
+				a {
+					font-size: 1.2rem;
+				} 
+			}
+		}
 		.one_filter {
 			min-height: 30px;
 			padding: 10px;

@@ -9,8 +9,8 @@
             <div class="col-md-3 menu_personal menu_catalog">
                 <div class="tag">
                     <span class="title">Отобранны:</span>
-                    <span ng-repeat="filter in ctrl.filters">{{filter.tagName}}<span class="fa fa-times"
-                                                                                     ng-click="ctrl.removeFilterAndUpdate(filter.name)"></span></span>
+                    <span ng-repeat="filter in ctrl.filters">{{filter.tagName}}
+                    <span class="fa fa-times" ng-click="ctrl.removeFilterAndUpdate(filter.name)"></span></span>
                 </div>
                 <ul>
                     <li>
@@ -65,6 +65,24 @@
                             <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
+                    <li>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('keytring'); ctrl.showOthe = true;">
+                            <a href="">Кейтринг</a>
+                            <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('staff'); ctrl.showOthe = true;" role="button" data-toggle="collapse" href="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                            <a href="">Staff</a>
+                            <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
+                        </div>
+                        <div class="filter collapse" id="collapse_2"> 
+                            <ul class="staff_ul">
+                                <li><a href="" ng-click="ctrl.handleFilter('staff.barman'); ctrl.showOthe = true;">Бармены</a></li>
+                                <li><a href="" ng-click="ctrl.handleFilter('staff.waiter'); ctrl.showOthe = true;">Официанты</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li> 
                         <div class="cursor_pointer" ng-click="ctrl.handleFilter('set'); ctrl.showOthe = false;">
                             <a href="">Сет</a>
@@ -88,13 +106,14 @@
                 <div class="row">
                     <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.filteredStaff">
                         <div ng-show="person.type == 'staff'">
-                            <img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model"
+                            <img src="{{person.photo.small}}" alt="" class="img-responsive foto_model"
                                  ui-sref="dashboard.model({id: person.id})">
 
                             <div class="btn_group">
                                 <choose-button person="person"></choose-button>
                             </div>
-                            <h5 ui-sref="dashboard.model({id: person.id})">{{person.name}}<br> ID: {{person.id}}</h5>
+                            <h5 ui-sref="dashboard.model({id: person.id})">{{person.name}}<br> ID: {{person.dt_id}}</h5>
+
                         </div>
 
                         <div class="row" ng-show="person.type == 'suites'">
@@ -131,7 +150,7 @@
                             </div>
                             <div class="col-md-4">
                                 
-                                <img src="{{person.photo.medium}}" alt="" class="img-responsive foto_model"
+                                <img src="{{person.photo.small}}" alt="" class="img-responsive foto_model"
                                  ui-sref="dashboard.model({id: person.id})"
                                  style="">
                             </div>
@@ -151,7 +170,7 @@
                             </div>
                             <div class="col-md-12">
                                 <slick infinite=true slides-to-show=4 slides-to-scroll=1  responsive="ctrl.responsive">
-                                    <div ng-repeat="photo in person.photos"><img  src="http://dream-team-staging.dshop24.ru{{photo.medium}}" class="img-responsive" style="width: 95%;"></div>
+                                    <div ng-repeat="photo in person.photos"><img  src="http://dt-agency.ru{{photo.medium}}" class="img-responsive" style="width: 95%;"></div>
                                  </slick>
                             </div>
                             <!-- <div class="col-md-12">

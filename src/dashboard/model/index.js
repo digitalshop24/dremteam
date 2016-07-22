@@ -15,7 +15,11 @@ export default angular.module('dashboard.model', [])
                 resolve: {
                     person: ($stateParams, staffService) => {
                         return staffService.getById($stateParams.id);
-                    }
+                    },
+
+                    $title: ['person', function(person) {
+                        return person.name;
+                    }]
                 }
             });
     });

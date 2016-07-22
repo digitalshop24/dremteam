@@ -39,5 +39,8 @@
     "angulartics-google-analytics": "~0.1.4",
     "angular-youtube-embed": "^1.0.2",
     "angularjs-slider": "~4.0.2"
+  },
+  "devDependencies": {
+    "angular-ui-router-title": "^0.0.4"
   }
 }

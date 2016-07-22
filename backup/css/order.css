@@ -1,0 +1,160 @@
+body {
+  font-family: "PermianSansRegular", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  position: relative;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialised;
+  overflow-x: hidden;
+  color: #000;
+  background-color: #fff;
+  outline: none;
+  overflow-x: hidden; }
+
+.basket {
+  display: none; }
+
+a {
+  outline: none; }
+
+h2 {
+  font-size: 34px;
+  font-family: "PermianSerifRegular", sans-serif;
+  padding-top: 50px; }
+
+h5 {
+  padding-bottom: 25px;
+  font-size: 15px;
+  color: #666666; }
+
+h3, h4 {
+  padding: 0;
+  margin: 0; }
+
+.btn_group {
+  position: relative;
+  left: 5%;
+  bottom: 50px; }
+
+.show {
+  text-transform: uppercase;
+  margin-top: 40px; }
+  .show a {
+    padding: 20px;
+    background-color: #eeeeee;
+    color: #000; }
+    .show a span {
+      color: #FFDB4B;
+      padding: 5px;
+      border: 1px solid #FFDB4B; }
+
+.yellow_btn {
+  background-color: #FFDB4B;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  padding: 11px 11px 6px;
+  font-size: 1.2rem; }
+
+.yellow_btn_right {
+  background-color: #FFDB4B;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  line-height: 1.5;
+  margin-left: 1px;
+  padding: 11px; }
+
+.grey_btn {
+  background-color: #dedede;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-size: 1.1rem;
+  padding: 12px 11px 7px; }
+
+.grey_btn_right {
+  background-color: #dedede;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  padding: 1.1rem; }
+
+.dream {
+  margin-top: 100px;
+  margin-bottom: 50px; }
+
+.menu_f {
+  z-index: 1000;
+  position: relative; }
+
+.fixed {
+  position: fixed;
+  top: 50px; }
+
+.fix_p {
+  padding-right: 0;
+  padding-left: 0; }
+
+.m_logo img {
+  max-height: 135px;
+  margin: 0 auto;
+  padding-bottom: 50px; }
+
+.m_icon {
+  font-size: 3rem;
+  border: 2px solid;
+  border-radius: 30px;
+  padding: 10px; }
+
+.order_1 {
+  width: 100%;
+  margin: 0px auto;
+  color: #fff; }
+  .order_1 .close {
+    color: #fff;
+    opacity: 1; }
+  .order_1 .order_2 {
+    background-color: #000;
+    padding-top: 125px; }
+    .order_1 .order_2 .order_3 {
+      background-color: #000; }
+      .order_1 .order_2 .order_3 .btn_group {
+        position: absolute;
+        left: 8%;
+        bottom: 5px; }
+      .order_1 .order_2 .order_3 .yellow_btn {
+        padding: 6px 20px; }
+      .order_1 .order_2 .order_3 .yellow_btn_right {
+        padding: 7px 10px 9px; }
+      .order_1 .order_2 .order_3 .show {
+        padding-bottom: 50px; }
+      .order_1 .order_2 .order_3 .field {
+        padding: 10px 0; }
+        .order_1 .order_2 .order_3 .field input {
+          width: 200px;
+          padding: 3px 0;
+          background-color: #000;
+          color: #fff; }
+        .order_1 .order_2 .order_3 .field button {
+          border: none; }
+    .order_1 .order_2 .thx {
+      min-height: 700px;
+      background-color: #000; }
+      .order_1 .order_2 .thx .y_activ {
+        border-color: #FFDB4B; }
+
+.nav {
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  left: 0px; }
+  .nav ul li {
+    text-transform: uppercase;
+    list-style-type: none;
+    display: inline;
+    padding-left: 10px; }
+    .nav ul li a {
+      color: #fff; }
+  .nav .active li {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff; }
+
+.order_2 {
+  height: 100vh; }

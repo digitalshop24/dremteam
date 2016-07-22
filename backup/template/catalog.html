@@ -1,0 +1,485 @@
+
+ <link rel="stylesheet" href="css/cat.css">
+ 	<header>
+		<div class="container-fluid s_1">
+			<div class="row">
+				<div class="col-xs-3 col-sm-6 col-md-7 col-lg-7 nav text-left hidden-sm hidden-xs">
+				<div class="logo hidden-sm hidden-xs">
+					<a href="#/"><img class="img-responsive" src="img/logo2.png" alt=""></a>
+				</div>
+				<nav id="menutop">	
+					<ul >
+						<li><a href="#/home" >Главная</a></li>
+						<li><a href="#/catalog" class="active">Персонал</a></li>
+						<!--<li ><a href="#jworks" ng-click="f5=f5+1">Работы</a></li>-->
+						<li ><a href="#/contakt">Контакты</a></li>
+						<!--<li><a href="">Мероприятия</a></li>-->
+					</ul>
+				</nav>
+				</div>
+				
+				<div class="basket hidden-sm hidden-xs">
+					<a href="{{ href }}" ng-click=" href = count?'#/order':'#/'">
+						<img src="img/icon2.png" alt="">
+						<p >Выбрано: {{ count }}</p>
+					</a>
+					
+				</div>
+			</div>
+		</div>
+
+	</header>
+	
+
+	<section>
+		<div class="container-fluid dream">
+			<div class="row " >
+				<div class="col-xs-1 col-sm-2 col-md-4 col-lg-4" style="margin-top: 70px;">
+					<hr>
+				</div>
+			    <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4 text-center">
+			       <h2 class="h2_media">Собери команду мечты!</h2>		         	
+			    </div>
+			    <div class="col-xs-1 col-sm-2 col-md-4 col-lg-4" style="margin-top: 70px;">
+			       <hr>
+			    </div> <!--end Выбраный персонал-->
+			</div>
+		</div>
+		<div class="container-fluid s_2">
+			<div class="row">
+				<div class="col-sm-3 col-md-3 menu_f sticky">
+					<!--Отобраные-->
+					<div class="col-md-12 text-left otbor"> 
+						<p>ОТОБРАННЫ:</p> 
+							<p><a href="" ng-show="border_fSexm" ng-click="addFiltSex('m', border_fSexm)"  >Мужчина <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+							<p><a href="" ng-show="border_fSexw" ng-click="addFiltSex('w', border_fSexw)" >Женщина <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="border_fHair1" ng-click="addFiltHair('светлые', border_fHair1)"  >Светлые <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href=""	ng-show="border_fHair2" ng-click="addFiltHair('темные', border_fHair2)">Темные <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href=""	ng-show="border_fHair3" ng-click="addFiltHair('рыжие', border_fHair3)"> Рыжие<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p1" ng-click="addFilt(firstClick, 0, p1);">Модели <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p1_1" ng-click="addFilt(firstClick, 11, p1_1);">Фотомодели <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p1_2" ng-click="addFilt(firstClick, 12, p1_2);">Подиум <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p2" ng-click="addFilt(firstClick, 1, p2);">Фотографы <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p3" ng-click="addFilt(firstClick, 2, p3);">Стилисты <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p4" ng-click="addFilt(firstClick, 3, p4);">Визажисты <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p5" ng-click="addFilt(firstClick, 4, p5);">Staff <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p5_1" ng-click="addFilt(firstClick, 51, p5_1);">Бармены <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+
+							<p><a href="" ng-show="p5_2" ng-click="addFilt(firstClick, 52, p5_2);">Официанты <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></p>
+					</div>
+					
+					<!--фильтры были тут-->
+					<!--Каталог-->
+					
+					<div class="col-md-12 catalog"  >
+						<ul style="margin-top: 30px;">
+						<li>
+							<a href="">
+								<p 
+									ng-click="addFilt(firstClick, 0, p1); " 
+									style="{{ active_p = p1?'color: #FC0;':'' }}">Модели 
+									<!-- <span ng-show='p1' class="glyphicon glyphicon-menu-up text-right"></span> -->
+									<span class="animateArrowMenuP1 {{aniSwitchMenu = p1?'up':'down'}} glyphicon glyphicon-menu-right text-right"></span>
+								</p>
+							</a> 
+							<ul ng-show="p1" class="ul_filt animateButton ButtonModel">
+								<!-- <a 
+								href="" 
+								ng-click="addFilt(firstClick, 11, p1_1);"
+								style="{{ active_p = p1_1?'color: #FC0;':'' }}">
+								<li>Фото</li></a>
+								<a 
+								href="" 
+								ng-click="addFilt(firstClick, 12, p1_2);"
+								style="{{ active_p = p1_2?'color: #FC0;':'' }}">
+								<li>Подиумные</li></a> -->
+				<!--Пол--> 		<!-- <div class="filtry"> -->
+									<li class="text-left sex ">
+										<h3>Пол:</h3>
+										<div style="float:right;">
+											<a style = "{{ activeP = border_fSexm?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltSex('m', border_fSexm)" 
+											>
+												<h4>Мужчина</h4>
+											</a>
+											<a style = "{{ activeP = border_fSexw?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltSex('w', border_fSexw)"  
+											>
+											<h4>Женщина</h4></a>
+											<!--Что бы вернуть кнопку, поменять f на m-->
+										</div>
+									</li>	
+									<li class="text-left sex">
+										<h3>Рост:</h3>
+										<div style="float:right;">
+											<a style = "{{ activeP = border_fHeightOt?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltHeight('от 175', border_fHeightOt)" 
+											>
+												<h4>от 175 см.</h4>
+											</a>
+											<a style = "{{ activeP = border_fHeightDo?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltHeight('до 175', border_fHeightDo)"  
+											>
+												<h4>до 175 см.</h4>
+											</a>
+											<!--Что бы вернуть кнопку, поменять f на m-->
+										</div>
+									</li>	
+									
+									<li class="text-left sex">
+										<h3>Цвет волос:</h3>
+										<div style="float:right;">
+											<a style = "{{ activeP = border_fHair1?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltHair('светлые', border_fHair1)" 
+											>                                 
+											<h4>Светлые</h4>
+											</a>
+											<a style = "{{ activeP = border_fHair2?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltHair('темные', border_fHair2)"
+											>
+											<h4>Темные</h4></a>
+											<a style = "{{ activeP = border_fHair3?'border: 1px solid #FC0;':'border:none;' }}" 
+											href="" 
+											ng-click="addFiltHair('рыжие', border_fHair3)"
+											>
+											<h4>Рыжие</h4></a>
+											<!--Что бы вернуть кнопку, поменять f на m-->
+										</div>
+									</li>	
+								<!-- </div> -->		
+								
+							</ul>
+						</li>
+					<!-- 	<li>
+							<a href="">
+								<p 
+									ng-click="addFilt(firstClick, 1, p2);" 
+									style="{{ active_p = p2?'color: #FC0;':'' }}">Фотографы
+									<span ng-show='p2' class="glyphicon glyphicon-menu-up text-right"></span>
+									<span ng-show='!p2' class="glyphicon glyphicon-menu-down text-right"></span> 
+								</p>
+							</a>
+							<ul ng-show="p2">
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+							</ul> 
+						</li> -->
+						<li>
+							<a href="">
+								<p 
+									ng-click="addFilt(firstClick, 1, p2); other(true);" 
+									style="{{ active_p = p2?'color: #FC0;':'' }}">Фотографы
+									
+								</p>
+							</a>
+							
+						</li>
+
+						<li>
+							<a href="">
+								<p 
+									ng-click="addFilt(firstClick, 2, p3); other(true);" 
+									style="{{ active_p = p3?'color: #FC0;':'' }}">Стилисты
+									<!--<span ng-show='pStyle' class="glyphicon glyphicon-menu-up text-right"></span>
+									<span ng-show='!pStyle' class="glyphicon glyphicon-menu-down text-right"></span>-->
+								</p>
+							</a>
+							<!--
+							<ul ng-show="pStyle">
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+			 					<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+							</ul>-->
+						</li>
+						<li>
+							<a href="">
+								<p 
+									ng-click="addFilt(firstClick, 3, p4); other(true);" 
+									style="{{ active_p = p4?'color: #FC0;':'' }}">Визажисты
+									<!--<span ng-show='pStyle' class="glyphicon glyphicon-menu-up text-right"></span>
+									<span ng-show='!pStyle' class="glyphicon glyphicon-menu-down text-right"></span> -->
+								</p>
+							</a>
+							<!--
+							<ul ng-show="pStyle">
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+								<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+			 					<a href="" ng-click="fProf = 'model'"><li>Фото/Видео</li></a>
+							</ul>-->
+						</li>
+						<li>
+							<a href="">
+								<p 
+									ng-click="addFilt(firstClick, 4, p5);" 
+									style="{{ active_p = p5?'color: #FC0;':'' }}">STAFF
+									<span class="animateArrowMenuP5 {{aniSwitchMenu = p5?'up':'down'}}  glyphicon glyphicon-menu-right text-right"></span>
+									<!-- <span ng-show='!p5' class="glyphicon glyphicon-menu-right text-right"></span> -->
+								</p>
+							</a>
+							
+							<ul ng-show="p5" class="ul_other animateButton">
+								
+								<a 
+								href="" 
+								ng-click="addFilt(firstClick, 51, p5_1);"
+								style="{{ active_p = p5_1?'color: #FC0;':'' }}">
+								<li>Бармены</li></a>
+								<a 
+								href="" 
+								ng-click="addFilt(firstClick, 52, p5_2);"
+								style="{{ active_p = p5_2?'color: #FC0;':'' }}">
+								<li>Официанты</li></a>
+							</ul>
+						</li>
+						<li>
+							<a href="">
+								<p 
+									ng-click="pSS(pS)" 
+									style="{{ active_p = pS?'color: #FC0;':'' }}">СПЕЦПРЕДЛОЖЕНИЕ !
+								</p>
+							</a>
+						</li>
+						</ul>
+					</div>
+				<!-- 	Менеджер -->
+					<div class="col-md-12 event hidden-sm hidden-xs">
+						<h3 class="text-center">Ваш Event - менеджер</h3>
+						<h4 class="text-left"> Для уточнения информации свяжитесь с ивент-менеджером</h4>
+						<div class="col-md-5">
+							<img class="img-responsive" src="img/foto.png" alt="">
+						</div>
+						<div class="col-md-7 fio">
+							<h4>Василиса</h4>
+							<p><a href="tel:+7945999999">+7 (977) 389 59 35<span><img src="img/viber.png" alt=""></span><span><img src="img/viber2.png" alt=""></span></a></p>
+							<p><a href="">Dream.team.model@gmail.com</a></p>
+						</div>
+					</div>
+				</div><!--menu-->
+				
+
+				<!--Каталог-->
+				<div class="col-sm-3 col-md-3" ></div>
+
+				<div class="col-sm-9 col-md-9">
+				<!-- <div class="container-fluid special_top" ng-click="pSS(pS)" >
+					<div class="row">
+						<div class="col-md-12 text-left">
+							<p 
+								
+								style="{{ active_p = pS?'color: #FC0;':'' }}">ОТКРЫТЬ СПЕЦПРЕДЛОЖЕНИЕ !
+							</p>
+						</div>
+					</div>
+				</div> -->
+				<div class="container-fluid" ng-show="model" ng-init="col = 12">
+					<div class="row">
+					<div class="col-md-12 model_foto">
+						<div class="animate col-xs-6 col-sm-6 col-md-3 fix_p" 
+							ng-repeat="img in imgcat | filterP:fProf | filter:{sex:fSex} | filter:{height:fHeight} | filterH:fHair | limitTo:col"
+							>
+							<a 
+							href= "#/catalog/{{img.id}}" 
+							ng-click="modalId = img.id"
+							target="_blank">
+								<img class="img-responsive" ng-src="{{ img.url }}" alt="" >
+							</a>
+							
+								<div class="btn_group " 
+								ng-show="showBtn(img.id)" 
+								>
+									<a href="" class="yellow_btn" ng-click="addModel(img.url);">Выбрать</a>
+									<a href="" class="yellow_btn_right glyphicon glyphicon-plus" ng-click="addModel(img.url)"></a>
+								</div>	
+
+								<div class="btn_group " 
+								ng-show="!showBtn(img.id)" 
+								>
+									<a href="" class="grey_btn" ng-click="delModel(img.url);">Отменить</a>
+									<a href="" class="grey_btn_right glyphicon glyphicon-remove" ng-click="delModel(img.url)"></a>
+								</div>
+	
+						</div>
+					</div> <!--end model_foto-->
+					</div>
+					<div class="row let_more">
+						<div class="col-md-12 text-center">
+							<a href="" class="grey_btn" ng-click="col = col + 12">Показать еще</a>
+						</div>
+					</div>
+				</div>	
+				</div><!--catalog-->
+
+				<!--Спецпредложение-->
+				<div class="col-sm-9 col-md-9 special" ng-show="pS">
+					<div class="row wrapp_set" ng-repeat="set in sets">
+						<div class="col-md-6 text-left"><h2>{{set.name}}</h2></div>
+						<div class="col-md-6 text-right"><h2><span>Скидка</span> -{{set.discount*100}}%</h2></div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6 text-left wrapp_model" ng-show="ShowSpecial(set.staff,'Model')">
+							<p>Модели.</p>
+							<div class="col-sm-4 col-md-4 text-center model_padding" ng-repeat="model in set.staff | filterSet:'Model'">
+								<a href="#/catalog/{{model.id}}"><img src="{{ model.url }}" alt="" class="img-responsive"></a>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6 text-left wrapp_model" ng-show="ShowSpecial(set.staff,'Photograph')">
+							<p>Фотографы.</p>
+							<div class="col-sm-4 col-md-4 text-center model_padding" ng-repeat="model in set.staff | filterSet:'Photograph'">
+								<a href="#/catalog/{{model.id}}"><img src="{{ model.url }}" alt="" class="img-responsive"></a>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6 text-left wrapp_model" ng-show="ShowSpecial(set.staff,'Stylist')">
+							<p>Стилисты.</p>
+							<div class="col-sm-4 col-md-4 text-center model_padding" ng-repeat="model in set.staff | filterSet:'Stylist'">
+								<a href="#/catalog/{{model.id}}"><img src="{{ model.url }}" alt="" class="img-responsive"></a>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6 text-left wrapp_model" ng-show="ShowSpecial(set.staff,'Visagiste')">
+							<p>Визажисты.</p>
+							<div class="col-sm-4 col-md-4 text-center model_padding" ng-repeat="model in set.staff | filterSet:'Visagiste'">
+								<a href="#/catalog/{{model.id}}"><img src="{{ model.url }}" alt="" class="img-responsive"></a>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6 text-left wrapp_model" ng-show="ShowSpecial(set.staff,'Barman')">
+							<p class="text-left">Бармены.</p>
+							<div class="col-sm-4 col-md-4 text-center model_padding" ng-repeat="model in set.staff | filterSet:'Barman'">
+								<a href="#/catalog/{{model.id}}"><img src="{{ model.url }}" alt="" class="img-responsive"></a>
+							</div>
+						</div>
+					</div>
+					<div class="row">	
+						<div class="col-md-12 text-center ">
+									<div class=" btn_wrapp animateButton" 
+									ng-show="showBtnSet(set.id)" >
+										<!-- <a href="" class="yellow_btn" ng-click="addModel(set.image)">Выбрать</a> -->
+										<a href="" class="yellow_btn_right glyphicon glyphicon-plus" ng-click="addModel(set.image)"></a>
+									</div>	
+
+									<div class="btn_wrapp animateButton" 
+									ng-show="!showBtnSet(set.id)" >
+										<!-- <a href="" class="grey_btn" ng-click="delModel(set.image)">Отменить</a> -->
+										<a href="" class="grey_btn_right glyphicon glyphicon-remove" ng-click="delModel(set.image)"></a>
+									</div>
+
+
+						</div>
+					</div>	
+					</div>
+
+				</div>
+				<!--End Спецпредложение-->
+					<!-- Фотографы, Визажисты-->
+				<div class="col-sm-9 col-md-9" ng-show="otherModel">
+					<div class="row other_model" ng-repeat="img in imgcat | filterP:fProf ">
+						<div class="row other_fio">
+							<a href="#/catalog/{{img.id}}"><h3>{{img.fio}}</h3></a>
+						</div>
+						<div class="row main_foto">
+							<div class="col-sm-3 col-md-3">
+								<a href="#/catalog/{{img.id}}"><img src="{{img.url}}" alt="" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-9 col-md-9">
+								<p ng-bind-html="img.iabout"></p>
+								<div class="btn_group  text-right" 
+								ng-show="showBtn(img.id)">
+									<a href="" class="yellow_btn" ng-click="addModel(img.url);">Выбрать</a>
+									<a href="" class="yellow_btn_right glyphicon glyphicon-plus" ng-click="addModel(img.url)"></a>
+								</div>	
+
+								<div class="btn_group text-right" 
+								ng-show="!showBtn(img.id)">
+									<a href="" class="grey_btn" ng-click="delModel(img.url);">Отменить</a>
+									<a href="" class="grey_btn_right glyphicon glyphicon-remove" ng-click="delModel(img.url)"></a>
+								</div>
+							</div>
+						</div>		
+						<div class="row other_portfol">
+							<a href="#/catalog/{{img.id}}">
+								<div class="col-sm-3 col-md-3 p_null">
+									<img src="{{img.gallery[0]}}" alt="" class="img-responsive">
+								</div>	
+								<div class="col-sm-3 col-md-3 p_null">
+									<img src="{{img.gallery[1]}}" alt="" class="img-responsive">
+								</div>	
+								<div class="col-sm-3 col-md-3 p_null">
+									<img src="{{img.gallery[2]}}" alt="" class="img-responsive">
+								</div>	
+								<div class="col-sm-3 col-md-3 p_null">
+									<img src="{{img.gallery[3]}}" alt="" class="img-responsive">
+								</div>	
+							</a>
+
+								
+						
+													
+						</div>			
+					</div>
+				</div>
+				<!--End Фотографы, Визажисты -->
+			</div>
+			
+			<div class="col-md-12 text-center show hidden">
+				<a href="">Показать еще<span class="glyphicon glyphicon-menu-down"></span></a>
+			</div>	
+		</div>
+
+	</section>
+
+
+	<footer>
+		<div class="container-fluid s_f">
+			<div class="row">
+				<div class="col-md-12">
+					<img src="img/logo2.png" alt="" class="img-responsive">
+					<h3>Разработка сайта - <span>dshop24.ru</span></h3>
+				</div>		
+			</div>
+		</div>
+	</footer>
+<!-- 	
+<div style="{{ mSize }}" class="manager hidden-sm hidden-xs hidden">
+		<div class="content_m">
+			<p>Для уточнения информации свяжитесь <br>с ивент-менеджером:</p>
+			<img class="img-responsive" src="img/foto.png" alt="">
+			<p>Станислав</p>
+			<p></p><a href="tel:+7945999999">+7 945 999 99 99 <span><img src="" alt=""></span><span><img src="" alt=""></span></a>
+			<p><a href="">Skype:dreamteam</a></p>
+			<p><a href="">s.thonovich@dreamteam.ru</a></p>
+			<p><a href="" ng-click="mSize = 'left: -85%'; menuHide ='z-index:1000;'"><span>+</span></a></p>
+		</div>
+		<div class="content_clik" ng-click="mSize = 'left: -53%'; menuHide ='z-index:0;'">
+			
+		</div>
+</div> -->
+
+	
+
+
+  
+
+    
+
+
+
+
+	
+
+	
+	

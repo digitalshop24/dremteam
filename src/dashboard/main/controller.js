@@ -7,10 +7,15 @@ export default class MainCtrl {
         this.recruitingModal = recruitingModal;
         this.works = works.works;
         this.worksPhotos = works.photos;
-        console.log(works);
+        this.id_active = '';
     }
 
     openRecruitingModal() {
         this.recruitingModal.open();
+    }
+
+    addFilterSet() {
+        this.obj ='[{"name":"set","tagName":"СПЕЦПРЕДЛОЖЕНИЯ","exclude":["all"],"showSets":true}]';
+        localStorage.setItem("filter", this.obj);
     }
 }

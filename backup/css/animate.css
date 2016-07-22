@@ -1,0 +1,120 @@
+.animate {
+    -webkit-transition: 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000) all;
+    -moz-transition: 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000) all;
+    -ms-transition: 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000) all;
+    -o-transition: 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000) all;
+    transition: 1000ms cubic-bezier(0.190, 1.000, 0.220, 1.000) all;
+}
+.animateButton {
+ -webkit-transition: 1s ease-out all; /* Safari/Chrome */
+ -moz-transition: 1s ease-out all; /* Firefox */
+ -ms-transition: 1s ease-out all; /* IE10 */
+ -o-transition: 1s ease-out all; /* Opera */
+ transition: 1s ease-out all; /* Future Browsers */
+}
+.animateArrowMenuP1 {
+  -webkit-transition: 0.7s ease-out all; /* Safari/Chrome */
+ -moz-transition: 0.7s ease-out all; /* Firefox */
+ -ms-transition: 0.7s ease-out all; /* IE10 */
+ -o-transition: 0.7s ease-out all; /* Opera */
+ transition: 0.7s ease-out all; /* Future Browsers */
+}
+.animateArrowMenuP5 {
+  -webkit-transition: 0.7s ease-out all; /* Safari/Chrome */
+ -moz-transition: 0.7s ease-out all; /* Firefox */
+ -ms-transition: 0.7s ease-out all; /* IE10 */
+ -o-transition: 0.7s ease-out all; /* Opera */
+ transition: 0.7s ease-out all; /* Future Browsers */
+}
+
+    .animate.ng-enter, 
+    .ng-leave { 
+        /*-webkit-transition: 1000ms cubic-bezier(0.420, 0.000, 1.000, 1.000) all;
+        -moz-transition: 1000ms cubic-bezier(0.420, 0.000, 1.000, 1.000) all;
+        -ms-transition: 1000ms cubic-bezier(0.420, 0.000, 1.000, 1.000) all;
+        -o-transition: 1000ms cubic-bezier(0.420, 0.000, 1.000, 1.000) all;
+        transition: 1000ms cubic-bezier(0.420, 0.000, 1.000, 1.000) all;*/
+        position: relative;
+        display: block;
+    } 
+     
+    .animate.ng-leave.ng-leave-active,
+    .ng-enter {
+          -webkit-transform: rotateX(0deg) rotateY(30deg) translatez(5px);
+          -moz-transform: rotateX(0deg) rotateY(30deg) translatez(5px);
+          -ms-transform: rotateX(0deg) rotateY(30deg) translatez(5px);
+          -o-transform: rotateX(0deg) rotateY(30deg) translatez(5px);
+          transform: rotateX(0deg) rotateY(30deg) translatez(5px);
+          opacity: 0;
+          height: 0px;
+    }        
+     
+    .animate.ng-enter.ng-enter-active,
+    .ng-leave {
+            -webkit-transform: rotateX(0deg) rotateY(0deg) translatez(5px);
+    -moz-transform: rotateX(0deg) rotateY(0deg) translatez(5px);
+    -ms-transform: rotateX(0deg) rotateY(0deg) translatez(5px);
+    -o-transform: rotateX(0deg) rotateY(0deg) translatez(5px);
+    transform: rotateX(0deg) rotateY(0deg) translatez(5px);
+    opacity: 1;
+    height: 30px;
+    }
+
+/*.animate.ng-enter {
+	left:1000px;
+  opacity: 0;
+}
+.animate.ng-enter.ng-enter-active  {
+	left:0px;
+   opacity: 1;
+}
+.animate.ng-leave {
+  left:0px;
+  opacity: 1;
+	
+}
+.animate.ng-leave.ng-leave-active  {
+	left:1000px;
+  opacity: 1;
+}*/
+
+
+
+/*.animateButton.hide-add {left:1000px;}
+.animateButton.hide-add.hide-add-active  {left:0px;}
+.animateButton.hide-remove {left:0px;}
+.animateButton.hide-remove.hide-remove-active  {left:1000px;}
+*/
+.animateButton {
+  height: 150px;
+  opacity: 0.9;
+}
+
+.animateButton.ng-hide {
+   height: 0;
+   opacity: 0;
+   
+}
+
+.animateButton.ButtonModel {
+  height: 250px;
+}
+
+.animateButton.ButtonModel.ng-hide {
+   height: 0;
+   
+   
+}
+
+.animateArrowMenuP1.up {
+    transform: rotate(-90deg);
+}
+.animateArrowMenuP1.down {
+    transform: rotate(90deg);
+}
+.animateArrowMenuP5.up {
+    transform: rotate(-90deg);
+}
+.animateArrowMenuP5.down {
+    transform: rotate(90deg);
+}

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "RobotoRegular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype"); }
+
+/* font-family: "PermianSansRegular"; */
+@font-face {
+    font-family: "PermianSansRegular";
+    src: url("../fonts/PermianSansRegular/PermianSansRegular.eot");
+    src: url("../fonts/PermianSansRegular/PermianSansRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PermianSansRegular/PermianSansRegular.woff") format("woff"),
+    url("../fonts/PermianSansRegular/PermianSansRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "PermianSansBold"; */
+@font-face {
+    font-family: "PermianSansBold";
+    src: url("../fonts/PermianSansBold/PermianSansBold.eot");
+    src: url("../fonts/PermianSansBold/PermianSansBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PermianSansBold/PermianSansBold.woff") format("woff"),
+    url("../fonts/PermianSansBold/PermianSansBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "PermianSansItalic"; */
+@font-face {
+    font-family: "PermianSansItalic";
+    src: url("../fonts/PermianSansItalic/PermianSansItalic.eot");
+    src: url("../fonts/PermianSansItalic/PermianSansItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PermianSansItalic/PermianSansItalic.woff") format("woff"),
+    url("../fonts/PermianSansItalic/PermianSansItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "PermianSerifRegular"; */
+@font-face {
+    font-family: "PermianSerifRegular";
+    src: url("../fonts/PermianSerifRegular/PermianSerifRegular.eot");
+    src: url("../fonts/PermianSerifRegular/PermianSerifRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PermianSerifRegular/PermianSerifRegular.woff") format("woff"),
+    url("../fonts/PermianSerifRegular/PermianSerifRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "PermianSerifBold"; */
+@font-face {
+    font-family: "PermianSerifBold";
+    src: url("../fonts/PermianSerifBold/PermianSerifBold.eot");
+    src: url("../fonts/PermianSerifBold/PermianSerifBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PermianSerifBold/PermianSerifBold.woff") format("woff"),
+    url("../fonts/PermianSerifBold/PermianSerifBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "PermianSerifItalic"; */
+@font-face {
+    font-family: "PermianSerifItalic";
+    src: url("../fonts/PermianSerifItalic/PermianSerifItalic.eot");
+    src: url("../fonts/PermianSerifItalic/PermianSerifItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PermianSerifItalic/PermianSerifItalic.woff") format("woff"),
+    url("../fonts/PermianSerifItalic/PermianSerifItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+

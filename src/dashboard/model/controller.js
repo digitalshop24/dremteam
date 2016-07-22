@@ -3,7 +3,6 @@
 export default class ModelCtrl {
     constructor(person) {
         this.person = person;
-        console.log(this.person);
         this.bigfoto = this.person.photo.medium;
         this.responsive = [
             {
@@ -35,5 +34,10 @@ export default class ModelCtrl {
 
     checkBigFoto(link) {
       this.bigfoto = link;
+    }
+    colorHair(hair_color) {
+      if (hair_color == 'dark') return 'Темный';
+      if (hair_color == 'blond') return 'Светлый';
+      if (hair_color == 'red') return 'Рыжий';
     }
 }

@@ -16,6 +16,7 @@ export default class CatalogCtrl {
         
         this.filteredStaff = this.staff;
         this.filters = [];
+
         this.showOthe = false;
         this.i = 0;
         this.slider = {
@@ -35,15 +36,14 @@ export default class CatalogCtrl {
         this.obj = "";
         if ((localStorage.getItem("filter") == undefined)) {
             this.handleFilter('models');
-            console.log('111',this.filters);
         }
         else {
             this.filt = JSON.parse(localStorage.getItem("filter"));
             for (this.i = 0; this.i < this.filt.length; this.i++) {
                 this.handleFilter(this.filt[this.i].name);
             }
-            console.log('222', this.filt);
         }
+        console.log('this.filters', this.filters);
     }
 
     handleFilter(filterName) {
@@ -67,9 +67,12 @@ export default class CatalogCtrl {
     }
 
     filterStaff() {
+
         this.filteredStaff = this.staff;
         this.filters.forEach(filter => {
+            console.log('filter', filter);
             this.filteredStaff = this.filteredStaff.filter(filter.filter);
+            console.log('this.filteredStaff', this.filteredStaff);
         });
     }
 
@@ -170,6 +173,38 @@ export default class CatalogCtrl {
                 }
             },
             {
+                name: "keytring",
+                tagName: "Кейтринг",
+                exclude: ["all"],
+                filter: (person) => {
+                    return person.profession == "keytring";
+                }
+            },
+            {
+                name: "staff",
+                tagName: "Staff",
+                exclude: ["all"],
+                filter: (person) => {
+                    return person.profession == "staff";
+                }
+            },
+            {
+                name: "staff.barman",
+                tagName: "Бармены",
+                exclude: ["staff.barman"],
+                filter: (person) => {
+                    return person.subprofession == "barman"
+                }
+            },
+            {
+                name: "staff.waiter",
+                tagName: "Официанты",
+                exclude: ["staff.barman"],
+                filter: (person) => {
+                    return person.subprofession == "waiter";
+                }
+            },
+            {
                 name: "set",
                 tagName: "СПЕЦПРЕДЛОЖЕНИЯ",
                 exclude: ["all"],
@@ -182,6 +217,13 @@ export default class CatalogCtrl {
     }
 
     getEnabledHairColors() {
+        return [
+            this.isFilterSwitchedOn('models.hair.red') ? 'red' : '',
+            this.isFilterSwitchedOn('models.hair.dark') ? 'dark' : '',
+            this.isFilterSwitchedOn('models.hair.blond') ? 'blond' : ''
+        ]
+    }
+    getEnabledSub() {
         return [
             this.isFilterSwitchedOn('models.hair.red') ? 'red' : '',
             this.isFilterSwitchedOn('models.hair.dark') ? 'dark' : '',

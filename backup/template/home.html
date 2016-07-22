@@ -1,0 +1,333 @@
+ <link rel="stylesheet" href="css/main.css">
+<slick slides-to-show="1" slides-to-scroll="1" infinite="true" dots="true">
+	<div>
+		<img src="img/bg_slide.jpg" alt="" class="img-responsive">
+	</div>	
+	<div>
+		<img src="img/bg_slide2.jpg" alt="" class="img-responsive">
+	</div>				
+</slick>
+
+		<header>			
+			<div class="s_1 container-fluid">
+				<div class="row">	
+				
+				
+				
+				<div class="col-xs-3 col-sm-6 col-md-7 col-lg-7 nav text-left hidden-sm hidden-xs">
+				<div class="logo hidden-sm hidden-xs">
+					<a href="#/"><img class="img-responsive" src="img/logo.png" alt=""></a>
+				</div>
+				<nav id="menutop">	
+					<ul >
+						<li><a href="#/home" class="active">Главная</a></li>
+						<li><a href="#/catalog">Персонал</a></li>
+						<!--<li ><a href="#jworks" ng-click="f5=f5+1">Работы</a></li>-->
+						<li ><a href="#/contakt">Контакты</a></li>
+						<!--<li><a href="">Мероприятия</a></li>-->
+					</ul>
+				</nav>
+				</div>
+				
+				<div class="basket hidden-sm hidden-xs">
+					<a href="{{ href }}" ng-click=" href = count?'#/order':'#/'">
+						<img src="img/icon.png" alt="">
+						<p >Выбрано: {{ count }}</p>
+					</a>
+					
+				</div>
+				<!-- <div class="basket fix2 hidden-sm hidden-xs">
+					<a href="{{ href }}" class="yellow_btn" ng-click=" href = count?'#/order':'#/'">Заказать</a>
+					<a href="" class="yellow_btn_right glyphicon glyphicon-shopping-cart"></a>
+					
+				</div> -->
+				
+				<!--наше агенство-->
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 selection text-center hidden-sm hidden-xs">
+					<h2>Наше агентство соберет для Вас персональную <br> команду сотрудников </h2>
+					<h5 style="margin-bottom: 20px;">Свяжитесь с нами и расскажите о вашем мероприятии. <br> Наши опытные менеджеры предоставят Вам всех необходимых людей.</h5>
+					<a href="" class="yellow_btn" data-toggle="modal" data-target="#podbor">Подобрать персонал</a>
+					<a href="" class="yellow_btn_right glyphicon glyphicon-user" data-toggle="modal" data-target="#podbor"></a>
+				</div>
+			</div>
+		</div>
+
+	</header>
+	
+
+
+	<!--Наш персонал-->
+	<section>
+		<div class="s_2">
+			
+				<div class="container-fluid">
+					<div class="">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center usperson">
+							<h2>Наши модели</h2> 
+							<h5>Вы можете создать команду мечты сомастоятельно,<br> просто перейдите в каталог и сделайте свой выбор</h5>
+						</div>
+						
+					</div>
+				</div>	
+				<div class="container-fluid">
+						<div class="row">
+						 <div class="menu text-center">
+							
+								<!-- <div class="col-xs-6 col-sm-6 col-md-6" style="background-color: #FFDB4B;">
+									<a href="#/catalog" ng-click="addFiltSex('w', false); " >Девушки</a>
+									
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6" style="background-color: #a1a1a1;">
+									<a href="#/catalog" ng-click="addFiltSex('m', false);  " >Парни</a>
+									
+								</div> 
+								-->
+								<div class="col-xs-3 col-sm-3 col-md-3">
+									<a href="#/catalog" ng-click="addFiltSex('w', false); " >
+									<img src="img/model1.jpg" alt="" class="img-responsive"></a>
+								</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">
+									<a href="#/catalog" ng-click="addFiltSex('w', false); " >
+									<img src="img/model1_1.jpeg" alt="" class="img-responsive"></a>
+								</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">
+									<a href="#/catalog" ng-click="addFiltSex('m', false); " >
+									<img src="img/model22.jpg" alt="" class="img-responsive"></a>
+								</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">
+									<a href="#/catalog" ng-click="addFiltSex('m', false); " >
+									<img src="img/model33.jpeg" alt="" class="img-responsive"></a>
+								</div>
+							</div>	 
+						
+				<!-- <slick slides-to-show="4" slides-to-scroll="1"  infinite="true" init-onload=true data="imgcat">
+							<div  ng-repeat="img in imgcat | filter:'model' ">
+								<a href= "#/catalog/{{img.id}}">
+									<img class="img-responsive" ng-src="{{ img.url }}" alt="" >
+								</a>
+							</div> 
+				</slick> -->
+						
+							
+						</div>
+				</div>
+				
+				
+				<div class="container-fluid">
+					<div class="">
+						<div class="col-md-12 text-center" style="margin-top: 45px;">
+							<!--<a href="#/catalog" class="grey_btn cat"> Перейти к каталогу 
+								<span class="glyphicon glyphicon-menu-right"></span>
+							</a>-->
+							<a href="#/catalog" class="grey_btn cat" > Перейти к каталогу  
+								<span class="glyphicon glyphicon-menu-right"></span>				
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</section>
+
+	<section class="spec_main">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2>Спецпредложение</h2>
+					<h5>Вам нужны девушки-модели, встречающие гостей? А как же стилисты<br> и визажисты для них? Для случаев заказа полного комплекта персонала<br> у нас предусмотрены скидки!</h5>
+					<img src="img/main_set.jpg" alt="" class="img-responsive">
+					<a href="#/catalog" class="yellow_btn cat" ng-click="pSS(pS)"> Спецпредложения  
+						<span class="">!</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container-fluid s_3" id="jworks">
+			<div class="">
+				<div class="container-fluid" id="jworks">
+					<div class="">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center usperson">
+							<h2>Персонал для мероприятий</h2>
+							<h5>С нашим агентство сотрудничают лучшие<br> профессионалы своего дела</h5>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-3 col-md-3" >
+					<ul>
+						<li>
+							<a href="" >
+								<p ng-click="pp1 = !pp1; pp2 = false; pp3 = false; " ng-init="pp1 = false;">Работы фотографов 
+									<span ng-show='pp1' class="glyphicon glyphicon-menu-up text-right"></span>
+									<span ng-show='!pp1' class="glyphicon glyphicon-menu-down text-right"></span>
+								</p>
+							</a>
+							<ul ng-show="pp1">
+								<a href="" ng-repeat="foto in imgcat | filter:'Photograph'"><li ng-click="filterMain(foto.fio, foto.prof);">{{foto.fio}}</li></a>
+								
+							</ul>
+						</li>
+						<li>
+							<a href="" >
+								<p ng-click="pp1 = false; pp2 = !pp2; pp3 = false; " ng-init="pp2 = false;">Работы стилистов 
+									<span ng-show='pp2' class="glyphicon glyphicon-menu-up text-right"></span>
+									<span ng-show='!pp2' class="glyphicon glyphicon-menu-down text-right"></span>
+								</p>
+							</a>
+							<ul ng-show="pp2">
+								<a href="" ng-repeat="foto in imgcat | filter:'Stylist'"><li ng-click="filterMain(foto.fio, foto.prof);">{{foto.fio}}</li></a>
+							</ul>
+						</li>
+						<li>
+							<a href="" >
+								<p ng-click="pp3 = !pp3; pp2 = false; pp1 = false; " ng-init="pp3 = false;">Работы визажистов 
+									<span ng-show='pp3' class="glyphicon glyphicon-menu-up text-right"></span>
+									<span ng-show='!pp3' class="glyphicon glyphicon-menu-down text-right"></span>
+								</p>
+							</a>
+							<ul ng-show="pp3">
+								<a href="" ng-repeat="foto in imgcat | filter:'Visagiste'"><li ng-click="filterMain(foto.fio, foto.prof); ">{{foto.fio}}</li></a>
+							</ul>
+						</li>
+					
+					</ul>
+				</div>
+
+				
+				
+				<!--Фото портфолио -->
+				<div class="col-sm-12 col-sm-9 col-md-9" 
+				id="sh_foto" >
+					<div ng-repeat="img in imgcat | filter:{fio:filt} | filterP:fMainProf " ng-show="!base">
+
+						<div class="animate col-xs-6 col-sm-6 col-md-3 foto_" ng-repeat="work in img.gallery | limitTo:4">
+							<img class="img-responsive" ng-src="{{ work }}" alt="">
+						</div>
+					   	<!-- <div class="animate col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="{{ img.gallery[0] }}" alt="">
+						</div>
+						<div class="animate col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="{{ img.gallery[1] }}" alt="">
+						</div>
+						<div class="animate col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="{{ img.gallery[2] }}" alt="">
+						</div>
+						<div class="animate col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="{{ img.gallery[3] }}" alt="">
+						</div> -->
+					</div>
+					<div ng-show="base">
+						<div class=" col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="img/port1.jpeg" alt="">
+						</div>
+						<div class=" col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="img/port2.jpeg" alt="">
+						</div>
+						<div class=" col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="img/port3.jpeg" alt="">
+						</div>
+						<div class=" col-xs-6 col-sm-6 col-md-3 foto_">
+							<img class="img-responsive" ng-src="img/port4.jpeg" alt="">
+						</div>
+					</div>
+				</div>	
+				<!--end фото-->
+			</div>
+				
+		</div><!--end s_3-->
+	</section>
+<!--	<section>
+		<div class="conteiner-fluid s_4">
+			<div class="">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center usperson">
+					<h2>О компании</h2>
+					<h5>Наша компания существует с 2007 года и является одним из <br> лучших агенств на территории СНГ</h5>
+				</div>
+				
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+					 <img src="img/aboutus.jpg" alt="" class="img-responsive">
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 about">
+					<h4>Чем мы занимаемся?</h4>	
+					<p>Каждый веб-разработчик знает, что такое текст-«рыба». Текст этот, несмотря на название, не имеет никакого отношения к обитателям водоемов. Используется он веб-дизайнерами для вставки на интернет-страницы и демонстрации внешнего вида контента, просмотра шрифтов, абзацев, отступов и т.д. Так как цель применения такого текста исключительно демонстрационная, то и смысловую нагрузку ему нести совсем необязательно. Более того, нечитабельность текста сыграет на руку при оценке качества восприятия макета.</p>
+					<p>Самым известным «рыбным» текстом является знаменитый Lorem ipsum. Считается, что впервые его применили в книгопечатании еще в XVI веке. Своим появлением Lorem ipsum обязан древнеримскому философу Цицерону, ведь именно из его трактата «О пределах добра и зла» средневековый книгопечатник вырвал отдельные фразы и слова, получив текст-«рыбу», широко используемый и по сей день. Конечно, возникают некоторые вопросы, связанные с использованием Lorem ipsum на сайтах и проектах, ориентированных на кириллическй контент – написание символов на латыни и на кириллице значительно различается.</p>
+				</div>
+			</div>	
+		</div>	
+	</section>
+
+
+			
+
+ -->
+<section>
+	<div class="container-fluid s_7">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2>Затрудняетесь с выбором?</h2>
+				<h4>Наше агенство соберет для Вас персональную<br> команду сотрудников</h4>
+				
+					<a href="" class="yellow_btn" data-toggle="modal" data-target="#podbor">Подобрать персонал</a>
+					<a href="" class="yellow_btn_right" data-toggle="modal" data-target="#podbor"><img src="img/black_men.png" alt=""></a>
+				
+
+			</div>
+		</div>
+	</div>
+</section>
+
+	<footer>
+		<div class="container-fluid s_6">
+			<div class="">
+				<div class="col-md-12">
+					<img src="img/logo2.png" alt="" class="img-responsive">
+					<h3>Разработка сайта - <span>dshop24.ru</span></h3>
+				</div>		
+			</div>
+		</div>
+	</footer>
+	
+
+<div class="modal fade" id="podbor">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe"
+style="display:none;" onload="if(submitted)
+{window.location='thx.html';}"></iframe>
+<form action="https://docs.google.com/a/dshop24.ru/forms/d/1Hl_FggIM9IvX2kX7mRZXlV8sgA847EeDXnUxTxiXK1E/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.804605877" value="Ваше имя" class="ss-q-short valid text-center" id="entry_804605877" dir="auto" aria-label="Имя" title="" type="text"
+						onfocus="if(this.value=='Ваше имя'){this.value='';}" onblur="if(this.value==''){this.value='Ваше имя';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.1855579486" value="Контактный телефон" class="ss-q-short valid text-center" id="entry_1855579486" dir="auto" aria-label="Телефон" title="" type="text" onfocus="if(this.value=='Контактный телефон'){this.value='';}" onblur="if(this.value==''){this.value='Контактный телефон';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.121100234" value="Электронная почта" class="ss-q-short valid text-center" id="entry_121100234" dir="auto" aria-label="Email" title="" type="text" onfocus="if(this.value=='Электронная почта'){this.value='';}" onblur="if(this.value==''){this.value='Электронная почта';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.2050095359" value="Тип мероприятия" class="ss-q-short valid text-center" id="" dir="auto" aria-label="Type" title="" type="text" onfocus="if(this.value=='Тип мероприятия'){this.value='';}" onblur="if(this.value==''){this.value='Тип мероприятия';}">
+					</div>
+					
+					<!-- <input  value="" class="ss-q-short valid" id="entry_2050095359" dir="auto" aria-label="Тип мероприятия  " title="" type="text"> -->
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input  value="Комментарий" class="ss-q-short valid text-center" id="" dir="auto" aria-label="Type" title="" type="text" onfocus="if(this.value=='Комментарий'){this.value='';}" onblur="if(this.value==''){this.value='Комментарий';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field hidden">
+						<input name="" value="" class="" id="" dir="auto" aria-label="" title="" type="text">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<button name="submit" value="" id="ss-submit" class="yellow_btn jfk-button jfk-button-action " type="submit">Отправить</button>
+					</div>
+					</form>	 
+                    </div>
+                </div>
+            </div>
+        </div>

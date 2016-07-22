@@ -15,6 +15,9 @@ export default angular.module('dashboard.card', [])
                 template: require('./template.html'),
                 url: '/card',
                 controller: CardCtrl,
-                controllerAs: 'ctrl'
+                controllerAs: 'ctrl',
+                resolve: {
+                    $title: () => { return 'Корзина'; }
+                }
             });
     });

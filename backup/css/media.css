@@ -1,0 +1,181 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.s_2 .model_foto .fix_p {
+
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.selection p {
+        font-size: 30px;
+	}
+	
+	.s_1 .basket p {
+		font-size: 1rem;
+	}
+		
+
+	.s_1 .selection p {
+    	font-size: 3rem !important;
+	}
+	
+	.contakt {
+		padding-top: 140px;
+	}
+	.set_h2 {
+		padding-top: 120px;
+	}
+	slick .slick-prev {
+		border:none !important;
+	}
+	slick .slick-next {
+		border:none !important;
+	}
+	slick .slick-dots {
+		display: none !important;
+	}
+
+	/*h2 {
+		padding-top: 150px !important;	
+	}*/
+
+	/*@media screen and (-webkit-min-device-pixel-ratio:0) {
+	   h2 {  
+	   		padding-top: 0 !important;	
+	   }
+		.h2_media {
+			margin-top: 150px;
+		}
+	}*/
+	
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.s_1 .selection {
+		display: none;
+	}
+	
+	.s_2 {
+		margin-top: 0 !important;
+	}
+	.s_2 .menu div a {
+        line-height: 3.6 !important;
+        font-size: 1rem;
+	}
+	.s_2 .usperson {
+    	margin-top: 0 !important;
+	}
+	.s_3 ul {
+   	   	margin-right: 50px;
+   	   	margin-bottom: 30px;
+	}
+	
+	.s_1 .basket img{
+		margin-bottom: 20px;	
+	}
+	
+	
+	.fixed {
+        position: inherit !important;
+	}
+	.s_2 .model_foto .btn_group .yellow_btn {
+		font-size: 1rem;
+	}
+	.s_2 .model_foto .btn_group .yellow_btn_right {
+		font-size: 1rem;
+	}
+	.grey_btn {
+		font-size: 1rem;
+	}
+	.grey_btn_right {
+		font-size: 1rem;
+	}
+
+
+
+
+}	
+@media only screen and (max-width : 708px) {
+	.carousel {
+        display: none;
+	}
+}
+	
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	h2 {
+		font-size: 30px !important;
+
+	}
+	.s_1 .logo {
+    	left: 32% !important;
+	}
+	.hidden_xxs {
+		display: none;
+	}
+	
+}
+
+@media only screen and (max-width : 376px) {
+	
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.dream {
+	       	margin-bottom: 100px; 
+		}
+	}
+	
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	
+	
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+/*all site*/
+a:focus, a:hover {
+    color: #010509;
+    text-decoration: none;
+}
+
+.modal-backdrop.in {
+	opacity: .9;
+}
+.modal-body .field input {
+	border: 1px solid #fff;
+}
+#podbor {
+	padding-top: 15vh;
+}

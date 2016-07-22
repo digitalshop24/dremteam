@@ -14,15 +14,15 @@
 				<img ng-show="person.type == 'suites'" src="{{person.image.medium}}" alt="" class="img-responsive">
 				<ul class="" ng-show="person.profession == 'model'">
 					<li ng-bind="person.name + ' ID:' + person.id"></li>
-					<li ng-bind="'Рост: ' + person.height">Рост: 173</li>
-					<li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li>
+					<!-- <li ng-bind="'Рост: ' + person.height">Рост: 173</li> -->
+					<!-- <li>Вес: 51</li>
+					<li>Параметры: 86-58-89</li> -->
 				</ul>
 				<ul class="" ng-show="person.type == 'suites'">
 					<li ng-bind="person.name"></li>
 					<li ng-repeat="block in person.staff">{{block.name}} : {{block.persons.length}}</li>
 				</ul>
-				<p ng-bind="person.description"></p>
+				<!-- <p ng-bind="person.description"></p> -->
 				<div class="btn_group">
 					<button class="btn_grey" ng-click="ctrl.remove(person)"><span class=" fa fa-times"></span></button>
 				</div>

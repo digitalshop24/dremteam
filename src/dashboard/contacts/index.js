@@ -14,10 +14,8 @@ export default angular.module('dashboard.сontacts', [])
                 url: '/сontacts',
                 controller: СontactsCtrl,
                 controllerAs: 'ctrl',
-                // resolve: {
-                //     token: ($stateParams) => {
-                //         return $stateParams.reset_password_token;
-                //     }
-                // }
+                resolve: {
+                    $title: () => { return 'Контакты'; },
+                }
             });
     });

@@ -27,7 +27,9 @@ export default angular.module('dashboard.main', [])
 
                     works: mainService => {
                         return mainService.getWorks();
-                    }
+                    },
+
+                    $title: () => { return 'Главная'; },
                 }
             });
     });

@@ -1,0 +1,153 @@
+<link rel="stylesheet" href="css/order.css">
+<div class="order_1">
+	<div class="order_2">
+		<div class="order_3">
+			<div class="container-fluid"> <!--step 1-->
+				<div class="">
+						<div class="col-xs-3 col-sm-6 col-md-7 col-lg-7 nav text-left hidden-sm hidden-xs">
+						<nav id="menutop">	
+							<ul > 
+								<li ><a href="#/" >Главная</a></li>
+								<li><a href="#/catalog">Персонал</a></li>
+
+								<li ><a href="#/contakt">Контакты</a></li>
+								<!--<li><a href="">Мероприятия</a></li>-->
+							</ul>
+						</nav>
+						</div>
+
+
+					<div class="col-md-12 text-center m_logo hidden-sm hidden-xs">
+						<a href="#/"><img class="img-responsive" src="img/logo.png" alt=""></a>
+					</div>
+
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+					 <span class="glyphicon glyphicon-user m_icon " ></span>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					 <hr>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					 <span class="glyphicon glyphicon-earphone m_icon "></span>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					 <hr>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-left">
+					 <span class="glyphicon glyphicon-ok m_icon "></span>
+					</div>
+				</div>	
+			</div>
+
+			<div class="container-fluid"> <!--step 1-->
+				<div class="row">
+			  <!--Выбранный персонал hidden-->
+				  	<div class="col-xs-1 col-sm-4 col-md-4 col-lg-4" style="padding-top: 70px;">
+				  		<hr>
+				 	</div>
+					<div class="col-xs-10 col-sm-4 col-md-4 col-lg-4 text-center">
+					    <h2>Выбраный персонал</h2>		         	
+					</div>
+					<div class="col-xs-1 col-sm-4 col-md-4 col-lg-4" style="padding-top: 70px;">
+					    <hr>
+					</div> 
+					
+					
+			</div>
+
+
+			<div class="container-fluid">
+					<div class="row">
+					<div class="col-md-2 text-center"></div>
+					<div class="col-md-8 text-center">	
+					
+						<div class="col-sm-3 col-md-3"  ng-repeat="img in basket" >
+							<img class="img-responsive" src="{{ img.url }}" alt="">
+							
+							<!-- <div class="btn_group animateButton" 
+								ng-show="!img.showBtn" 
+								ng-click="img.showBtn = !img.showBtn"
+								>
+									<a href="" class="yellow_btn" ng-click="addModel(img.url);">Выбрать</a>
+									<a href="" class="yellow_btn_right glyphicon glyphicon-plus" ng-click="addModel(img.url)"></a>
+								</div>	
+ -->
+								<div class="btn_group animateButton" 
+								ng-click="img.showBtn = !img.showBtn"
+								>
+								<!-- ng-show="img.showBtn" -->
+									<!-- <a href="" class="grey_btn" ng-click="delModel(img.url);">Отменить</a> -->
+									<a href="" class="grey_btn_right glyphicon glyphicon-remove" ng-click="delModel(img.url)"></a>
+								</div>
+						</div>
+													
+					</div>	
+					<div class="col-md-2 text-center"></div>
+									<!--button next
+									 
+									<div class="col-md-12 text-center show">
+										<a href="">Далее <span class="glyphicon glyphicon-menu-right"></span></a>
+									</div>	-->
+							
+					</div>
+				</div>	
+
+
+
+			<!--end cf step 1-->
+			<!--step 2-->
+			<div class="container-fluid ">
+				<div class="row">
+				      			<!--ЛД-->
+					<div class="col-xs-1 col-sm-4 col-md-4 col-lg-4" style="padding-top: 70px;">
+						<hr>
+					</div>
+				   	<div class="col-xs-10 col-sm-4 col-md-4 col-lg-4 text-center">
+				      	<h2>Личные данные</h2>		         	
+				    </div>
+				    <div class="col-xs-1 col-sm-4 col-md-4 col-lg-4" style="padding-top: 70px;">
+				    	<hr>
+				    </div> <!--end ЛД-->
+								
+					<form action="https://docs.google.com/a/dshop24.ru/forms/d/1Hl_FggIM9IvX2kX7mRZXlV8sgA847EeDXnUxTxiXK1E/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left: 0">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.804605877" value="Ваше имя" class="ss-q-short valid text-center" id="entry_804605877" dir="auto" aria-label="Имя" title="" type="text"
+						onfocus="if(this.value=='Ваше имя'){this.value='';}" onblur="if(this.value==''){this.value='Ваше имя';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.1855579486" value="Контактный телефон" class="ss-q-short valid text-center" id="entry_1855579486" dir="auto" aria-label="Телефон" title="" type="text" onfocus="if(this.value=='Контактный телефон'){this.value='';}" onblur="if(this.value==''){this.value='Контактный телефон';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<input name="entry.121100234" value="Электронная почта" class="ss-q-short valid text-center" id="entry_121100234" dir="auto" aria-label="Email" title="" type="text" onfocus="if(this.value=='Электронная почта'){this.value='';}" onblur="if(this.value==''){this.value='Электронная почта';}">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field hidden">
+						<input name="" value="" class="" id="" dir="auto" aria-label="" title="" type="text">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center field">
+						<button name="submit" value="" id="ss-submit" class="yellow_btn jfk-button jfk-button-action " type="submit">Отправить</button>
+					</div>
+					</form>	
+				</div><!--end row-->
+			</div> <!--end cf-->
+				      	<!--end step 2 -->
+
+				      	<!--step 3
+				      	<div class="container-fluid hidden">
+				      		<div class="row">
+				      			
+								<div class="col-xs-1 col-sm-4 col-md-4 col-lg-4" style="padding-top: 70px;"><hr></div>
+				      			<div class="col-xs-10 col-sm-4 col-md-4 col-lg-4 text-center">
+				         			<h2>Готово!</h2>		         	
+				         		</div>
+				         		<div class="col-xs-1 col-sm-4 col-md-4 col-lg-4" style="padding-top: 70px;">
+				         			<hr>
+				         		</div> <
+
+				         		
+				      		</div>
+				      	</div> 
+				      	end step 3 -->
+		</div>
+	</div>
+</div>
+

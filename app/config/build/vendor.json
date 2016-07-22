@@ -12,7 +12,9 @@
             "bower_components/slick-carousel/slick/slick.js",
             "bower_components/angular-slick/dist/slick.js",
             "bower_components/angularjs-slider/dist/rzslider.min.js",
+            "bower_components/angular-ui-router-title/angular-ui-router-title.js",
             "src/resources/js/ya-map-2.1.min.js"
+            
         ],
         "dest": "vendor.min.js"
     },

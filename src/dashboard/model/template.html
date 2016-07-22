@@ -12,9 +12,9 @@
 			</div>
 			<div class="col-md-6">
 				<ul ng-show="ctrl.person.profession == 'model'">
-					<li ng-bind="'Рост: ' + ctrl.person.height"></li>
-					<li ng-bind="'Параметры: ' + ctrl.person.measurements"></li>
-					<li ng-bind="'Цвет волос: ' + ctrl.person.hair_color"></li>
+					<li ng-bind="'Рост: ' + ctrl.person.height" ng-show="ctrl.person.height"></li>
+					<li ng-bind="'Параметры: ' + ctrl.person.measurements" ng-show="ctrl.person.measurements"></li>
+					<li ng-bind="'Цвет волос: ' + ctrl.colorHair(ctrl.person.hair_color)" ng-show="ctrl.person.hair_color"></li>
 				</ul>
 				<choose-button person="ctrl.person"></choose-button>
 			</div>

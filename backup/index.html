@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="modelsApp" ng-controller="modelCtrl" ng-cloak id="body"> 
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>{{ titles }} </title>
+	<meta name="description" content="">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css">
+ 	<link rel="stylesheet" href="libs/owl-carousel/owl.theme.css">
+ 	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+ 	
+ 	<!-- <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css"> -->
+	<link rel="stylesheet" href="libs/animate/animate.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- <link rel="stylesheet" href="css/animates.css"> -->
+
+	
+	
+
+</head>
+
+<body  >
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N5FJZP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5FJZP');</script>
+<!-- End Google Tag Manager -->
+				
+<div class="menu_size hidden-md hidden-lg" >
+		  <div class="container_menu " id="menu_size">
+		    <div id="sidebar">
+		        <ul id="li_menu">
+		            <li><a href="#/home" >Главная</a></li>
+	  				<li><a href="#/catalog">Персонал</a></li>
+	  				<li><a href="#/contakt" >Контакты</a></li>
+	  				
+		        </ul>
+		    </div>
+		    <div class="main-content">
+		        <a href="" data-toggle=".container_menu" id="sidebar-toggle">
+		            <span class="bar"></span>
+		            <span class="bar"></span>
+		            <span class="bar"></span>
+		        </a>
+		        
+		    </div>
+			
+			
+			<img class="img-responsive hidden_xxs" src="img/logo.png" alt="" style="margin: 0 auto; width:100px; background-color: rgba(42, 42, 42, 0.38); padding: 4px;">
+			
+			<div class="basket ">
+					
+					<p >Выбрано: {{ count }}</p>
+					
+			</div>
+			<div class="basket fix3">
+					<a href="{{ href }}" ng-click=" href = count?'#/order':'#/'" class="yellow_btn_right glyphicon glyphicon-shopping-cart"></a>
+					
+			</div>
+					  
+		</div>
+</div>
+	
+		
+   <ng-view></ng-view>
+			
+
+
+	
+
+	
+
+
+	
+	
+	<!--<script src="libs/jquery/jquery-1.11.2.min.js"></script>-->
+	
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bower_components/slick-carousel/slick/slick.js"></script>
+	<script src="bower_components/angular-slick/dist/slick.js"></script>
+	<script src="bower_components/angular-ymaps/angular-ymaps.js"></script>
+	<script src="js/ya-map-2.1.min.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/common.js"></script>
+
+	
+</body>
+</html>

@@ -1,0 +1,82 @@
+/*
+//Портфолио
+	$scope.imgPortfolio =[
+		{ url : 'img/model1.jpg', //vogue
+		  fistScreen : '', // Есть ли фото на первом экране ВАЖНО!!! не больше 4 фото без  fistScreen : 'hidden' и  marker : 'marker'
+		  label : 'vogue', // Категория фотографии
+		  marker : '' },
+		{ url : 'img/model1.jpg',
+		  fistScreen : '',
+		  label : 'vogue',
+		  marker : ''},
+		{ url : 'img/model1.jpg',
+		  fistScreen : '',
+		  label : 'vogue',
+		  marker : ''},  	
+		{ url : 'img/model1.jpg',
+		  fistScreen : '',
+		  label : 'vogue',
+		  marker : ''},  	
+		{ url : 'img/model1.jpg',
+		  fistScreen : 'hidden',
+		  label : 'vogue',
+		  marker : 'marker'},  	
+		{ url : 'img/model2.jpg', //glamour 1
+		  fistScreen : '',
+		  label : 'glamour',
+		  marker : ''},  
+		{ url : 'img/model2.jpg', //2
+		  fistScreen : '',
+		  label : 'glamour',
+		  marker : ''}, 
+		{ url : 'img/model2.jpg', //3
+		  fistScreen : '',
+		  label : 'glamour',
+		  marker : ''},  
+		{ url : 'img/model2.jpg', //4
+		  fistScreen : '',
+		  label : 'glamour',
+		  marker : ''},
+		{ url : 'img/model2.jpg',
+		  fistScreen : 'hidden',
+		  label : 'glamour',
+		  marker : 'marker'},
+		{ url : 'img/model2.jpg', 
+		  fistScreen : 'hidden',
+		  label : 'glamour',
+		  marker : 'marker'},
+		{ url : 'img/model2.jpg', 
+		  fistScreen : 'hidden',
+		  label : 'glamour',
+		  marker : 'marker'},  
+		{ url : 'img/model3.jpg', //cosmopolitan 1
+		  fistScreen : '',
+		  label : 'cosmopolitan',
+		  marker : ''},  
+		{ url : 'img/model3.jpg', //2
+		  fistScreen : '',
+		  label : 'cosmopolitan',
+		  marker : ''}, 
+		{ url : 'img/model3.jpg', //3
+		  fistScreen : '',
+		  label : 'cosmopolitan',
+		  marker : ''},  
+		{ url : 'img/model3.jpg', //4
+		  fistScreen : '',
+		  label : 'cosmopolitan',
+		  marker : ''},
+		{ url : 'img/model3.jpg',
+		  fistScreen : 'hidden',
+		  label : 'cosmopolitan',
+		  marker : 'marker'},
+		{ url : 'img/model3.jpg', 
+		  fistScreen : 'hidden',
+		  label : 'cosmopolitan',
+		  marker : 'marker'},
+		{ url : 'img/model3.jpg', 
+		  fistScreen : 'hidden',
+		  label : 'cosmopolitan',
+		  marker : 'marker'}       	
+	
+	];
+*/

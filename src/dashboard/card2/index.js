@@ -14,10 +14,8 @@ export default angular.module('dashboard.card2', [])
                 url: '/card-step-2',
                 controller: Card2Ctrl,
                 controllerAs: 'ctrl',
-                // resolve: {
-                //     token: ($stateParams) => {
-                //         return $stateParams.reset_password_token;
-                //     }
-                // }
+                resolve: {
+                     $title: () => { return 'Оформление заказа'; },
+                }
             });
     });

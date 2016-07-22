@@ -1,0 +1,65 @@
+	<link rel="stylesheet" href="css/cat.css">
+<div class="set">	
+		<a href="#/catalog"><span class="krest text-right glyphicon glyphicon-remove" aria-hidden="true"> </a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 m_logo text-center">
+					<img src="img/logo.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid set_h2">
+			<div class="row">
+				<div class="col-md-4">
+					<hr>
+				</div>
+				<div class="col-md-4 text-center">
+					<h2>{{ img.fio }}</h2>
+				</div>
+				<div class="col-md-4">
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6" style="padding: 0 0 10px 0;">
+					<p><img src="{{ imgMain }}" alt="" class="img-responsive" ></p>
+				</div>
+				<div class="col-md-6 text-left">
+					<h3></h3>
+					<p ng-bind-html="img.iabout"></p>
+				</div>
+			</div>	
+			<div class="row">
+				<slick  slides-to-show="5" slides-to-scroll="1" init-onload=true data="img.gallery">
+			  		<div 
+			  		class="text-center" 
+			  		ng-repeat=" gal in img.gallery">
+						<p><img src="{{ gal }}" alt="" class="img-responsive" ng-click="imgMainC(gal)"></p>
+					</div>	
+				</slick>	
+			
+			</div>	
+			<div class="row" ng-init="h_g='hide'; h_y=''">
+				<div class="col-md-12 text-center">
+					<div class="btn_group animateButton" 
+						ng-class="h_y" 
+						ng-click="h_y='hide'; h_g='' "
+						style="left: 0; bottom: 0; padding-bottom: 50px; top: 20px;">
+							<a href="" class="yellow_btn" ng-click="addModel(img.url)">Выбрать</a>
+							<a href="" class="yellow_btn_right glyphicon glyphicon-plus" ng-click="addModel(img.url)"></a>
+						</div>	
+
+						<div class="btn_group animateButton" 
+						ng-class="h_g" 
+						ng-click="h_g='hide'; h_y='' "
+						style="left: 0; bottom: 0; padding-bottom: 50px; top: 20px;">
+							<a href="" class="grey_btn" ng-click="delModel(img.url)">Отменить</a>
+							<a href="" class="grey_btn_right glyphicon glyphicon-remove" ng-click="delModel(img.url)"></a>
+						</div>
+				</div>
+			</div>
+											
+		</div>
+</div>

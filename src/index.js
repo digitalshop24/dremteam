@@ -12,6 +12,8 @@ export default angular.module('app',
         'ngStorage',
         'yaMap',
         'rzModule',
+        'ng',
+        'ui.router.title',
         dashboard.name
     ])
     .service('api', Api)

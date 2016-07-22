@@ -21,7 +21,9 @@ export default angular.module('dashboard.catalog', [])
 
                     sets: staffService => {
                         return staffService.getSets();
-                    }
+                    },
+
+                    $title: () => { return 'Каталог'; },
                 }
             });
     });

@@ -34,7 +34,7 @@
         <div class="row">
             <slick infinite=true slides-to-show=4 slides-to-scroll=1>
                 <div class="col-md-3 fix_padding" ng-repeat="model in ctrl.models">
-                    <img ui-sref="dashboard.model({id: model.id})" src="{{model.photo.medium}}" alt="" class="img-responsive">
+                    <img ui-sref="dashboard.model({id: model.id})" src="{{model.photo.medium}}" alt="" class="img-responsive" style="cursor:pointer;">
                 </div>
             </slick>
         </div>
@@ -57,7 +57,7 @@
                 <p>Вам нужны девушки-модели, встречающие гостей? А как же стилисты<br>и визажисты для них? Для случаев
                     заказа полного комплекта персонала <br>у нас предусмотрены скидки!</p>
                 <img src="img/resources/img/main_set.jpg" alt="" class="img-responsive ">
-                <button class="btn_yellow" ui-sref="dashboard.catalog">
+                <button class="btn_yellow" ui-sref="dashboard.catalog" ng-click="ctrl.addFilterSet();">
                     Спецпредложение
                     <span class="" aria-hidden="true">!</span>
                 </button>
@@ -71,7 +71,7 @@
             <div class="col-md-12 text-center">
                 <h2>Персонал для мероприятий</h2>
 
-                <p>С нашим агентство сотрудничают лучшие<br>профессионалы своего дела</p>
+                <p>С нашим агентством сотрудничают лучшие<br>профессионалы своего дела</p>
             </div>
         </div>
         <div class="row">
@@ -96,7 +96,7 @@
             <div class="col-md-9 personal_main">
                 <div class="row">
                     <div class="col-md-3" ng-repeat="photo in ctrl.worksPhotos">
-                        <a href="" ><img src="{{photo.medium}}" alt="" class="img-responsive"></a>
+                        <a href="" ui-sref="dashboard.model({id: ctrl.id_active})"><img src="{{photo.medium}}" alt="" class="img-responsive"> </a>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Затрудняетесь с выбором?</h2>
-                <h5>Наше агентством соберет для Вас персональную<br>команду сотрудников</h5>
+                <h5>Наше агентство соберет для Вас персональную<br>команду сотрудников</h5>
                 <button class="btn_yellow" ng-click="ctrl.openRecruitingModal()">
                     Подобрать персонал
                 </button>

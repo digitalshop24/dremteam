@@ -1,0 +1,155 @@
+[
+		{ 	
+			"url" : "img/model/w/1Alena/image.jpeg",
+			"id" : "1",
+			"sex" : "w",
+			"fio" : "Алена",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/w/2Elen/image(11).jpeg",
+			"id" : "2",
+			"sex" : "w",
+			"fio" : "Елена",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/w/3Irina/image(6).jpeg",
+			"id" : "3",
+			"sex" : "w",
+			"fio" : "Ирина",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/w/4Marina/image.jpeg",
+			"id" : "4",
+			"sex" : "w",
+			"fio" : "Марина",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/w/5Masha/image.jpeg",
+			"id" : "5",
+			"sex" : "w",
+			"fio" : "Мария",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/w/6Natasha/image.jpeg",
+			"id" : "6",
+			"sex" : "w",
+			"fio" : "Наталья",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/m/1Vlad/image.jpeg",
+			"id" : "7",
+			"sex" : "m",
+			"fio" : "Владимир",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/m/2Dima/image(2).jpeg",
+			"id" : "8",
+			"sex" : "m",
+			"fio" : "Дима",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/w/7Tania/image.jpeg",
+			"id" : "9",
+			"sex" : "w",
+			"fio" : "Татьяна",
+			"age" : "18",
+			"prof" :"model podium","iabout" : ""
+		},
+		{ 	
+			"url" : "img/style/w/1Maria/image.jpeg",
+			"id" : "10",
+			"sex" : "w",
+			"fio" : "Марина",
+			"age" : "18",
+			"prof" :"style",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/staff/bar/1Gabriel/image(2).jpeg",
+			"id" : "11",
+			"sex" : "m",
+			"fio" : "Габриэль",
+			"age" : "18",
+			"prof" :"staff",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/visagiste/1Vera/image(9).jpeg",
+			"id" : "12",
+			"sex" : "w",
+			"fio" : "Вера",
+			"age" : "18",
+			"prof" :"visi",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/visagiste/2Sveta/sveta.jpeg",
+			"id" : "13",
+			"sex" : "w",
+			"fio" : "Светлана",
+			"age" : "18",
+			"prof" :"visi",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/visagiste/3Sveta/image(10).jpeg",
+			"id" : "14",
+			"sex" : "w",
+			"fio" : "Светлана",
+			"age" : "18",
+			"prof" :"visi",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/foto/1Natasha/image(4).jpeg",
+			"id" : "15",
+			"sex" : "w",
+			"fio" : "Наталья",
+			"age" : "18",
+			"prof" :"fotograf",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/staff/of/1Ilia/image.jpeg",
+			"id" : "16",
+			"sex" : "m",
+			"fio" : "",
+			"age" : "18",
+			"prof" :"staff",
+			"iabout" : ""
+		},
+		{ 	
+			"url" : "img/model/m/3Elisei/image.jpeg",
+			"id" : "17",
+			"sex" : "m",
+			"fio" : "Елисей",
+			"age" : "18",
+			"prof" : "model foto",
+			"iabout" : ""
+		}
+
+]
