@@ -45,6 +45,16 @@ p,h1,h2,h3,h4,h5,h6 {padding: 0; margin: 0;}
 	text-transform: uppercase;
 	font-weight: bold;
 }
+.btn_yellow_border_none {
+	height: 40px;
+	background-color: #fff;
+	border: 1px solid $yellow;
+	padding: 0 15px;
+	color: #000;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0 5px;
+}
 
 
 .btn_grey {
@@ -142,3 +152,12 @@ p,h1,h2,h3,h4,h5,h6 {padding: 0; margin: 0;}
 .slick-next::before {
 	content: " ";
 }
+
+.rzslider .rz-pointer, .rzslider .rz-bar.rz-selection {
+	background-color: $yellow !important;
+}
+.rzslider .rz-pointer.rz-active::after, .rzslider .rz-pointer::after {
+	background-color: #fff !important;
+	color: #fff !important;
+}
+

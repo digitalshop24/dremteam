@@ -1,9 +1,11 @@
 'use strict';
 
 export default class ModelCtrl {
-    constructor(person) {
+    constructor(person, $sce) {
         this.person = person;
+        console.log(this.person);
         this.bigfoto = this.person.photo.medium;
+        this.sce = $sce;
         this.responsive = [
             {
               breakpoint: 1280,
@@ -36,8 +38,8 @@ export default class ModelCtrl {
       this.bigfoto = link;
     }
     colorHair(hair_color) {
-      if (hair_color == 'dark') return 'Темный';
-      if (hair_color == 'blond') return 'Светлый';
+      if (hair_color == 'dark') return 'Шатенки';
+      if (hair_color == 'blond') return 'Блондинки';
       if (hair_color == 'red') return 'Рыжий';
     }
 }

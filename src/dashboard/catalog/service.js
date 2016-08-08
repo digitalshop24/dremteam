@@ -5,4 +5,5 @@ export default class CatalogService {
         this.api = api;
 
     }
+    
 }

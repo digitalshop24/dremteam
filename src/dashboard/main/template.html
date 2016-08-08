@@ -95,10 +95,27 @@
             </div>
             <div class="col-md-9 personal_main">
                 <div class="row">
-                    <div class="col-md-3" ng-repeat="photo in ctrl.worksPhotos">
+                    <div class="col-xs-6 col-sm-6 col-md-3" ng-repeat="photo in ctrl.worksPhotos" style="padding-top: 10px; padding-bottom: 10px;">
                         <a href="" ui-sref="dashboard.model({id: ctrl.id_active})"><img src="{{photo.medium}}" alt="" class="img-responsive"> </a>
                     </div>
+
                 </div>
+                <div class="row" ng-show="!ctrl.id_active">
+                    <div class="col-xs-6 col-sm-6 col-md-3" style="padding-top: 10px; padding-bottom: 10px;">
+                        <a href="" ui-sref="dashboard.model({id: 16})"><img src="http://dt-agency.ru/system/photos/photos/000/000/082/medium/image%2810%29.jpeg" alt="" class="img-responsive"> </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3" style="padding-top: 10px; padding-bottom: 10px;">
+                        <a href="" ui-sref="dashboard.model({id: 6})"><img src="http://dt-agency.ru/system/staffs/photos/000/000/006/medium/2_%D1%84%D0%BE%D1%82%D0%BE_-_%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB_%D0%B4%D0%BB%D1%8F_%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%82%D1%8F%D0%B8%D0%B9.jpeg" alt="" class="img-responsive"> </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3" style="padding-top: 10px; padding-bottom: 10px;">
+                        <a href="" ui-sref="dashboard.model({id: 22})"><img src="http://dt-agency.ru/system/photos/photos/000/000/114/medium/image%282%29.jpeg" alt="" class="img-responsive"> </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3" style="padding-top: 10px; padding-bottom: 10px;">
+                        <a href="" ui-sref="dashboard.model({id: 19})"><img src="http://dt-agency.ru/system/staffs/photos/000/000/019/medium/image.jpeg" alt="" class="img-responsive"> </a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>

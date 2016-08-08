@@ -11,6 +11,7 @@
   "author": "Skoda",
   "license": "Proprietary",
   "devDependencies": {
+    "angular-sanitize": "^1.5.8",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sass-bulk-import": "^1.0.1",

@@ -14,6 +14,7 @@ export default angular.module('app',
         'rzModule',
         'ng',
         'ui.router.title',
+        require('angular-sanitize'),
         dashboard.name
     ])
     .service('api', Api)

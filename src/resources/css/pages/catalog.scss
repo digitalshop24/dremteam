@@ -18,12 +18,23 @@
 				} 
 			}
 		}
+		.my_stars {
+			p {
+				padding: 1px 9px !important;
+				border: 2px solid #fc0;
+				float: none !important;
+				width: 50%;
+				margin: 0 auto !important;
+			}
+		}
 		.one_filter {
 			min-height: 30px;
-			padding: 10px;
-			margin-bottom: 10px; 
+			padding: 20px;
+			// margin-bottom: 10px; 
+			text-align: center;
+			border-bottom: 1px solid #e1e1e1;
 			p {
-				float: left;
+				// float: left;
 				padding: 0;
 				margin: 0;
 				text-transform: uppercase;
@@ -31,8 +42,9 @@
 				font-size: 1.3rem;
 			}
 			ul {
-				float: right;
+				// float: right;
 				padding-top: 1px;
+				margin-top: 5px;
 				li {
 					padding: 0 10px;
 					margin: 0;
@@ -61,6 +73,7 @@
 				font-size: 1.3rem;
 				margin-left: 3px; 
 				cursor: pointer;
+				margin: 7px 3px;
 			}
 		}
 		ul {

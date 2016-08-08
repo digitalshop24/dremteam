@@ -12,11 +12,12 @@
 			<div class="col-md-3 text-center cart_model" ng-repeat="person in ctrl.staff | filter:{type:'staff'}">
 				<img ng-show="person.type == 'staff'" src="{{person.photo.medium}}" alt="" class="img-responsive">
 				<img ng-show="person.type == 'suites'" src="{{person.image.medium}}" alt="" class="img-responsive">
-				<ul class="" ng-show="person.profession == 'model'">
-					<li ng-bind="person.name + ' ID:' + person.id"></li>
-					<!-- <li ng-bind="'Рост: ' + person.height">Рост: 173</li> -->
-					<!-- <li>Вес: 51</li>
-					<li>Параметры: 86-58-89</li> -->
+				<ul class="" ng-show="person.profession == 'model'" style="height:120px;">
+					<li ng-bind="person.name" ng-show="person.name"></li>
+					<li ng-bind="'ID:' + person.dt_id" ng-show="person.dt_id"></li>
+					<li ng-bind="'Рост: ' + person.height" ng-show="person.height">Рост: 173</li>
+					<li ng-bind="'Вес: ' + person.weight " ng-show="person.weight ">Вес: 51</li>
+					<li ng-bind="'Параметры: ' + person.measurements" ng-show="person.measurements">Параметры: 86-58-89</li>
 				</ul>
 				<ul class="" ng-show="person.type == 'suites'">
 					<li ng-bind="person.name"></li>

@@ -10,19 +10,29 @@
 			<div class="col-md-6">
 				<img src="{{ctrl.bigfoto}}" alt="" class="img-responsive">
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 model_fix_mobile">
 				<ul ng-show="ctrl.person.profession == 'model'">
 					<li ng-bind="'Рост: ' + ctrl.person.height" ng-show="ctrl.person.height"></li>
 					<li ng-bind="'Параметры: ' + ctrl.person.measurements" ng-show="ctrl.person.measurements"></li>
 					<li ng-bind="'Цвет волос: ' + ctrl.colorHair(ctrl.person.hair_color)" ng-show="ctrl.person.hair_color"></li>
+					<li ng-bind-html="ctrl.person.description" ng-show="ctrl.person.description"></li>
+
 				</ul>
 				<choose-button person="ctrl.person"></choose-button>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-12" ng-show="ctrl.person.profession == 'model'">
 				<slick ng-show="ctrl.person.photos" infinite=true slides-to-show=4 slides-to-scroll=1 arrow=true dots=true responsive="ctrl.responsive">
 					<div ng-repeat="photo in ctrl.person.photos"><img ng-click="ctrl.checkBigFoto(photo.medium)" src="{{photo.small}}"/></div>
 				</slick>
 			</div>
+			<div class="col-md-12 polotno" ng-show="ctrl.person.profession != 'model'">
+				<div class="row">
+					<div ng-repeat="photo in ctrl.person.photos" class="polotno_one_model col-md-3 col-lg-3 col-sm-6 col-xs-12 text-center">
+						<img  ng-click="ctrl.checkBigFoto(photo.medium)" src="{{photo.small}}"/>
+					</div>
+				</div>
+			</div>
+
 		</div>
 		
 	</div>

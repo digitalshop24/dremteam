@@ -15,15 +15,18 @@
                 <ul>
                     <li>
                         <div class="cursor_pointer" role="button" data-toggle="collapse" href="#collapse_1"
-                             aria-expanded="true" aria-controls="collapse_1" ng-click="ctrl.handleFilter('models'); ctrl.showOthe = false;">
+                             aria-expanded="true" aria-controls="collapse_1" ng-click="ctrl.handleFilter('models'); ctrl.addTemplate(false);">
                             <a class="">
                                 Модели
                             </a>
                             <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
 
                         </div>
-                        <div class="filter collapse"  id="collapse_1">
-                            <div style="min-height:150px;">
+                        <div class="filter collapse" id="collapse_1">
+                            <div style="min-height:280px;">
+                                <div class="one_filter text-center my_stars" >
+                                    <p><a href="" ng-click="ctrl.handleFilter('models.stars')">Наши звезды</a></p>
+                                </div>
                                 <div class="one_filter">
                                     <p>Пол:</p>
                                     <ul>
@@ -41,51 +44,58 @@
                                         <li><a href="">до 175 см</a></li>
                                     </ul>-->
                                 </div>
-                                <div class="one_filter">
+                                <div class="one_filter" style="border-bottom: none;">
                                     <p>Цвет волос:</p>
                                     <ul>
-                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.blond')">Светлые</a>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.blond')">Блондинки</a>
                                         </li>
-                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.dark')">Темные</a></li>
+                                        <li><a href="" ng-click="ctrl.handleFilter('models.hair.dark')">Шатенки</a></li>
                                         <li><a href="" ng-click="ctrl.handleFilter('models.hair.red')">Рыжие</a></li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('photographs'); ctrl.showOthe = true;">
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('photographs'); ctrl.addTemplate(true)">
                             <a href="">Фотографы</a>
                             <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('stylists'); ctrl.showOthe = true;">
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('stylists'); ctrl.addTemplate(true)">
                             <a href="">Стилисты</a>
                             <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('keytring'); ctrl.showOthe = true;">
-                            <a href="">Кейтринг</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('visagiste'); ctrl.addTemplate(true)">
+                            <a href="">Визажисты</a>
                             <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
                     <li>
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('staff'); ctrl.showOthe = true;" role="button" data-toggle="collapse" href="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-                            <a href="">Staff</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('keytring'); ctrl.addTemplate(true)">
+                            <a href="">Кейтеринг</a>
                             <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('staff'); ctrl.addTemplate(true);" role="button" data-toggle="collapse" href="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                            <a href="">Staff</a>
+                            <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span>
                         </div>
                         <div class="filter collapse" id="collapse_2"> 
                             <ul class="staff_ul">
-                                <li><a href="" ng-click="ctrl.handleFilter('staff.barman'); ctrl.showOthe = true;">Бармены</a></li>
-                                <li><a href="" ng-click="ctrl.handleFilter('staff.waiter'); ctrl.showOthe = true;">Официанты</a></li>
+                                <li><a href="" ng-click="ctrl.handleFilter('staff.barman'); ctrl.addTemplate(true)">Бармены</a></li>
+                                <li><a href="" ng-click="ctrl.handleFilter('staff.waiter'); ctrl.addTemplate(true)">Официанты</a></li>
                             </ul>
                         </div>
                     </li>
                     <li> 
-                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('set'); ctrl.showOthe = false;">
-                            <a href="">Сет</a>
+                        <div class="cursor_pointer" ng-click="ctrl.handleFilter('set'); ctrl.addTemplate(false);">
+                            <a href="">Спецпредложения</a>
                             <!-- <span class="fa fa-angle-down fa-2x" aria-hidden="true"></span> -->
                         </div>
                     </li>
@@ -94,7 +104,7 @@
                     <h4>Ваш Event - менеджер</h4>
 
                     <p style="padding-bottom: 10px; float:none;">Для уточнения информации свяжитесь с ивент-менеджером</p>
-                    <img src="img/resources/img/foto.png" alt="" class="img-responsive" style="margin:0 auto;">
+                    <img src="img/resources/img/event.jpg" alt="" class="img-responsive" style="margin:0 auto; border-radius: 50%; width: 60%;">
                     <ul class="text-center">
                         <li>Василиса</li>
                         <li>+7 (977) 389 59 35</li>
@@ -104,7 +114,7 @@
             </div>
             <div class="col-md-9 catalog_model" ng-show="!ctrl.showOthe">
                 <div class="row">
-                    <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.filteredStaff">
+                    <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.modelShow | limitTo: ctrl.rootScope.showItem">
                         <div ng-show="person.type == 'staff'">
                             <img src="{{person.photo.small}}" alt="" class="img-responsive foto_model"
                                  ui-sref="dashboard.model({id: person.id})">
@@ -116,7 +126,7 @@
 
                         </div>
 
-                        <div class="row" ng-show="person.type == 'suites'">
+                        <div class="row" ng-show="person.type == 'suites' && ctrl.showSets">
                             <div class="col-md-12" style="padding-bottom: 20px;">
                                 <h4 class="left" ng-bind="person.description">Для презентации</h4>
                                 <h4 class="right"><span>Скидка</span> -{{person.discount}}%</h4>
@@ -137,6 +147,13 @@
                                 <choose-button person="person"></choose-button>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-12 text-center " ng-show="!ctrl.showSets">
+                        <!-- <button class="btn_yellow" ng-click="ctrl.showItemAdd()">Показать еще</button> -->
+                        <button class="btn_yellow_border_none" ng-click="ctrl.paginationGet(ctrl.currentPage-1)"><</button>
+                        <button class="btn_yellow" >{{ctrl.currentPage}}</button>
+                        <button ng-show="ctrl.currentPage+1 <= ctrl.filteredStaff.length ? 'true':'false'" class="btn_yellow_border_none" ng-click="ctrl.paginationGet(ctrl.currentPage+1)">></button>
+                        
                     </div>
                 </div>
 

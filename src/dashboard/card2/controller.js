@@ -6,7 +6,7 @@ export default class Card2Ctrl {
     	this.staff = cardStorage.staff;
     	this.cardStorage = cardStorage;
     	this.allId = '';
-    	console.log('this.allId', this.allId);
+    	
 
     }
 
@@ -15,6 +15,6 @@ export default class Card2Ctrl {
     		this.allId +=  ' ID:' + this.staff[index].id;
     		// console.log(this.staff[index]);
 		}
-		console.log('console.log(this.allId);', this.allId);
+		
     }
 }

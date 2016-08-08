@@ -6,8 +6,10 @@ export default class MainCtrl {
         this.models = models;
         this.recruitingModal = recruitingModal;
         this.works = works.works;
-        this.worksPhotos = works.photos;
+        // this.worksPhotos = works.works[0].staff[0].photos;
         this.id_active = '';
+        console.log(this.worksPhotos);
+        console.log(this.works);
     }
 
     openRecruitingModal() {

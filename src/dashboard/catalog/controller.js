@@ -1,7 +1,15 @@
 'use strict';
 
 export default class CatalogCtrl {
-    constructor(staff, sets) {
+    constructor(staff, sets, catalogService, staffService, $rootScope, api) {
+        this.api = api
+        this.showOthe = JSON.parse(localStorage.getItem("showOthe"));
+        this.rootScope = $rootScope;
+        if (this.rootScope.showItem == undefined) {
+            this.rootScope.showItem = 12;
+        } 
+        this.staffService = staffService;
+        this.catalogService = catalogService;
         staff.sort((a,b) => {
             if (a.sex == 'w' && b.sex == 'm') {
                 return -1;
@@ -13,13 +21,10 @@ export default class CatalogCtrl {
         });
 
         this.staff = staff.concat(sets);
-        
         this.filteredStaff = this.staff;
         this.filters = [];
-
-        this.showOthe = false;
         this.i = 0;
-        this.slider = {
+        this.slider = { 
             minValue: 150,
             maxValue: 200,
             options: {
@@ -43,7 +48,22 @@ export default class CatalogCtrl {
                 this.handleFilter(this.filt[this.i].name);
             }
         }
-        console.log('this.filters', this.filters);
+
+        if ((localStorage.getItem("currentPage") == undefined)) {
+            this.currentPage = 0;
+        }
+        else {
+            this.currentPage = JSON.parse(localStorage.getItem("currentPage"));
+            
+        }
+
+        this.itemsPerPage = 12;
+        this.modelShow = [];
+        this.paginationGet(this.currentPage);
+    }
+   
+    showItemAdd() {
+        this.rootScope.showItem += 12;
     }
 
     handleFilter(filterName) {
@@ -64,16 +84,15 @@ export default class CatalogCtrl {
         this.showSets = filter.showSets;
         this.obj =JSON.stringify(this.filters);
         localStorage.setItem("filter", this.obj);
+        this.paginationGet(0);
     }
 
     filterStaff() {
-
         this.filteredStaff = this.staff;
         this.filters.forEach(filter => {
-            console.log('filter', filter);
             this.filteredStaff = this.filteredStaff.filter(filter.filter);
-            console.log('this.filteredStaff', this.filteredStaff);
         });
+        this.paginationGet(0);
     }
 
     removeFilterAndUpdate(filterName) {
@@ -86,6 +105,7 @@ export default class CatalogCtrl {
             const filterIndex = this.filters.findIndex(f => f.name == filterName);
             if (filterIndex > -1) {
                 this.filters.splice(filterIndex, 1);
+                if (filterIndex == 0 ) this.showOthe = false;
             }
         });
     }
@@ -102,19 +122,36 @@ export default class CatalogCtrl {
         return this.allFilters.find(f => f.name == filterName);
     }
 
+    findFilter(filterName) {
+        if (this.filters.find(f => f.name == filterName) == undefined) return false;
+        else return true;
+    }
+
+
     initFilters() {
         this.allFilters = [
             {
                 name: "models",
                 exclude: ["all"],
                 tagName: "Модели",
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "model";
                 }
             },
             {
+                name: "models.stars",
+                exclude: ["all"],
+                tagName: "Звезды",
+                showSets: false,
+                filter: (person) => {
+                    return person.subprofession == "stars";
+                }
+            },
+            {
                 name: "models.male",
                 tagName: "Парни",
+                showSets: false,
                 exclude: ["models.female"],
                 filter: (person) => {
                     return person.profession == "model" && person.sex == "m";
@@ -123,6 +160,7 @@ export default class CatalogCtrl {
             {
                 name: "models.female",
                 tagName: "Девушки",
+                showSets: false,
                 exclude: ["models.male"],
                 filter: (person) => {
                     return person.profession == "model" && person.sex == "w";
@@ -131,6 +169,7 @@ export default class CatalogCtrl {
             {
                 name: "models.height",
                 tagName: "Рост",
+                showSets: false,
                 filter: (person) => {
                     return person.height >= this.slider.minValue && person.height <= this.slider.maxValue;
                 }
@@ -138,20 +177,23 @@ export default class CatalogCtrl {
             {
                 name: "models.hair.red",
                 tagName: "Рыжие",
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
                 name: "models.hair.dark",
-                tagName: "Темные",
+                tagName: "Шатенки",
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
             },
             {
                 name: "models.hair.blond",
-                tagName: "Светлые",
+                tagName: "Блондинки",
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "model" && this.getEnabledHairColors().indexOf(person.hair_color) > -1;
                 }
@@ -160,6 +202,7 @@ export default class CatalogCtrl {
                 name: "photographs",
                 tagName: "Фотографы",
                 exclude: ["all"],
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "photograph";
                 }
@@ -168,14 +211,16 @@ export default class CatalogCtrl {
                 name: "stylists",
                 tagName: "Стилисты",
                 exclude: ["all"],
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "stylist";
                 }
             },
             {
                 name: "keytring",
-                tagName: "Кейтринг",
+                tagName: "Кейтеринг",
                 exclude: ["all"],
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "keytring";
                 }
@@ -184,6 +229,7 @@ export default class CatalogCtrl {
                 name: "staff",
                 tagName: "Staff",
                 exclude: ["all"],
+                showSets: false,
                 filter: (person) => {
                     return person.profession == "staff";
                 }
@@ -191,7 +237,8 @@ export default class CatalogCtrl {
             {
                 name: "staff.barman",
                 tagName: "Бармены",
-                exclude: ["staff.barman"],
+                exclude: ["staff.waiter"],
+                showSets: false,
                 filter: (person) => {
                     return person.subprofession == "barman"
                 }
@@ -200,6 +247,7 @@ export default class CatalogCtrl {
                 name: "staff.waiter",
                 tagName: "Официанты",
                 exclude: ["staff.barman"],
+                showSets: false,
                 filter: (person) => {
                     return person.subprofession == "waiter";
                 }
@@ -212,7 +260,16 @@ export default class CatalogCtrl {
                 filter: (person) => {
                     return person.type == "suites";
                 }
-            }
+            },
+            {
+                name: "visagiste",
+                tagName: "Визажисты",
+                exclude: ["all"],
+                showSets: false,
+                filter: (person) => {
+                    return person.profession == "visagiste";
+                }
+            },
         ]
     }
 
@@ -230,4 +287,27 @@ export default class CatalogCtrl {
             this.isFilterSwitchedOn('models.hair.blond') ? 'blond' : ''
         ]
     }
+
+    addTemplate(bool) {
+        this.showOthe = bool;
+        localStorage.setItem("showOthe", this.showOthe);
+        
+    }
+
+    paginationGet(num) {
+      this.maxPage = Math.ceil(this.filteredStaff.length/this.itemsPerPage);
+      this.maxPage--;
+      console.log(this.filteredStaff.length);
+      console.log(this.maxPage);
+      num = angular.isUndefined(num)?0:num;
+      if (num < 0) { num = 0; return; } 
+      if (num > this.maxPage) { num = this.maxPage; return; }
+      this.first = this.itemsPerPage*num;
+      this.last = this.first + this.itemsPerPage;
+      this.currentPage = num;
+      this.last = this.last > this.filteredStaff.length ? (this.filteredStaff.length-1) : this.last;
+      this.modelShow = this.filteredStaff.slice(this.first, this.last);
+      localStorage.setItem('currentPage', this.currentPage);
+    }
+
 }

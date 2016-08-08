@@ -14,6 +14,17 @@ export default class StaffService {
             return res.data.items;
         });
     }
+    getStaff20(main) {
+        return this.api.get('/staff', {
+            params: {
+                main: main,
+                page: 1,
+                per_page: 10
+            }
+        }).then((res) => {
+            return res.data.items;
+        });
+    }
 
     getById(id) {
         return this.api.get(`/staff/${id}`).then((res) => {
