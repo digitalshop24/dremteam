@@ -5,6 +5,7 @@ export default class CatalogCtrl {
         this.api = api
         this.showOthe = JSON.parse(localStorage.getItem("showOthe"));
         this.rootScope = $rootScope;
+        console.log(localStorage);
         if (this.rootScope.showItem == undefined) {
             this.rootScope.showItem = 12;
         } 
@@ -49,17 +50,22 @@ export default class CatalogCtrl {
             }
         }
 
+        console.log('11111', localStorage.getItem("currentPage"));
         if ((localStorage.getItem("currentPage") == undefined)) {
             this.currentPage = 0;
+            this.paginationGet(this.currentPage);
+            console.log('undefined');
         }
         else {
             this.currentPage = JSON.parse(localStorage.getItem("currentPage"));
+            this.paginationGet(this.currentPage);
+            console.log('no-undefined');
             
         }
 
         this.itemsPerPage = 12;
         this.modelShow = [];
-        this.paginationGet(this.currentPage);
+        
     }
    
     showItemAdd() {
@@ -297,8 +303,6 @@ export default class CatalogCtrl {
     paginationGet(num) {
       this.maxPage = Math.ceil(this.filteredStaff.length/this.itemsPerPage);
       this.maxPage--;
-      console.log(this.filteredStaff.length);
-      console.log(this.maxPage);
       num = angular.isUndefined(num)?0:num;
       if (num < 0) { num = 0; return; } 
       if (num > this.maxPage) { num = this.maxPage; return; }
@@ -308,6 +312,7 @@ export default class CatalogCtrl {
       this.last = this.last > this.filteredStaff.length ? (this.filteredStaff.length-1) : this.last;
       this.modelShow = this.filteredStaff.slice(this.first, this.last);
       localStorage.setItem('currentPage', this.currentPage);
+      console.log('2222222', localStorage.getItem("currentPage"));
     }
 
 }
