@@ -12,6 +12,7 @@ import card2 from './card2/index';
 import chooseButton from './choose-button/index';
 import StaffService from './staffService';
 import validInit from './valid-init/index';
+import sliderInit from './slider-init/index';
 
 export default angular.module('dashboard',
     [
@@ -23,7 +24,8 @@ export default angular.module('dashboard',
         chooseButton.name,
         card.name,
         card2.name,
-        validInit.name
+        validInit.name,
+        sliderInit.name
     ])
     .service('staffService', StaffService)
     .config($stateProvider => {

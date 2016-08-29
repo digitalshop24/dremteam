@@ -50,21 +50,18 @@ export default class CatalogCtrl {
             }
         }
 
-        console.log('11111', localStorage.getItem("currentPage"));
+        // console.log('11111', localStorage.getItem("currentPage"));
         if ((localStorage.getItem("currentPage") == undefined)) {
             this.currentPage = 0;
-            this.paginationGet(this.currentPage);
-            console.log('undefined');
         }
         else {
             this.currentPage = JSON.parse(localStorage.getItem("currentPage"));
-            this.paginationGet(this.currentPage);
-            console.log('no-undefined');
-            
         }
 
         this.itemsPerPage = 12;
         this.modelShow = [];
+        console.log('start', this.currentPage);
+        this.paginationGet(this.currentPage);
         
     }
    
@@ -90,7 +87,7 @@ export default class CatalogCtrl {
         this.showSets = filter.showSets;
         this.obj =JSON.stringify(this.filters);
         localStorage.setItem("filter", this.obj);
-        this.paginationGet(0);
+        // this.paginationGet(0);
     }
 
     filterStaff() {
@@ -98,7 +95,7 @@ export default class CatalogCtrl {
         this.filters.forEach(filter => {
             this.filteredStaff = this.filteredStaff.filter(filter.filter);
         });
-        this.paginationGet(0);
+        // this.paginationGet(0);
     }
 
     removeFilterAndUpdate(filterName) {
@@ -312,7 +309,7 @@ export default class CatalogCtrl {
       this.last = this.last > this.filteredStaff.length ? (this.filteredStaff.length-1) : this.last;
       this.modelShow = this.filteredStaff.slice(this.first, this.last);
       localStorage.setItem('currentPage', this.currentPage);
-      console.log('2222222', localStorage.getItem("currentPage"));
+      console.log('end', localStorage.getItem("currentPage"));
     }
 
 }

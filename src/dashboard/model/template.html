@@ -21,7 +21,7 @@
 				<choose-button person="ctrl.person"></choose-button>
 			</div>
 			<div class="col-md-12" ng-show="ctrl.person.profession == 'model'">
-				<slick ng-show="ctrl.person.photos" infinite=true slides-to-show=4 slides-to-scroll=1 arrow=true dots=true responsive="ctrl.responsive">
+				<slick ng-show="ctrl.person.photos" infinite=false slides-to-show=4 slides-to-scroll=1 arrow=true dots=true responsive="ctrl.responsive">
 					<div ng-repeat="photo in ctrl.person.photos">
 						<a href="" ng-click="ctrl.checkBigFoto(photo.medium)"><img ng-click="ctrl.checkBigFoto(photo.medium)" src="{{photo.small}}"/></a>
 					</div>
