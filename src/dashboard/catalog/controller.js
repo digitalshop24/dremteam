@@ -5,7 +5,6 @@ export default class CatalogCtrl {
         this.api = api
         this.showOthe = JSON.parse(localStorage.getItem("showOthe"));
         this.rootScope = $rootScope;
-        console.log(localStorage);
         if (this.rootScope.showItem == undefined) {
             this.rootScope.showItem = 12;
         } 
@@ -40,6 +39,15 @@ export default class CatalogCtrl {
         };
         this.initFilters();
         this.obj = "";
+        this.itemsPerPage = 12;
+        this.modelShow = [];
+        if ((localStorage.getItem("currentPage") == undefined)) {
+            this.currentPage = 0;
+        }
+        else {
+            this.currentPage = JSON.parse(localStorage.getItem("currentPage"));
+        }
+
         if ((localStorage.getItem("filter") == undefined)) {
             this.handleFilter('models');
         }
@@ -51,18 +59,8 @@ export default class CatalogCtrl {
         }
 
         // console.log('11111', localStorage.getItem("currentPage"));
-        if ((localStorage.getItem("currentPage") == undefined)) {
-            this.currentPage = 0;
-        }
-        else {
-            this.currentPage = JSON.parse(localStorage.getItem("currentPage"));
-        }
-
-        this.itemsPerPage = 12;
-        this.modelShow = [];
-        console.log('start', this.currentPage);
-        this.paginationGet(this.currentPage);
         
+        this.paginationGet(this.currentPage);
     }
    
     showItemAdd() {
@@ -95,7 +93,7 @@ export default class CatalogCtrl {
         this.filters.forEach(filter => {
             this.filteredStaff = this.filteredStaff.filter(filter.filter);
         });
-        // this.paginationGet(0);
+        this.paginationGet(this.currentPage);
     }
 
     removeFilterAndUpdate(filterName) {
@@ -298,18 +296,19 @@ export default class CatalogCtrl {
     }
 
     paginationGet(num) {
+        console.log(num);
       this.maxPage = Math.ceil(this.filteredStaff.length/this.itemsPerPage);
       this.maxPage--;
       num = angular.isUndefined(num)?0:num;
       if (num < 0) { num = 0; return; } 
-      if (num > this.maxPage) { num = this.maxPage; return; }
+      if ((num > this.maxPage)&&(this.maxPage > 0)) { num = this.maxPage; }
       this.first = this.itemsPerPage*num;
       this.last = this.first + this.itemsPerPage;
       this.currentPage = num;
       this.last = this.last > this.filteredStaff.length ? (this.filteredStaff.length-1) : this.last;
+
       this.modelShow = this.filteredStaff.slice(this.first, this.last);
       localStorage.setItem('currentPage', this.currentPage);
-      console.log('end', localStorage.getItem("currentPage"));
     }
 
 }

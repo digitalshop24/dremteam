@@ -113,8 +113,8 @@
                 </div>
             </div>
             <div class="col-md-9 catalog_model" ng-show="!ctrl.showOthe">
-                <div class="row">
-                    <div ng-class="{'col-md-3': !ctrl.showSets, 'col-md-12 set' : ctrl.showSets}" ng-repeat="person in ctrl.modelShow | limitTo: ctrl.rootScope.showItem">
+                <div class="row" >
+                    <div class="col-md-3" ng-repeat="person in ctrl.modelShow | limitTo: ctrl.rootScope.showItem" ng-show="!ctrl.showSets">
                         <div ng-show="person.type == 'staff'">
                             <img src="{{person.photo.small}}" alt="" class="img-responsive foto_model"
                                  ui-sref="dashboard.model({id: person.id})">
@@ -123,12 +123,12 @@
                                 <choose-button person="person"></choose-button>
                             </div>
                             <h5 ui-sref="dashboard.model({id: person.id})">{{person.name}}<br> ID: {{person.dt_id}}</h5>
-
                         </div>
-
+                    </div>    
+                    <div class="col-md-12 set" ng-repeat="person in ctrl.filteredStaff " ng-show="ctrl.showSets">
                         <div class="row" ng-show="person.type == 'suites' && ctrl.showSets">
                             <div class="col-md-12" style="padding-bottom: 20px;">
-                                <h4 class="left" ng-bind="person.description">Для презентации</h4>
+                                <h4 class="left" ng-bind="person.name">Для презентации</h4>
                                 <h4 class="right"><span>Скидка</span> -{{person.discount}}%</h4>
                             </div>
                             <div class="col-md-6" ng-repeat="block in person.staff">
@@ -147,13 +147,13 @@
                                 <choose-button person="person"></choose-button>
                             </div>
                         </div>
-                    </div>
+                    </div>    
+                        
                     <div class="col-md-12 text-center " ng-show="!ctrl.showSets">
                         <!-- <button class="btn_yellow" ng-click="ctrl.showItemAdd()">Показать еще</button> -->
                         <button class="btn_yellow_border_none" ng-click="ctrl.paginationGet(ctrl.currentPage-1)"><</button>
                         <button class="btn_yellow" >{{ctrl.currentPage}}</button>
                         <button ng-show="ctrl.currentPage+1 <= ctrl.filteredStaff.length ? 'true':'false'" class="btn_yellow_border_none" ng-click="ctrl.paginationGet(ctrl.currentPage+1)">></button>
-                        
                     </div>
                 </div>
 

@@ -10,7 +10,7 @@ export default class ModelCtrl {
               breakpoint: 1280,
               settings: {
                 slidesToShow: 3,
-                infinite: true,
+                infinite: false,
                 dots: true
               }
             },
@@ -18,7 +18,7 @@ export default class ModelCtrl {
               breakpoint: 992,
               settings: {
                 slidesToShow: 2,
-                infinite: true,
+                infinite: false,
                 dots: true
               }
             },
@@ -26,6 +26,7 @@ export default class ModelCtrl {
               breakpoint: 695,
               settings: {
                 slidesToShow: 1,
+                infinite: false,
               }
             }
             
